@@ -50,6 +50,7 @@
     <modules>
         <module>rapidf-restful</module>
         <module>rapidf-validation</module>
+        <module>rapidf-utils</module>
     </modules>
 
     <properties>

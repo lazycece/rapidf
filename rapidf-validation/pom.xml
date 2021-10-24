@@ -25,7 +25,20 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>rapidf-restful</artifactId>
+    <artifactId>rapidf-validation</artifactId>
     <name>${project.artifactId}</name>
+
+    <properties>
+        <hibernate-validator.version>6.1.5.Final</hibernate-validator.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate-validator.version}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
 
 </project>

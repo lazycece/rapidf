@@ -1,2 +1,2 @@
-# rapidf
+# Rapidf
 Rapid development framework

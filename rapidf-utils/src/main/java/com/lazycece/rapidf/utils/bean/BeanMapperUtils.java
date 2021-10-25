@@ -30,7 +30,7 @@ import java.util.List;
  */
 public class BeanMapperUtils {
 
-    private static Mapper MAPPER = DozerBeanMapperBuilder.buildDefault();
+    private static final Mapper MAPPER = DozerBeanMapperBuilder.buildDefault();
 
     /**
      * simple mapper

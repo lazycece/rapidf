@@ -31,7 +31,7 @@ public class CmdExecUtils {
      * @param cmd cmd cmd
      * @return exec success or not
      * @throws IOException          IOException
-     * @throws InterruptedException InterruptedException
+     * @throws InterruptedException Interrupted Exception
      */
     public static boolean execSuc(String cmd) throws IOException, InterruptedException {
         Process process = null;
@@ -51,9 +51,9 @@ public class CmdExecUtils {
      * exec cmd will be blocked until the subprocess exits.
      *
      * @param cmd cmd
-     * @return Process Process
+     * @return Process
      * @throws IOException          IOException
-     * @throws InterruptedException InterruptedException
+     * @throws InterruptedException Interrupted Exception
      */
     public static Process exec(String cmd) throws IOException, InterruptedException {
         return exec(cmd, -1, null);
@@ -67,7 +67,7 @@ public class CmdExecUtils {
      * @param unit    ${@link TimeUnit} <code>unit==null</code> indicates it will block
      * @return exec success or not
      * @throws IOException          IOException
-     * @throws InterruptedException InterruptedException
+     * @throws InterruptedException Interrupted Exception
      */
     public static boolean execSuc(String cmd, long timeout, TimeUnit unit) throws IOException, InterruptedException {
         Process process = null;
@@ -91,7 +91,7 @@ public class CmdExecUtils {
      * @param unit    ${@link TimeUnit} <code>unit==null</code> indicates it will block
      * @return Process
      * @throws IOException          IOException
-     * @throws InterruptedException InterruptedException
+     * @throws InterruptedException Interrupted Exception
      */
     public static Process exec(String cmd, long timeout, TimeUnit unit) throws IOException, InterruptedException {
         Process process = Runtime.getRuntime().exec(cmd);

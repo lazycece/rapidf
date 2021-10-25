@@ -29,6 +29,7 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.StringWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,13 +44,13 @@ public class XmlUtils {
      *
      * @param xmlStr xml string
      * @return map
-     * @throws Exception
+     * @throws Exception Exception
      */
     public static Map<String, String> xmlToMap(String xmlStr) throws Exception {
         Map<String, String> data = new HashMap<String, String>();
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-        InputStream stream = new ByteArrayInputStream(xmlStr.getBytes("UTF-8"));
+        InputStream stream = new ByteArrayInputStream(xmlStr.getBytes(StandardCharsets.UTF_8));
         org.w3c.dom.Document doc = documentBuilder.parse(stream);
         doc.getDocumentElement().normalize();
         NodeList nodeList = doc.getDocumentElement().getChildNodes();
@@ -69,7 +70,7 @@ public class XmlUtils {
      *
      * @param data map
      * @return xml string
-     * @throws Exception
+     * @throws Exception Exception
      */
     public static String mapToXml(Map<String, String> data) throws Exception {
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();

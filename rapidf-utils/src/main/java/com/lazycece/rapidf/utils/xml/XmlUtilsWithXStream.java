@@ -67,8 +67,8 @@ public class XmlUtilsWithXStream {
      * @param xmlString xml string
      * @return map
      * @throws ParserConfigurationException ParserConfigurationException
-     * @throws IOException
-     * @throws SAXException
+     * @throws IOException IOException
+     * @throws SAXException SAXException
      */
     public static Map<String, Object> xmlToMap(String xmlString) throws ParserConfigurationException, IOException, SAXException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();

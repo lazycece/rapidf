@@ -41,6 +41,10 @@ public class JsonUtils {
         return JSON.parseObject(json, clazz);
     }
 
+    public static <T> T parseObject(String json, TypeReference<T> typeReference) {
+        return JSON.parseObject(json, typeReference);
+    }
+
     public static <T> List<T> parseArray(String json, Class<T> clazz) {
         return JSON.parseArray(json, clazz);
     }

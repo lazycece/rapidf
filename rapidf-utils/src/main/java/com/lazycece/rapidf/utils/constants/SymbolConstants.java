@@ -39,5 +39,4 @@ public class SymbolConstants {
     public static final String COMMA = ",";
 
     public static final String DOT = ".";
-
 }

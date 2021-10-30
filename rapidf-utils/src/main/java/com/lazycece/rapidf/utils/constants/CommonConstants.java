@@ -14,13 +14,13 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.utils;
+package com.lazycece.rapidf.utils.constants;
 
 /**
  * @author lazycece
  * @date 2021/10/24
  */
-public class Constants {
+public class CommonConstants {
     /**
      * the size of one kb
      */

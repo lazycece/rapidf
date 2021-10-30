@@ -16,7 +16,7 @@
 
 package com.lazycece.rapidf.utils.image;
 
-import com.lazycece.rapidf.utils.Constants;
+import com.lazycece.rapidf.utils.constants.CommonConstants;
 import net.coobird.thumbnailator.Thumbnails;
 
 import java.io.ByteArrayInputStream;
@@ -45,11 +45,11 @@ public class ImageUtils {
      */
     public static byte[] compressImage(byte[] bytes, long limitSize,
                                        double accuracy) throws IOException {
-        if (bytes == null || bytes.length < limitSize * Constants.ONE_K_BYTES) {
+        if (bytes == null || bytes.length < limitSize * CommonConstants.ONE_K_BYTES) {
             return bytes;
         }
         byte[] transitBytes = bytes;
-        while (transitBytes.length > limitSize * Constants.ONE_K_BYTES) {
+        while (transitBytes.length > limitSize * CommonConstants.ONE_K_BYTES) {
             ByteArrayInputStream bis = new ByteArrayInputStream(transitBytes);
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
             Thumbnails.of(bis).scale(1).outputFormat("jpg").outputQuality(accuracy)

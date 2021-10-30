@@ -39,4 +39,24 @@ public class SymbolConstants {
     public static final String COMMA = ",";
 
     public static final String DOT = ".";
+
+    public static final String SEMICOLON = ";";
+
+    public static final String AND = "&";
+
+    public static final String EQUAL = "=";
+
+    public static final String AT = "@";
+
+    public static final String WAVE_LINE = "~";
+
+    public static final String UNDERLINE = "_";
+
+    public static final String SHORT_LINE = "-";
+
+    public static final String SLASH = "/";
+
+    public static final String VERTICAL_LINE = "\\|";
+
+    public static final String EMPTY = "";
 }

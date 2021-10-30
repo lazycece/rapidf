@@ -16,28 +16,25 @@
 
 package com.lazycece.rapidf.utils;
 
-import com.lazycece.rapidf.utils.constants.SymbolConstants;
+import org.junit.Test;
 
-import java.math.BigInteger;
-import java.util.UUID;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * @author lazycece
- * @date 2021/10/24
+ * @date 2021/10/30
  */
-public class UUIDUtils {
+public class UUIDUtilsTest {
 
-    public static String uuid() {
-        return UUID.randomUUID().toString().replaceAll(
-                SymbolConstants.SHORT_LINE, SymbolConstants.EMPTY);
+    @Test
+    public void testUUID() {
+        String uuid = UUIDUtils.uuid();
+        assertThat(uuid).isNotBlank();
     }
 
-    public static String sn(int num) {
-        String uuid = uuid();
-        String sn = new BigInteger(uuid, 16).toString();
-        if (num > sn.length()) {
-            throw new RuntimeException(String.format("num must less and equal %s", sn.length()));
-        }
-        return sn.substring(0, num);
+    @Test
+    public void testSn() {
+        String sn = UUIDUtils.sn(6);
+        assertThat(sn.length()).isEqualTo(6);
     }
 }

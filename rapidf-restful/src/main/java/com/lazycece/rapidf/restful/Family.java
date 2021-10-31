@@ -25,5 +25,6 @@ public enum Family {
     SUCCESS,
     CLIENT_ERROR,
     SERVER_ERROR,
+    INTEGRATION_ERROR,
     FAIL
 }

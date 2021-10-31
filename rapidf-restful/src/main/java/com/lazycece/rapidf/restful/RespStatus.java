@@ -27,6 +27,7 @@ public enum RespStatus implements Status {
     SUCCESS(200, "success"),
     ACCESS_DENIED(403, "access denied"),
     INTERNAL_SERVER_ERROR(500, "Internal Server Error"),
+    INTEGRATION_ERROR(600, "integration error"),
     FAIL(800, "fail"),
     PARAM_ERROR(801, "param error");
     private final int code;
@@ -48,6 +49,9 @@ public enum RespStatus implements Status {
                 break;
             case 5:
                 this.family = Family.SERVER_ERROR;
+                break;
+            case 6:
+                this.family = Family.INTEGRATION_ERROR;
                 break;
             case 8:
                 this.family = Family.FAIL;

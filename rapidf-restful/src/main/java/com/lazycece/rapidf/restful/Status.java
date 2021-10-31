@@ -33,7 +33,7 @@ public interface Status {
      *
      * @return the class of status code
      */
-    RespStatus.Family getFamily();
+    Family getFamily();
 
     /**
      * Get the status's message

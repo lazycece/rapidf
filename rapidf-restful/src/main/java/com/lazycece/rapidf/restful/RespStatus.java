@@ -29,8 +29,8 @@ public enum RespStatus implements Status {
     INTERNAL_SERVER_ERROR(500, "Internal Server Error"),
     FAIL(800, "fail"),
     PARAM_ERROR(801, "param error");
-    private int code;
-    private String message;
+    private final int code;
+    private final String message;
     private Family family;
 
     RespStatus(int code, String message) {
@@ -69,13 +69,5 @@ public enum RespStatus implements Status {
     @Override
     public String getMessage() {
         return message;
-    }
-
-    public enum Family {
-        AUTH,
-        SUCCESS,
-        CLIENT_ERROR,
-        SERVER_ERROR,
-        FAIL
     }
 }

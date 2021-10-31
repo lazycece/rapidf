@@ -46,7 +46,7 @@ public class RespData<T> {
         this(status.getCode(), status.getMessage(), body);
     }
 
-    public static RespData success() {
+    public static RespData<?> success() {
         return new RespData<>(RespStatus.SUCCESS);
     }
 
@@ -54,20 +54,20 @@ public class RespData<T> {
         return new RespData<>(RespStatus.SUCCESS, body);
     }
 
-    public static RespData fail() {
+    public static RespData<?> fail() {
         return new RespData<>(RespStatus.FAIL);
     }
 
-    public static RespData fail(String message) {
+    public static RespData<?> fail(String message) {
         return new RespData<>(RespStatus.FAIL.getCode(), message, null);
     }
 
-    public static RespData fail(Integer code, String message) {
+    public static RespData<?> fail(Integer code, String message) {
         return new RespData<>(code, message, null);
     }
 
-    public static RespData status(Status status) {
-        return new RespData(status);
+    public static RespData<?> status(Status status) {
+        return new RespData<>(status);
     }
 
     public boolean isSuccess() {

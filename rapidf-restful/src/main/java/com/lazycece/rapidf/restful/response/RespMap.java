@@ -73,7 +73,8 @@ public class RespMap extends HashMap<String, Object> {
     }
 
     public boolean isSuccess() {
-        return RespStatus.SUCCESS.getCode() == (int) this.getOrDefault(CODE_FIELD, RespStatus.FAIL.getCode());
+        return RespStatus.SUCCESS.getCode() == (int) this.getOrDefault(
+                CODE_FIELD, RespStatus.FAIL.getCode());
     }
 
     public Integer getCode() {

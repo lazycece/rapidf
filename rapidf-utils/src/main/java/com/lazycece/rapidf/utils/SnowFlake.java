@@ -109,9 +109,4 @@ public class SnowFlake {
         }
         return time;
     }
-
-    public static void main(String[] args) {
-        SnowFlake snowFlake = new SnowFlake(2, 3);
-        System.out.println(snowFlake.nextId());
-    }
 }

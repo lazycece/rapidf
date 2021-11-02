@@ -84,8 +84,8 @@ public class SymbolConstants {
 
     public static final String ANGLE_BRACKETS = "<>";
 
-    public static final String LESS_THAN = "<";
+    public static final String LESS = "<";
 
-    public static final String GREATER_THAN = ">";
+    public static final String GREATER = ">";
 
 }

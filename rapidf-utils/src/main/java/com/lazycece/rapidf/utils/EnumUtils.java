@@ -22,7 +22,7 @@ import java.lang.reflect.Method;
  * @author lazycece
  * @date 2021/10/24
  */
-public class EnumValidateUtils {
+public class EnumUtils {
 
     private static final String ENUM_METHOD_GET_VALUE = "getValue";
 

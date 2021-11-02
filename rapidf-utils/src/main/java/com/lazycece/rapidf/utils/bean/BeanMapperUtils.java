@@ -65,7 +65,7 @@ public class BeanMapperUtils {
      * @param <T>              T
      * @return destination object list
      */
-    public static <T> List<T> mapList(Collection sourceList, Class<T> destinationClass) {
+    public static <T> List<T> mapList(Collection<?> sourceList, Class<T> destinationClass) {
         List<T> destinationList = new ArrayList<>();
         for (Object sourceObject : sourceList) {
             destinationList.add(MAPPER.map(sourceObject, destinationClass));

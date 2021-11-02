@@ -29,7 +29,7 @@ public class UUIDUtils {
 
     public static String uuid() {
         return UUID.randomUUID().toString().replaceAll(
-                SymbolConstants.SHORT_LINE, SymbolConstants.EMPTY);
+                SymbolConstants.HYPHEN, SymbolConstants.EMPTY);
     }
 
     public static String sn(int num) {

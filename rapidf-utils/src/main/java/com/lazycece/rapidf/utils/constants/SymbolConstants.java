@@ -22,41 +22,70 @@ package com.lazycece.rapidf.utils.constants;
  */
 public class SymbolConstants {
 
-    public static final String COLON = ":";
+    public static final String EMPTY = "";
 
-    public static final String L_PARENTHESES = "(";
+    public static final String EXCLAMATION_MARK = "!";
 
-    public static final String R_PARENTHESES = ")";
-
-    public static final String L_BRACKETS = "[";
-
-    public static final String R_BRACKETS = "]";
-
-    public static final String L_BRACES = "{";
-
-    public static final String R_BRACES = "}";
+    public static final String QUESTION = "?";
 
     public static final String COMMA = ",";
 
     public static final String DOT = ".";
 
+    public static final String COLON = ":";
+
     public static final String SEMICOLON = ";";
 
-    public static final String AND = "&";
+    public static final String BACK_QUOTE = "`";
+
+    public static final String SINGLE_QUOTE = "'";
+
+    public static final String DOUBLE_QUOTE = "\"";
+
+    public static final String STAR = "*";
+
+    public static final String PLUS = "+";
+
+    public static final String HYPHEN = "-";
 
     public static final String EQUAL = "=";
-
-    public static final String AT = "@";
-
-    public static final String WAVE_LINE = "~";
-
-    public static final String UNDERLINE = "_";
-
-    public static final String SHORT_LINE = "-";
 
     public static final String SLASH = "/";
 
     public static final String VERTICAL_LINE = "\\|";
 
-    public static final String EMPTY = "";
+    public static final String UNDERLINE = "_";
+
+    public static final String DOLLAR = "$";
+
+    public static final String AT = "@";
+
+    public static final String CROSSHATCH = "#";
+
+    public static final String PERCENT = "%";
+
+    public static final String AND = "&";
+
+    public static final String CARET = "^";
+
+    public static final String TITLE = "~";
+
+    public static final String L_BRACES = "{";
+
+    public static final String R_BRACES = "}";
+
+    public static final String L_BRACKETS = "[";
+
+    public static final String R_BRACKETS = "]";
+
+    public static final String L_PARENTHESES = "(";
+
+    public static final String R_PARENTHESES = ")";
+
+    public static final String ANGLE_BRACKETS = "<>";
+
+    public static final String LESS_THAN = "<";
+
+    public static final String GREATER_THAN = ">";
+
 }

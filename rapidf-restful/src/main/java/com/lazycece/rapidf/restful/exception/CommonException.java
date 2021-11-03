@@ -17,6 +17,7 @@
 package com.lazycece.rapidf.restful.exception;
 
 import com.lazycece.rapidf.restful.RespStatus;
+import com.lazycece.rapidf.restful.Status;
 
 /**
  * @author lazycece
@@ -24,28 +25,38 @@ import com.lazycece.rapidf.restful.RespStatus;
  */
 public class CommonException extends AbstractCommonException {
 
-    private Integer code = RespStatus.FAIL.getCode();
+    private Status status = RespStatus.FAIL;
 
     public CommonException(String message) {
         super(message);
     }
 
-    public CommonException(Integer code, String message) {
+    public CommonException(String message, Status status) {
         super(message);
-        this.code = code;
+        this.status = status;
     }
 
     public CommonException(String message, Throwable cause) {
         super(message, cause);
     }
 
+    public CommonException(String message, Throwable cause, Status status) {
+        super(message, cause);
+        this.status = status;
+    }
+
     public CommonException(Throwable cause) {
         super(cause);
     }
 
+    public CommonException(Throwable cause, Status status) {
+        super(cause);
+        this.status = status;
+    }
+
     @Override
-    public int getCode() {
-        return this.code;
+    public Status getStatus() {
+        return this.status;
     }
 }
 

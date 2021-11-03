@@ -17,6 +17,7 @@
 package com.lazycece.rapidf.restful.exception;
 
 import com.lazycece.rapidf.restful.RespStatus;
+import com.lazycece.rapidf.restful.Status;
 
 /**
  * @author lazycece
@@ -35,8 +36,12 @@ public class ParamException extends AbstractCommonException {
         super(message, cause);
     }
 
+    public ParamException(Throwable cause) {
+        super(cause);
+    }
+
     @Override
-    public int getCode() {
-        return RespStatus.PARAM_ERROR.getCode();
+    public Status getStatus() {
+        return RespStatus.PARAM_ERROR;
     }
 }

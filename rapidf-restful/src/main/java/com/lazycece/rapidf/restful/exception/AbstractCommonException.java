@@ -16,6 +16,8 @@
 
 package com.lazycece.rapidf.restful.exception;
 
+import com.lazycece.rapidf.restful.Status;
+
 /**
  * @author lazycece
  * @date 2021/10/24
@@ -38,10 +40,10 @@ public abstract class AbstractCommonException extends RuntimeException {
     }
 
     /**
-     * global-custom-exception's code
+     * Get status .
      *
-     * @return int
+     * @return see ${@link Status}
      */
-    abstract public int getCode();
+    abstract public Status getStatus();
 }
 

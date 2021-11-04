@@ -82,5 +82,9 @@ public enum RespStatus implements Status {
         return canRetry;
     }
 
-
+    @Override
+    public String toString() {
+        return String.format("%s[%s,%s,%s]|%s",
+                this.name(), code, family, canRetry, message);
+    }
 }

@@ -45,5 +45,14 @@ public abstract class AbstractCommonException extends RuntimeException {
      * @return see ${@link Status}
      */
     abstract public Status getStatus();
+
+    @Override
+    public String getMessage() {
+        String message = super.getMessage();
+        if (message == null) {
+            message = "";
+        }
+        return String.format("%s|%s", getStatus().toString(), message);
+    }
 }
 

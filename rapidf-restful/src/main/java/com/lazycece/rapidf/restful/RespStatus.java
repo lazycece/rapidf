@@ -21,22 +21,24 @@ package com.lazycece.rapidf.restful;
  * @date 2021/10/24
  */
 public enum RespStatus implements Status {
-    AUTH_TOKEN_FAIL(-100, "auth token fail"),
-    AUTH_SIGN_FAIL(-101, "auth sign fail"),
-    AUTH_PARAM_FAIL(-102, "auth param fail"),
-    SUCCESS(200, "success"),
-    ACCESS_DENIED(403, "access denied"),
-    INTERNAL_SERVER_ERROR(500, "Internal Server Error"),
-    INTEGRATION_ERROR(600, "integration error"),
-    FAIL(800, "fail"),
-    PARAM_ERROR(801, "param error");
+    AUTH_TOKEN_FAIL(-100, "auth token fail", false),
+    AUTH_SIGN_FAIL(-101, "auth sign fail", false),
+    AUTH_PARAM_FAIL(-102, "auth param fail", false),
+    SUCCESS(200, "success", false),
+    ACCESS_DENIED(403, "access denied", false),
+    INTERNAL_SERVER_ERROR(500, "Internal Server Error", false),
+    INTEGRATION_ERROR(600, "integration error", false),
+    FAIL(800, "fail", false),
+    PARAM_ERROR(801, "param error", false);
     private final int code;
-    private final String message;
     private Family family;
+    private final String message;
+    private final boolean canRetry;
 
-    RespStatus(int code, String message) {
+    RespStatus(int code, String message, boolean canRetry) {
         this.code = code;
         this.message = message;
+        this.canRetry = canRetry;
         switch (code / 100) {
             case -1:
                 this.family = Family.AUTH;
@@ -74,4 +76,11 @@ public enum RespStatus implements Status {
     public String getMessage() {
         return message;
     }
+
+    @Override
+    public boolean isCanRetry() {
+        return canRetry;
+    }
+
+
 }

@@ -41,4 +41,11 @@ public interface Status {
      * @return the message
      */
     String getMessage();
+
+    /**
+     * Can retry or not.
+     *
+     * @return true/false
+     */
+    boolean isCanRetry();
 }

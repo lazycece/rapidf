@@ -16,7 +16,7 @@
 
 package com.lazycece.rapidf.restful.exception;
 
-import com.lazycece.rapidf.restful.Status;
+import com.lazycece.rapidf.restful.response.Status;
 
 /**
  * @author lazycece

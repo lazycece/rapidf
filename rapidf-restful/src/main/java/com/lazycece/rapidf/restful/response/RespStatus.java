@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.restful;
+package com.lazycece.rapidf.restful.response;
 
 /**
  * @author lazycece

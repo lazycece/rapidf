@@ -16,9 +16,6 @@
 
 package com.lazycece.rapidf.restful.response;
 
-import com.lazycece.rapidf.restful.RespStatus;
-import com.lazycece.rapidf.restful.Status;
-
 /**
  * @author lazycece
  * @date 2021/10/24

@@ -17,6 +17,7 @@
 package com.lazycece.rapidf.restful;
 
 import com.lazycece.rapidf.restful.exception.AssertException;
+import com.lazycece.rapidf.restful.response.RespStatus;
 import org.junit.Test;
 
 import java.util.ArrayList;

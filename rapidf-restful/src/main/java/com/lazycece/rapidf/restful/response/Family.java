@@ -14,38 +14,17 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.restful;
+package com.lazycece.rapidf.restful.response;
 
 /**
  * @author lazycece
- * @date 2021/10/24
+ * @date 2021/10/31
  */
-public interface Status {
-    /**
-     * Get the associated status code
-     *
-     * @return the status code
-     */
-    int getCode();
-
-    /**
-     * Get the class of status code
-     *
-     * @return the class of status code
-     */
-    Family getFamily();
-
-    /**
-     * Get the status's message
-     *
-     * @return the message
-     */
-    String getMessage();
-
-    /**
-     * Can retry or not.
-     *
-     * @return true/false
-     */
-    boolean isCanRetry();
+public enum Family {
+    AUTH,
+    SUCCESS,
+    FAIL,
+    CLIENT,
+    SERVER,
+    INTEGRATION
 }

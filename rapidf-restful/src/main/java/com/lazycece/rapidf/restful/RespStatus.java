@@ -21,17 +21,22 @@ package com.lazycece.rapidf.restful;
  * @date 2021/10/24
  */
 public enum RespStatus implements Status {
-    AUTH_TOKEN_FAIL(-100, "auth token fail", false),
-    AUTH_SIGN_FAIL(-101, "auth sign fail", false),
-    AUTH_PARAM_FAIL(-102, "auth param fail", false),
-    SUCCESS(200, "success", false),
-    ACCESS_DENIED(403, "access denied", false),
+
+    AUTH_TOKEN_FAIL(100, "Auth token fail", false),
+    AUTH_SIGN_FAIL(101, "Auth sign fail", false),
+    AUTH_PARAM_FAIL(102, "Auth param fail", false),
+    SUCCESS(200, "Success", false),
+    CLIENT_ERROR(400, "Client Error", false),
+    ACCESS_DENIED(403, "Access Denied", false),
     INTERNAL_SERVER_ERROR(500, "Internal Server Error", false),
-    INTEGRATION_ERROR(600, "integration error", false),
-    FAIL(800, "fail", false),
-    PARAM_ERROR(801, "param error", false);
+    DB_EXCEPTION(501, "DB Exception ", false),
+    INTEGRATION_ERROR(600, "Integration Error", false),
+    FAIL(700, "Fail", false),
+    PARAM_ERROR(701, "Param Error", false),
+    DATA_NOT_EXIST(702, "Data Not Exist", false);
+
     private final int code;
-    private Family family;
+    private final Family family;
     private final String message;
     private final boolean canRetry;
 
@@ -39,27 +44,7 @@ public enum RespStatus implements Status {
         this.code = code;
         this.message = message;
         this.canRetry = canRetry;
-        switch (code / 100) {
-            case -1:
-                this.family = Family.AUTH;
-                break;
-            case 2:
-                this.family = Family.SUCCESS;
-                break;
-            case 4:
-                this.family = Family.CLIENT;
-                break;
-            case 5:
-                this.family = Family.SERVER;
-                break;
-            case 6:
-                this.family = Family.INTEGRATION;
-                break;
-            case 8:
-                this.family = Family.FAIL;
-                break;
-            default:
-        }
+        this.family = getFamily(code);
     }
 
     @Override
@@ -72,6 +57,26 @@ public enum RespStatus implements Status {
         return family;
     }
 
+    public Family getFamily(int code) {
+        switch (code / 100) {
+            case 1:
+                return Family.AUTH;
+            case 2:
+                return Family.SUCCESS;
+            case 4:
+                return Family.CLIENT;
+            case 5:
+                return Family.SERVER;
+            case 6:
+                return Family.INTEGRATION;
+            case 7:
+            case 8:
+            case 9:
+                return Family.FAIL;
+            default:
+                return null;
+        }
+    }
 
     @Override
     public String getMessage() {

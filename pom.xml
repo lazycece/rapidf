@@ -51,6 +51,7 @@
         <module>rapidf-restful</module>
         <module>rapidf-validation</module>
         <module>rapidf-utils</module>
+        <module>rapidf-logger</module>
     </modules>
 
     <properties>

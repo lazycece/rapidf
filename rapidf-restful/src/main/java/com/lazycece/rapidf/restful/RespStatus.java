@@ -47,13 +47,13 @@ public enum RespStatus implements Status {
                 this.family = Family.SUCCESS;
                 break;
             case 4:
-                this.family = Family.CLIENT_ERROR;
+                this.family = Family.CLIENT;
                 break;
             case 5:
-                this.family = Family.SERVER_ERROR;
+                this.family = Family.SERVER;
                 break;
             case 6:
-                this.family = Family.INTEGRATION_ERROR;
+                this.family = Family.INTEGRATION;
                 break;
             case 8:
                 this.family = Family.FAIL;
@@ -71,6 +71,7 @@ public enum RespStatus implements Status {
     public Family getFamily() {
         return family;
     }
+
 
     @Override
     public String getMessage() {

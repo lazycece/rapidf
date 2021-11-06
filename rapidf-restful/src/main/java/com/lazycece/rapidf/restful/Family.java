@@ -23,8 +23,8 @@ package com.lazycece.rapidf.restful;
 public enum Family {
     AUTH,
     SUCCESS,
-    CLIENT_ERROR,
-    SERVER_ERROR,
-    INTEGRATION_ERROR,
+    CLIENT,
+    SERVER,
+    INTEGRATION,
     FAIL
 }

@@ -16,6 +16,8 @@
 
 package com.lazycece.rapidf.logger.parser;
 
+import javax.annotation.Nullable;
+
 /**
  * @author lazycece
  * @date 2021/11/6
@@ -28,7 +30,7 @@ public interface LogParser {
      * @param result result object
      * @return true or false
      */
-    boolean isSuccess(Object result);
+    boolean isSuccess(@Nullable Object result);
 
     /**
      * Parse result's status code
@@ -36,5 +38,5 @@ public interface LogParser {
      * @param result result object
      * @return status code
      */
-    String getCode(Object result);
+    String getCode(@Nullable Object result);
 }

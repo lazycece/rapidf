@@ -29,47 +29,47 @@ import java.util.Objects;
 public class Assert {
 
     public static void isTrue(final boolean bool, final Status status,
-                              final String msgFormat, final Object... args) {
+                              final String format, final Object... args) {
         if (!bool) {
-            throw new AssertException(String.format(msgFormat, args), status);
+            throw new AssertException(String.format(format, args), status);
         }
     }
 
     public static void isFalse(final boolean bool, final Status status,
-                               final String msgFormat, final Object... args) {
+                               final String format, final Object... args) {
         if (bool) {
-            throw new AssertException(String.format(msgFormat, args), status);
+            throw new AssertException(String.format(format, args), status);
         }
     }
 
     public static void notBlank(final String str, final Status status,
-                                final String msgFormat, final Object... args) {
-        isFalse(str == null || str.trim().length() == 0, status, msgFormat, args);
+                                final String format, final Object... args) {
+        isFalse(str == null || str.trim().length() == 0, status, format, args);
     }
 
     public static void isBlank(final String str, final Status status,
-                               final String msgFormat, final Object... args) {
-        isTrue(str == null || str.trim().length() == 0, status, msgFormat, args);
+                               final String format, final Object... args) {
+        isTrue(str == null || str.trim().length() == 0, status, format, args);
     }
 
     public static void notNull(final Object obj, final Status status,
-                               final String msgFormat, final Object... args) {
-        isTrue(obj != null, status, msgFormat, args);
+                               final String format, final Object... args) {
+        isTrue(obj != null, status, format, args);
     }
 
     public static void isNull(final Object obj, final Status status,
-                              final String msgFormat, final Object... args) {
-        isTrue(obj == null, status, msgFormat, args);
+                              final String format, final Object... args) {
+        isTrue(obj == null, status, format, args);
     }
 
     public static void notEmpty(final Collection<?> coll, final Status status,
-                                final String msgFormat, final Object... args) {
-        isFalse(coll == null || coll.isEmpty(), status, msgFormat, args);
+                                final String format, final Object... args) {
+        isFalse(coll == null || coll.isEmpty(), status, format, args);
     }
 
     public static void isEmpty(final Collection<?> coll, final Status status,
-                               final String msgFormat, final Object... args) {
-        isTrue(coll == null || coll.isEmpty(), status, msgFormat, args);
+                               final String format, final Object... args) {
+        isTrue(coll == null || coll.isEmpty(), status, format, args);
     }
 
     public static void equal(final Object source, final Object target, final Status status,
@@ -78,28 +78,28 @@ public class Assert {
     }
 
     public static void assignableFrom(final Class<?> superclass, final Class<?> subclass,
-                                      final Status status, final String msgFormat,
+                                      final Status status, final String format,
                                       final Object... args) {
-        isTrue(superclass.isAssignableFrom(subclass), status, msgFormat, args);
+        isTrue(superclass.isAssignableFrom(subclass), status, format, args);
     }
 
     public static void less(final long source, final long standard, final Status status,
-                            final String msgFormat, final Object... args) {
-        isTrue(source < standard, status, msgFormat, args);
+                            final String format, final Object... args) {
+        isTrue(source < standard, status, format, args);
     }
 
     public static void lessOrEqual(final long source, final long standard, final Status status,
-                                   final String msgFormat, final Object... args) {
-        isTrue(source <= standard, status, msgFormat, args);
+                                   final String format, final Object... args) {
+        isTrue(source <= standard, status, format, args);
     }
 
     public static void greater(final long source, final long standard, final Status status,
-                               final String msgFormat, final Object... args) {
-        isTrue(source > standard, status, msgFormat, args);
+                               final String format, final Object... args) {
+        isTrue(source > standard, status, format, args);
     }
 
     public static void greaterOrEqual(final long source, final long standard, final Status status,
-                                      final String msgFormat, final Object... args) {
-        isTrue(source >= standard, status, msgFormat, args);
+                                      final String format, final Object... args) {
+        isTrue(source >= standard, status, format, args);
     }
 }

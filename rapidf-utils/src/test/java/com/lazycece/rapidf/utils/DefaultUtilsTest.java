@@ -37,6 +37,21 @@ public class DefaultUtilsTest {
     }
 
     @Test
+    public void testDefaultValueT() {
+        Object object = null;
+        assertThat(DefaultUtils.defaultValue(object, new Object())).isNotNull();
+        object = "object";
+        assertThat(DefaultUtils.defaultValue(object, new Object())).isInstanceOf(String.class);
+    }
+
+    @Test
+    public void testDefaultArray() {
+        assertThat(DefaultUtils.defaultArray(null)).isNotNull();
+        String[] array = new String[]{"1", "2"};
+        assertThat(DefaultUtils.defaultArray(array).size()).isGreaterThan(1);
+    }
+
+    @Test
     public void testDefaultList() {
         assertThat(DefaultUtils.defaultList(null)).isNotNull();
         assertThat(DefaultUtils.defaultList(Lists.newArrayList())).isNotNull();

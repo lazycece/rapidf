@@ -16,6 +16,7 @@
 
 package com.lazycece.rapidf.utils;
 
+import com.google.common.collect.Lists;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
@@ -32,6 +33,14 @@ public class DefaultUtils {
 
     public static String defaultValue(final String value, final String defaultValue) {
         return StringUtils.isNotBlank(value) ? value : defaultValue;
+    }
+
+    public static <T> T defaultValue(final T value, final T defaultValue) {
+        return value != null ? value : defaultValue;
+    }
+
+    public static <T> List<T> defaultArray(final T[] array) {
+        return array != null ? Lists.newArrayList(array) : new ArrayList<>();
     }
 
     public static <T> List<T> defaultList(final List<T> list) {

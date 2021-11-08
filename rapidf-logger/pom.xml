@@ -27,12 +27,46 @@
 
     <artifactId>rapidf-logger</artifactId>
     <name>${project.artifactId}</name>
+    <properties>
+        <slf4j.version>1.7.32</slf4j.version>
+        <spring.aop>5.3.12</spring.aop>
+        <rapidf.version>0.0.1-SNAPSHOT</rapidf.version>
+    </properties>
 
     <dependencies>
         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.aop}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
             <groupId>com.lazycece.rapidf</groupId>
             <artifactId>rapidf-utils</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${rapidf.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.github.dozermapper</groupId>
+                    <artifactId>dozer-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.thoughtworks.xstream</groupId>
+                    <artifactId>xstream</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.dom4j</groupId>
+                    <artifactId>dom4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>net.coobird</groupId>
+                    <artifactId>thumbnailator</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 

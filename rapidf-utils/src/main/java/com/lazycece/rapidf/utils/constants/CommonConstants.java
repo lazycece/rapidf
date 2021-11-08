@@ -21,6 +21,11 @@ package com.lazycece.rapidf.utils.constants;
  * @date 2021/10/24
  */
 public class CommonConstants {
+
+    public static final String SUCCESS = "Y";
+    public static final String FAIL = "N";
+
+    public static final String MS = "ms";
     /**
      * the size of one kb
      */

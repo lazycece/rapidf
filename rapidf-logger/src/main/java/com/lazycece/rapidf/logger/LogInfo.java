@@ -16,21 +16,30 @@
 
 package com.lazycece.rapidf.logger;
 
+import com.lazycece.rapidf.utils.DefaultUtils;
+
+import static com.lazycece.rapidf.utils.constants.CommonConstants.*;
+import static com.lazycece.rapidf.utils.constants.SymbolConstants.*;
+
 /**
  * @author lazycece
  * @date 2021/11/6
  */
-public class LogInfo {
+public class LogInfo implements Log {
+
+    private static final String REQUEST = "REQUEST";
+    private static final String RESULT = "RESULT";
 
     private String symbol;
     private boolean success;
+    private String code;
+    private Object result;
     private String className;
     private String methodName;
     private long enterTime;
     private long outTime;
     private Object[] args;
     private Class<?>[] blacklist;
-    private Object result;
 
     public String getSymbol() {
         return symbol;
@@ -46,6 +55,22 @@ public class LogInfo {
 
     public void setSuccess(boolean success) {
         this.success = success;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public Object getResult() {
+        return result;
+    }
+
+    public void setResult(Object result) {
+        this.result = result;
     }
 
     public String getClassName() {
@@ -96,11 +121,87 @@ public class LogInfo {
         this.blacklist = blacklist;
     }
 
-    public Object getResult() {
-        return result;
+    @Override
+    public String digestLog() {
+
+        // Format: [(symbol)(className.methodName,success,consumeTime)(code)]
+
+        StringBuilder sb = new StringBuilder();
+
+        // [
+        sb.append(L_BRACKETS);
+
+        // (symbol)
+        sb
+                .append(L_PARENTHESES)
+                .append(DefaultUtils.defaultValue(symbol, HYPHEN))
+                .append(R_PARENTHESES);
+
+        // (className.methodName,success,consumeTime)
+        sb
+                .append(L_PARENTHESES)
+                .append(DefaultUtils.defaultValue(className, HYPHEN))
+                .append(DOT)
+                .append(DefaultUtils.defaultValue(methodName, HYPHEN))
+                .append(COMMA)
+                .append(success ? SUCCESS : FAIL)
+                .append(COMMA)
+                .append(outTime - enterTime).append(MS)
+                .append(R_PARENTHESES);
+
+        // (code)
+        sb
+                .append(L_PARENTHESES)
+                .append(DefaultUtils.defaultValue(code, HYPHEN))
+                .append(R_PARENTHESES);
+        // ]
+
+        sb.append(R_BRACKETS);
+
+        return sb.toString();
     }
 
-    public void setResult(Object result) {
-        this.result = result;
+    @Override
+    public String detailLog() {
+
+        // Format: [symbol,className.methodName][REQUEST(arg1,arg2)][RESULT(result)]
+
+        StringBuilder sb = new StringBuilder();
+
+        // [symbol,className.methodName]
+        sb
+                .append(L_BRACKETS)
+                .append(DefaultUtils.defaultValue(symbol, HYPHEN))
+                .append(COMMA)
+                .append(DefaultUtils.defaultValue(className, HYPHEN))
+                .append(DOT)
+                .append(DefaultUtils.defaultValue(methodName, HYPHEN))
+                .append(R_BRACKETS);
+
+        // [REQUEST(arg1,arg2)]
+        sb.append(L_BRACKETS).append(REQUEST).append(L_PARENTHESES);
+        for (Object object : DefaultUtils.defaultArray(args)) {
+            if (object == null || inBlacklist(object.getClass())) {
+                continue;
+            }
+            sb.append(object).append(COMMA);
+        }
+        sb.append(R_PARENTHESES).append(R_BRACKETS);
+
+        // [RESULT(result)]
+        sb.append(L_BRACKETS).append(RESULT).append(L_PARENTHESES)
+                .append(result)
+                .append(R_PARENTHESES).append(R_BRACKETS);
+
+        return sb.toString();
+    }
+
+    private boolean inBlacklist(Class<?> clazz) {
+        for (Class<?> clz : DefaultUtils.defaultArray(blacklist)) {
+            if (clz.isAssignableFrom(clazz)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

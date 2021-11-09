@@ -30,17 +30,28 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Documented
 @Target({METHOD})
 @Retention(RUNTIME)
-public @interface ApiLogger {
+public @interface Logger {
+
     /**
      * log symbol
      *
      * @return symbol description
      */
-    String symbol() default "";
+    String symbol();
 
-    String digestType() default "";
+    /**
+     * the digest log type
+     *
+     * @return log type name
+     */
+    String digestType();
 
-    String detailType() default "";
+    /**
+     * the detail log type
+     *
+     * @return log type name
+     */
+    String detailType();
 
     /**
      * args blacklist, which indicates them will not be shown

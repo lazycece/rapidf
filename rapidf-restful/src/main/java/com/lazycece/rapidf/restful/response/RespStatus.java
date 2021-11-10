@@ -22,28 +22,26 @@ package com.lazycece.rapidf.restful.response;
  */
 public enum RespStatus implements Status {
 
-    AUTH_TOKEN_FAIL(100, "Auth token fail", false),
-    AUTH_SIGN_FAIL(101, "Auth sign fail", false),
-    AUTH_PARAM_FAIL(102, "Auth param fail", false),
-    SUCCESS(200, "Success", false),
-    CLIENT_ERROR(400, "Client Error", false),
-    ACCESS_DENIED(403, "Access Denied", false),
-    INTERNAL_SERVER_ERROR(500, "Internal Server Error", false),
-    DB_EXCEPTION(501, "DB Exception ", false),
-    INTEGRATION_ERROR(600, "Integration Error", false),
-    FAIL(700, "Fail", false),
-    PARAM_ERROR(701, "Param Error", false),
-    DATA_NOT_EXIST(702, "Data Not Exist", false);
+    AUTH_TOKEN_FAIL(100, "Auth token fail"),
+    AUTH_SIGN_FAIL(101, "Auth sign fail"),
+    AUTH_PARAM_FAIL(102, "Auth param fail"),
+    SUCCESS(200, "Success"),
+    CLIENT_ERROR(400, "Client Error"),
+    ACCESS_DENIED(403, "Access Denied"),
+    INTERNAL_SERVER_ERROR(500, "Internal Server Error"),
+    DB_EXCEPTION(501, "DB Exception "),
+    INTEGRATION_ERROR(600, "Integration Error"),
+    FAIL(700, "Fail"),
+    PARAM_ERROR(701, "Param Error"),
+    DATA_NOT_EXIST(702, "Data Not Exist");
 
     private final int code;
     private final Family family;
     private final String message;
-    private final boolean canRetry;
 
-    RespStatus(int code, String message, boolean canRetry) {
+    RespStatus(int code, String message) {
         this.code = code;
         this.message = message;
-        this.canRetry = canRetry;
         this.family = getFamily(code);
     }
 
@@ -84,13 +82,8 @@ public enum RespStatus implements Status {
     }
 
     @Override
-    public boolean isCanRetry() {
-        return canRetry;
-    }
-
-    @Override
     public String toString() {
-        return String.format("%s[%s,%s,%s]|%s",
-                this.name(), code, family, canRetry, message);
+        return String.format("%s[%s,%s]|%s",
+                this.name(), code, family, message);
     }
 }

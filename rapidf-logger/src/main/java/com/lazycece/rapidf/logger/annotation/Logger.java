@@ -37,21 +37,21 @@ public @interface Logger {
      *
      * @return symbol description
      */
-    String symbol();
+    String symbol() default "";
 
     /**
      * the digest log type
      *
      * @return log type name
      */
-    String digestType();
+    String digestType() default "";
 
     /**
      * the detail log type
      *
      * @return log type name
      */
-    String detailType();
+    String detailType() default "";
 
     /**
      * args blacklist, which indicates them will not be shown

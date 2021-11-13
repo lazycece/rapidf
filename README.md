@@ -1,5 +1,5 @@
 # Rapidf
-Rapid development framework
+Rapid development framework.
 
 ## Quick Start
 

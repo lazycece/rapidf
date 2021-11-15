@@ -17,7 +17,7 @@
     <properties>
         <java.version>1.8</java.version>
         <rapidf.logger.version>0.0.1-SNAPSHOT</rapidf.logger.version>
-        <rapidf.restfull.version>0.0.1-SNAPSHOT</rapidf.restfull.version>
+        <rapidf.restful.version>0.0.1-SNAPSHOT</rapidf.restful.version>
         <rapidf.utils.version>0.0.1-SNAPSHOT</rapidf.utils.version>
         <rapidf.validation.version>0.0.1-SNAPSHOT</rapidf.validation.version>
     </properties>
@@ -43,7 +43,22 @@
         <dependency>
             <groupId>com.lazycece.rapidf</groupId>
             <artifactId>rapidf-logger</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${rapidf.logger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.lazycece.rapidf</groupId>
+            <artifactId>rapidf-restful</artifactId>
+            <version>${rapidf.restful.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.lazycece.rapidf</groupId>
+            <artifactId>rapidf-utils</artifactId>
+            <version>${rapidf.utils.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.lazycece.rapidf</groupId>
+            <artifactId>rapidf-validation</artifactId>
+            <version>${rapidf.validation.version}</version>
         </dependency>
     </dependencies>
 

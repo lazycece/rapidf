@@ -13,9 +13,15 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>rapidf-example</name>
     <description>rapidf-example</description>
+
     <properties>
         <java.version>1.8</java.version>
+        <rapidf.logger.version>0.0.1-SNAPSHOT</rapidf.logger.version>
+        <rapidf.restfull.version>0.0.1-SNAPSHOT</rapidf.restfull.version>
+        <rapidf.utils.version>0.0.1-SNAPSHOT</rapidf.utils.version>
+        <rapidf.validation.version>0.0.1-SNAPSHOT</rapidf.validation.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -32,6 +38,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.lazycece.rapidf</groupId>
+            <artifactId>rapidf-logger</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

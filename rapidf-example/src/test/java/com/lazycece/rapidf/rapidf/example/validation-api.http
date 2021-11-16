@@ -1,0 +1,12 @@
+
+###
+POST http://localhost:8080/validateEnum
+Content-Type: application/x-www-form-urlencoded
+
+status=VALID&tag=test
+
+###
+POST http://localhost:8080/validateEnum
+Content-Type: application/x-www-form-urlencoded
+
+status=error&tag=test

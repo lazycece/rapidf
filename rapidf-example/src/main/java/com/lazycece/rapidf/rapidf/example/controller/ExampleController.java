@@ -18,8 +18,11 @@ package com.lazycece.rapidf.rapidf.example.controller;
 
 import com.lazycece.rapidf.logger.annotation.Logger;
 import com.lazycece.rapidf.rapidf.example.constants.LogTypeConstants;
+import com.lazycece.rapidf.rapidf.example.req.ValidateEnumReq;
 import com.lazycece.rapidf.restful.response.RespMap;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -34,8 +37,15 @@ public class ExampleController {
             digestType = LogTypeConstants.CONTROLLER_DIGEST,
             detailType = LogTypeConstants.CONTROLLER_DETAIL,
             blacklist = {int.class})
+    // TODO: 2021/11/16 接口注解？ 非接口注解? rpc子类实现注解？
     public RespMap example(String name, int age) {
         String data = String.format("hello, %s,  %s years old.", name, age);
+        return RespMap.success(data);
+    }
+
+    @PostMapping("/validateEnum")
+    public RespMap validateEnum(@Validated ValidateEnumReq req) {
+        String data = String.format("tag = %s, status = %s", req.getTag(), req.getStatus());
         return RespMap.success(data);
     }
 }

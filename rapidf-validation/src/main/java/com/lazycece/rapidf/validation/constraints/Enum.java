@@ -111,7 +111,7 @@ public @interface Enum {
      *
      * @return method's name
      */
-    String method() default "ordinal";
+    String method() default "name";
 
     /**
      * Defines several {@link Enum} annotations on the same element.

@@ -33,28 +33,28 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 public @interface Logger {
 
     /**
-     * log symbol
+     * Log symbol
      *
      * @return symbol description
      */
     String symbol() default "";
 
     /**
-     * the digest log name
+     * The digest log name, default is the declared class of the annotated method
      *
      * @return log name
      */
     String digestLogName() default "";
 
     /**
-     * the detail log name
+     * The detail log name, default is the declared class of the annotated method
      *
      * @return log name
      */
     String detailLogName() default "";
 
     /**
-     * args blacklist, which indicates them will not be shown
+     * Args blacklist, which indicates them will not be shown
      *
      * @return class array
      */

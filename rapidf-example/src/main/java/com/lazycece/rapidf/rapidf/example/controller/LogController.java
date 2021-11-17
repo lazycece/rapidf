@@ -37,16 +37,16 @@ public class LogController {
 
     @GetMapping("/logHello")
     @Logger(symbol = "log-hello",
-            digestType = LogNameConstants.CONTROLLER_DIGEST,
-            detailType = LogNameConstants.CONTROLLER_DETAIL)
+            digestLogName = LogNameConstants.CONTROLLER_DIGEST,
+            detailLogName = LogNameConstants.CONTROLLER_DETAIL)
     public RespMap logHello(String name) {
         return RespMap.success(helloService.hello(name));
     }
 
     @GetMapping("/logBlacklist")
     @Logger(symbol = "log-blacklist",
-            digestType = LogNameConstants.CONTROLLER_DIGEST,
-            detailType = LogNameConstants.CONTROLLER_DETAIL,
+            digestLogName = LogNameConstants.CONTROLLER_DIGEST,
+            detailLogName = LogNameConstants.CONTROLLER_DETAIL,
             blacklist = {Integer.class})
     public RespMap logBlacklist(String arg1, int arg2) {
         String data = String.format("Log parameter: %s, %s", arg1, arg2);
@@ -55,15 +55,15 @@ public class LogController {
 
     @GetMapping("/logEmptyResult")
     @Logger(symbol = "log-empty-result",
-            digestType = LogNameConstants.CONTROLLER_DIGEST,
-            detailType = LogNameConstants.CONTROLLER_DETAIL)
+            digestLogName = LogNameConstants.CONTROLLER_DIGEST,
+            detailLogName = LogNameConstants.CONTROLLER_DETAIL)
     public void logEmptyResult() {
     }
 
     @GetMapping("/logThrow")
     @Logger(symbol = "log-throw",
-            digestType = LogNameConstants.CONTROLLER_DIGEST,
-            detailType = LogNameConstants.CONTROLLER_DETAIL)
+            digestLogName = LogNameConstants.CONTROLLER_DIGEST,
+            detailLogName = LogNameConstants.CONTROLLER_DETAIL)
     public void logThrow() {
         throw new CommonException("logThrow");
     }

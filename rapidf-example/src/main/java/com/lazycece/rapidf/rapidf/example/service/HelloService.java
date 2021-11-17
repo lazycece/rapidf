@@ -26,7 +26,7 @@ import com.lazycece.rapidf.rapidf.example.constants.LogNameConstants;
 public interface HelloService {
 
     @Logger(symbol = "hello",
-            digestType = LogNameConstants.SERVICE_DIGEST,
-            detailType = LogNameConstants.SERVICE_DETAIL)
+            digestLogName = LogNameConstants.SERVICE_DIGEST,
+            detailLogName = LogNameConstants.SERVICE_DETAIL)
     String hello(String name);
 }

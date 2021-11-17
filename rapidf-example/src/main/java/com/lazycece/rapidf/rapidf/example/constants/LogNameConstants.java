@@ -20,9 +20,11 @@ package com.lazycece.rapidf.rapidf.example.constants;
  * @author lazycece
  * @date 2021/11/16
  */
-public class LogTypeConstants {
+public class LogNameConstants {
 
     public static final String CONTROLLER_DIGEST = "CONTROLLER_DIGEST";
     public static final String CONTROLLER_DETAIL = "CONTROLLER_DETAIL";
 
+    public static final String SERVICE_DIGEST = "SERVICE_DIGEST";
+    public static final String SERVICE_DETAIL = "SERVICE_DETAIL";
 }

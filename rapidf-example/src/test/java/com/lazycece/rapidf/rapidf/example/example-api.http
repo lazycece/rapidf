@@ -1,9 +1,0 @@
-
-###
-POST http://localhost:8080/validateEnum
-Content-Type: application/x-www-form-urlencoded
-
-status=VALID&tag=test
-
-###
-GET http://localhost:8080/hello?name=lazycece&age=100

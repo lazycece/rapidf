@@ -1,0 +1,18 @@
+GET http://localhost:8080/logHello?name=lazycece
+Accept: application/json
+
+###
+GET http://localhost:8080/logBlacklist?arg1=test&arg2=100
+Accept: application/json
+
+###
+GET http://localhost:8080/logEmptyResult
+Accept: application/json
+
+###
+GET http://localhost:8080/logThrow
+Accept: application/json
+
+###
+GET http://localhost:8080/logNo
+Accept: application/json

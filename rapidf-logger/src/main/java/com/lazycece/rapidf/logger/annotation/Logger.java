@@ -40,18 +40,18 @@ public @interface Logger {
     String symbol() default "";
 
     /**
-     * the digest log type
+     * the digest log name
      *
-     * @return log type name
+     * @return log name
      */
-    String digestType() default "";
+    String digestLogName() default "";
 
     /**
-     * the detail log type
+     * the detail log name
      *
-     * @return log type name
+     * @return log name
      */
-    String detailType() default "";
+    String detailLogName() default "";
 
     /**
      * args blacklist, which indicates them will not be shown

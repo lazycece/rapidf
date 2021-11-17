@@ -68,6 +68,11 @@ public class LogController {
         throw new CommonException("logThrow");
     }
 
+    @GetMapping("/logDefaultName")
+    @Logger
+    public void logDefaultName() {
+    }
+
     @GetMapping("/logNo")
     public void logNo() {
     }

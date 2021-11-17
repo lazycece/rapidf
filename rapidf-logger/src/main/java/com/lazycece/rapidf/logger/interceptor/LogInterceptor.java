@@ -100,12 +100,21 @@ public class LogInterceptor implements MethodInterceptor {
         logInfo.setSymbol(logger.symbol());
         logInfo.setBlacklist(logger.blacklist());
 
+        Class<?> defaultLogClass = invocation.getMethod().getDeclaringClass();
+
         if (StringUtils.isNotBlank(logger.digestLogName())) {
             LogUtils.info(LoggerFactory.getLogger(logger.digestLogName()),
                     logInfo.digestLog());
+        } else {
+            LogUtils.info(LoggerFactory.getLogger(defaultLogClass),
+                    logInfo.digestLog());
         }
+
         if (StringUtils.isNotBlank(logger.detailLogName())) {
             LogUtils.info(LoggerFactory.getLogger(logger.detailLogName()),
+                    logInfo.detailLog());
+        } else {
+            LogUtils.info(LoggerFactory.getLogger(defaultLogClass),
                     logInfo.detailLog());
         }
     }

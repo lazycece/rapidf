@@ -39,7 +39,7 @@ public class LoggerConfig {
     @Bean
     public BeanNameAutoProxyCreator beanNameAutoProxyCreator() {
         BeanNameAutoProxyCreator beanNameAutoProxyCreator = new BeanNameAutoProxyCreator();
-        beanNameAutoProxyCreator.setBeanNames("logController","helloService*");
+        beanNameAutoProxyCreator.setBeanNames("logController", "helloService*");
         beanNameAutoProxyCreator.setInterceptorNames("logInterceptor");
         return beanNameAutoProxyCreator;
     }

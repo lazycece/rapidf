@@ -38,6 +38,7 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -49,6 +50,7 @@
             <groupId>com.lazycece.rapidf</groupId>
             <artifactId>rapidf-utils</artifactId>
             <version>${rapidf.version}</version>
+            <optional>true</optional>
             <exclusions>
                 <exclusion>
                     <groupId>com.github.dozermapper</groupId>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="LOG_EXCEPTION_CONVERSION_WORD">%xwEx</Property>
+        <Property name="LOG_LEVEL_PATTERN">%5p</Property>
+        <Property name="LOG_DATEFORMAT_PATTERN">yyyy-MM-dd HH:mm:ss.SSS</Property>
+        <Property name="CONSOLE_LOG_PATTERN">%clr{%d{${sys:LOG_DATEFORMAT_PATTERN}}}{faint} %clr{${sys:LOG_LEVEL_PATTERN}} %clr{%pid}{magenta} %clr{---}{faint} %clr{[%15.15t]}{faint} %clr{%-40.40c{1.}}{cyan} %clr{:}{faint} %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
+        <Property name="FILE_LOG_PATTERN">%d{${sys:LOG_DATEFORMAT_PATTERN}} ${sys:LOG_LEVEL_PATTERN} %pid --- [%t] %-40.40c{1.} : %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
+        <Property name="FILE_LOG_SIZE">100MB</Property>
+    </Properties>
+    <Appenders>
+        <!-- ====default log appender begin==== -->
+        <!-- system out -->
+        <Console name="STDOUT_APPENDER" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${sys:CONSOLE_LOG_PATTERN}" charset="UTF-8" />
+        </Console>
+        <!-- system err -->
+        <Console name="STDERR_APPENDER" target="SYSTEM_ERR" follow="true">
+            <PatternLayout pattern="${sys:CONSOLE_LOG_PATTERN}" charset="UTF-8" />
+        </Console>
+        <!-- app-default -->
+        <RollingFile name="DEFAULT_APPENDER" fileName="${sys:LOG_PATH}/app-default.log"
+                     filePattern="${sys:LOG_PATH}/$${date:yyyy-MM}/app-default-%d{yyyy-MM-dd-HH}-%i.log.gz">
+            <PatternLayout pattern="${sys:FILE_LOG_PATTERN}" charset="UTF-8"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="${sys:FILE_LOG_SIZE}" />
+            </Policies>
+            <DefaultRolloverStrategy/>
+        </RollingFile>
+        <!-- common-error -->
+        <RollingFile name="ERROR_APPENDER" fileName="${sys:LOG_PATH}/common-error.log"
+                     filePattern="${sys:LOG_PATH}/$${date:yyyy-MM}/common-error-%d{yyyy-MM-dd-HH}-%i.log.gz">
+            <PatternLayout pattern="${sys:FILE_LOG_PATTERN}" charset="UTF-8"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="${sys:FILE_LOG_SIZE}" />
+            </Policies>
+            <DefaultRolloverStrategy/>
+            <ThresholdFilter level="error"/>
+        </RollingFile>
+        <!-- ====default log appender end==== -->
+
+        <!-- ====biz log appender begin==== -->
+        <!-- custom-log -->
+        <RollingFile name="CUSTOM_LOG_NAME_APPENDER" fileName="${sys:LOG_PATH}/custom-log.log"
+                     filePattern="${sys:LOG_PATH}/$${date:yyyy-MM}/custom-log-%d{yyyy-MM-dd-HH}-%i.log.gz">
+            <PatternLayout pattern="${sys:FILE_LOG_PATTERN}" charset="UTF-8"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="${sys:FILE_LOG_SIZE}" />
+            </Policies>
+            <DefaultRolloverStrategy/>
+        </RollingFile>
+
+        <!-- ====biz log appender end==== -->
+    </Appenders>
+    <Loggers>
+        <!-- package logger -->
+        <AsyncLogger name="org.apache.catalina.startup.DigesterFactory" level="error" />
+        <AsyncLogger name="org.apache.catalina.util.LifecycleBase" level="error" />
+        <AsyncLogger name="org.apache.coyote.http11.Http11NioProtocol" level="warn" />
+        <AsyncLogger name="org.apache.sshd.common.util.SecurityUtils" level="warn"/>
+        <AsyncLogger name="org.apache.tomcat.util.net.NioSelectorPool" level="warn" />
+        <AsyncLogger name="org.eclipse.jetty.util.component.AbstractLifeCycle" level="error" />
+        <AsyncLogger name="org.hibernate.validator.internal.util.Version" level="warn" />
+        <AsyncLogger name="org.springframework.boot.actuate.endpoint.jmx" level="warn"/>
+
+        <!-- custom logger -->
+        <AsyncLogger name="CUSTOM_LOG_NAME" additivity="false" level="${sys:LOG_LEVEL}">
+            <AppenderRef ref="CUSTOM_LOG_NAME_APPENDER" />
+            <AppenderRef ref="ERROR_APPENDER" />
+        </AsyncLogger>
+
+        <!-- root logger -->
+        <AsyncRoot level="${sys:LOG_LEVEL}">
+            <AppenderRef ref="DEFAULT_APPENDER" />
+            <AppenderRef ref="ERROR_APPENDER" />
+        </AsyncRoot>
+    </Loggers>
+</Configuration>

@@ -21,13 +21,27 @@
         <rapidf.restful.version>0.0.1-SNAPSHOT</rapidf.restful.version>
         <rapidf.utils.version>0.0.1-SNAPSHOT</rapidf.utils.version>
         <rapidf.validation.version>0.0.1-SNAPSHOT</rapidf.validation.version>
-        <log4j.core.version>2.14.1</log4j.core.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>3.4.2</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -65,11 +79,6 @@
             <groupId>com.lazycece.rapidf</groupId>
             <artifactId>rapidf-validation</artifactId>
             <version>${rapidf.validation.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>${log4j.core.version}</version>
         </dependency>
     </dependencies>
 

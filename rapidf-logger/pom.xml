@@ -29,7 +29,7 @@
     <name>${project.artifactId}</name>
     <properties>
         <slf4j.version>1.7.32</slf4j.version>
-        <spring.aop>5.3.12</spring.aop>
+        <spring.aop>5.3.13</spring.aop>
         <rapidf.version>0.0.1-SNAPSHOT</rapidf.version>
     </properties>
 

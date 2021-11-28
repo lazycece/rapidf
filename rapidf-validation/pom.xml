@@ -29,7 +29,7 @@
     <name>${project.artifactId}</name>
 
     <properties>
-        <hibernate-validator.version>6.1.5.Final</hibernate-validator.version>
+        <hibernate-validator.version>7.0.1.Final</hibernate-validator.version>
     </properties>
 
     <dependencies>

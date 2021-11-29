@@ -40,7 +40,7 @@ public class AssertTest {
         assertThatThrownBy(() ->
                 Assert.isTrue(false, RespStatus.FAIL, msgFormat, "isTrue"))
                 .isInstanceOf(AssertException.class)
-                .hasMessage(String.format(msgFormat, "isTrue"));
+                .hasMessageContaining(String.format(msgFormat, "isTrue"));
     }
 
     @Test
@@ -50,7 +50,7 @@ public class AssertTest {
         assertThatThrownBy(() ->
                 Assert.isFalse(true, RespStatus.FAIL, msgFormat, "isFalse"))
                 .isInstanceOf(AssertException.class)
-                .hasMessage(String.format(msgFormat, "isFalse"));
+                .hasMessageContaining(String.format(msgFormat, "isFalse"));
     }
 
     @Test
@@ -60,7 +60,7 @@ public class AssertTest {
         assertThatThrownBy(() ->
                 Assert.notBlank(" ", RespStatus.FAIL, msgFormat, "notBlank"))
                 .isInstanceOf(AssertException.class)
-                .hasMessage(String.format(msgFormat, "notBlank"));
+                .hasMessageContaining(String.format(msgFormat, "notBlank"));
     }
 
     @Test
@@ -70,7 +70,7 @@ public class AssertTest {
         assertThatThrownBy(() ->
                 Assert.isBlank("--", RespStatus.FAIL, msgFormat, "isBlank"))
                 .isInstanceOf(AssertException.class)
-                .hasMessage(String.format(msgFormat, "isBlank"));
+                .hasMessageContaining(String.format(msgFormat, "isBlank"));
     }
 
     @Test
@@ -80,7 +80,7 @@ public class AssertTest {
         assertThatThrownBy(() ->
                 Assert.notNull(null, RespStatus.FAIL, msgFormat, "notNull"))
                 .isInstanceOf(AssertException.class)
-                .hasMessage(String.format(msgFormat, "notNull"));
+                .hasMessageContaining(String.format(msgFormat, "notNull"));
     }
 
     @Test
@@ -90,7 +90,7 @@ public class AssertTest {
         assertThatThrownBy(() ->
                 Assert.isNull(new Object(), RespStatus.FAIL, msgFormat, "isNull"))
                 .isInstanceOf(AssertException.class)
-                .hasMessage(String.format(msgFormat, "isNull"));
+                .hasMessageContaining(String.format(msgFormat, "isNull"));
     }
 
     @Test
@@ -100,7 +100,7 @@ public class AssertTest {
         assertThatThrownBy(() ->
                 Assert.notEmpty(null, RespStatus.FAIL, msgFormat, "notEmpty"))
                 .isInstanceOf(AssertException.class)
-                .hasMessage(String.format(msgFormat, "notEmpty"));
+                .hasMessageContaining(String.format(msgFormat, "notEmpty"));
     }
 
     @Test
@@ -110,7 +110,7 @@ public class AssertTest {
         assertThatThrownBy(() ->
                 Assert.isEmpty(Collections.singletonList(1), RespStatus.FAIL, msgFormat, "isEmpty"))
                 .isInstanceOf(AssertException.class)
-                .hasMessage(String.format(msgFormat, "isEmpty"));
+                .hasMessageContaining(String.format(msgFormat, "isEmpty"));
     }
 
     @Test
@@ -120,7 +120,7 @@ public class AssertTest {
         assertThatThrownBy(() ->
                 Assert.equal(1, 2, RespStatus.FAIL, msgFormat, "equal"))
                 .isInstanceOf(AssertException.class)
-                .hasMessage(String.format(msgFormat, "equal"));
+                .hasMessageContaining(String.format(msgFormat, "equal"));
     }
 
     @Test
@@ -130,7 +130,7 @@ public class AssertTest {
         assertThatThrownBy(() ->
                 Assert.assignableFrom(List.class, Collection.class, RespStatus.FAIL, msgFormat, "assignableFrom"))
                 .isInstanceOf(AssertException.class)
-                .hasMessage(String.format(msgFormat, "assignableFrom"));
+                .hasMessageContaining(String.format(msgFormat, "assignableFrom"));
     }
 
     @Test
@@ -140,7 +140,7 @@ public class AssertTest {
         assertThatThrownBy(() ->
                 Assert.less(2, 1, RespStatus.FAIL, msgFormat, "less"))
                 .isInstanceOf(AssertException.class)
-                .hasMessage(String.format(msgFormat, "less"));
+                .hasMessageContaining(String.format(msgFormat, "less"));
     }
 
     @Test
@@ -150,7 +150,7 @@ public class AssertTest {
         assertThatThrownBy(() ->
                 Assert.lessOrEqual(2, 1, RespStatus.FAIL, msgFormat, "lessOrEqual"))
                 .isInstanceOf(AssertException.class)
-                .hasMessage(String.format(msgFormat, "lessOrEqual"));
+                .hasMessageContaining(String.format(msgFormat, "lessOrEqual"));
     }
 
     @Test
@@ -160,7 +160,7 @@ public class AssertTest {
         assertThatThrownBy(() ->
                 Assert.greater(1, 2, RespStatus.FAIL, msgFormat, "greater"))
                 .isInstanceOf(AssertException.class)
-                .hasMessage(String.format(msgFormat, "greater"));
+                .hasMessageContaining(String.format(msgFormat, "greater"));
     }
 
     @Test
@@ -170,6 +170,6 @@ public class AssertTest {
         assertThatThrownBy(() ->
                 Assert.greaterOrEqual(1, 2, RespStatus.FAIL, msgFormat, "greaterOrEqual"))
                 .isInstanceOf(AssertException.class)
-                .hasMessage(String.format(msgFormat, "greaterOrEqual"));
+                .hasMessageContaining(String.format(msgFormat, "greaterOrEqual"));
     }
 }

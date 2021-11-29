@@ -1,7 +1,16 @@
 # Rapidf
-Rapid development framework.
+[![Maven Central](https://img.shields.io/maven-central/v/com.lazycece.rapidf/rapidf)](https://search.maven.org/search?q=rapidf)
+[![License](https://img.shields.io/badge/license-Apache--2.0-green)](https://www.apache.org/licenses/LICENSE-2.0.html)
+[![GitHub release](https://img.shields.io/badge/release-download-orange.svg)](https://github.com/lazycece/rapidf/releases)
+
+[中文](./README_zh_CN.md)
+
+The full name is Rapid development framework. Rapidf currently provides the restful (response, exception, assert) ,
+validation, api level logger (method level logger) and custom utils.
 
 ## Quick Start
+
+Complete example can view [rapidf-example](https://github.com/lazycece/rapidf/tree/main/rapidf-example).
 
 ### Maven dependency
 ```xml
@@ -10,7 +19,7 @@ Rapid development framework.
         <repository>
             <id>sonatype</id>
             <name>sonatype</name>
-            <url>https://oss.sonatype.org/content/groups/public</url>
+            <url>https://s01.oss.sonatype.org/content/groups/public</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>

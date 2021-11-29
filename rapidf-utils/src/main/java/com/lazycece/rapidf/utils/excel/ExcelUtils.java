@@ -31,7 +31,7 @@ import java.util.Map;
 /**
  * Simple utils for reading and writing excel.
  * <br>
- * We agree that the excel content should conform to <code>Map<String, List<Map<String, Object>>></code>.
+ * We agree that the excel content should conform to ${@code Map<String, List<Map<String, Object>>>}.
  * Out map key is the sheet's name of excel, list value is the content. And inner map represent the row
  * of the sheet in excel, inner map key is the index column(0,1,2,3 ...), value represent the real value a cell
  *
@@ -179,7 +179,7 @@ public class ExcelUtils {
             for (Map<String, Object> rowData : sheetEntry.getValue()) {
                 Row row = sheet.createRow(index);
                 for (Map.Entry<String, Object> cellEntry : rowData.entrySet()) {
-                    Cell cell = row.createCell(Integer.valueOf(cellEntry.getKey()));
+                    Cell cell = row.createCell(Integer.parseInt(cellEntry.getKey()));
                     CellStyle cellStyle = workbook.createCellStyle();
                     cellStyle.setAlignment(HorizontalAlignment.CENTER);
                     cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);

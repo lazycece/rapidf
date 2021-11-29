@@ -43,8 +43,8 @@ public class AudioInfoUtils {
      *
      * @param file audio file path
      * @return audio's information as json
-     * @throws IOException
-     * @throws InterruptedException
+     * @throws IOException          throw an IOException
+     * @throws InterruptedException throw an InterruptedException
      */
     public String getAudioInfo(String file) throws IOException, InterruptedException {
         String cmd = FFPROBE_CMD + CMD_PARAMS + file;
@@ -58,8 +58,8 @@ public class AudioInfoUtils {
      * @param timeout timeout
      * @param unit    unit
      * @return audio's information as json
-     * @throws IOException
-     * @throws InterruptedException
+     * @throws IOException          throw an IOException
+     * @throws InterruptedException throw an InterruptedException
      */
     public String getAudioInfo(String file, long timeout, TimeUnit unit) throws IOException, InterruptedException {
         String cmd = FFPROBE_CMD + CMD_PARAMS + file;

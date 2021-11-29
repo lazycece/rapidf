@@ -27,6 +27,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 /**
@@ -34,32 +35,32 @@ import java.util.List;
  * @date 2018/4/6
  */
 public class XmlUtils {
+
     private static final Logger LOGGER = LoggerFactory.getLogger(XmlUtils.class);
 
     /**
-     * write writexml file according to the <obj>elementNode</obj>
-     * @see ElementNode
+     * write xml file according to the <code>elementNode</code> ${@link ElementNode}
      *
-     * @param elementNode  writexml content
-     * @param filePath file path for save
-     * @throws Exception
+     * @param elementNode xml content
+     * @param filePath    file path for save
+     * @throws Exception exception
      */
     public static void writeXml(ElementNode elementNode, String filePath) throws Exception {
 
         Document document = createDocumentTree(elementNode);
 
-        LOGGER.info("begin write writexml");
+        LOGGER.info("begin write xml");
         FileOutputStream fos = new FileOutputStream(filePath);
-        OutputStreamWriter osw = new OutputStreamWriter(fos, "utf-8");
+        OutputStreamWriter osw = new OutputStreamWriter(fos, StandardCharsets.UTF_8.name());
         OutputFormat of = new OutputFormat();
-        of.setEncoding("utf-8");
+        of.setEncoding(StandardCharsets.UTF_8.name());
         of.setIndent(true);
         of.setIndent("  ");
         of.setNewlines(true);
         XMLWriter writer = new XMLWriter(osw, of);
         writer.write(document);
         writer.close();
-        LOGGER.info("end write writexml");
+        LOGGER.info("end write xml");
     }
 
     private static Document createDocumentTree(ElementNode elementNode) {

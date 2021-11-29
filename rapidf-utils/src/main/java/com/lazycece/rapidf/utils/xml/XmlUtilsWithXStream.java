@@ -53,6 +53,7 @@ public class XmlUtilsWithXStream {
      *
      * @param xmlStr xml string
      * @param clazz  clazz
+     * @param <T>    class type
      * @return object
      */
     public static <T> T xmlToObject(String xmlStr, Class<T> clazz) {
@@ -67,8 +68,8 @@ public class XmlUtilsWithXStream {
      * @param xmlString xml string
      * @return map
      * @throws ParserConfigurationException ParserConfigurationException
-     * @throws IOException IOException
-     * @throws SAXException SAXException
+     * @throws IOException                  IOException
+     * @throws SAXException                 SAXException
      */
     public static Map<String, Object> xmlToMap(String xmlString) throws ParserConfigurationException, IOException, SAXException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();

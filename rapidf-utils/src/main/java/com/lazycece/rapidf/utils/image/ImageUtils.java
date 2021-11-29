@@ -42,6 +42,7 @@ public class ImageUtils {
      * @param limitSize limit size kb
      * @param accuracy  Basic compression accuracy,[0,1]
      * @return picture byte stream
+     * @throws IOException IOException
      */
     public static byte[] compressImage(byte[] bytes, long limitSize,
                                        double accuracy) throws IOException {

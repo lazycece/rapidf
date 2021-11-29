@@ -24,9 +24,9 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * for sign param, and all param spilt by '&'
+ * For sign param, and all param spilt by ${@code &}
  * <p>
- * eg: param_one=value_one&param_two=value_tow&param_three=value_three
+ * eg: ${@code param_one=value_one&param_two=value_tow&param_three=value_three}
  *
  * @author lazycece
  */

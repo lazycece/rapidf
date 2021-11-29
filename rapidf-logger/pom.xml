@@ -21,7 +21,7 @@
     <parent>
         <artifactId>rapidf-parent</artifactId>
         <groupId>com.lazycece.rapidf</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -30,7 +30,7 @@
     <properties>
         <slf4j.version>1.7.32</slf4j.version>
         <spring.aop>5.3.13</spring.aop>
-        <rapidf.version>0.0.1-SNAPSHOT</rapidf.version>
+        <rapidf.utils.version>1.0.0</rapidf.utils.version>
     </properties>
 
     <dependencies>
@@ -49,7 +49,7 @@
         <dependency>
             <groupId>com.lazycece.rapidf</groupId>
             <artifactId>rapidf-utils</artifactId>
-            <version>${rapidf.version}</version>
+            <version>${rapidf.utils.version}</version>
             <optional>true</optional>
             <exclusions>
                 <exclusion>

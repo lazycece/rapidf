@@ -18,10 +18,10 @@
         <java.version>1.8</java.version>
         <maven.deploy.plugin.version>2.8.2</maven.deploy.plugin.version>
         <disruptor.version>3.4.4</disruptor.version>
-        <rapidf.logger.version>0.0.1-SNAPSHOT</rapidf.logger.version>
-        <rapidf.restful.version>0.0.1-SNAPSHOT</rapidf.restful.version>
-        <rapidf.utils.version>0.0.1-SNAPSHOT</rapidf.utils.version>
-        <rapidf.validation.version>0.0.1-SNAPSHOT</rapidf.validation.version>
+        <rapidf.logger.version>1.0.0</rapidf.logger.version>
+        <rapidf.restful.version>1.0.0</rapidf.restful.version>
+        <rapidf.utils.version>1.0.0</rapidf.utils.version>
+        <rapidf.validation.version>1.0.0</rapidf.validation.version>
     </properties>
 
     <dependencies>

@@ -23,7 +23,7 @@ import com.lazycece.rapidf.restful.response.Status;
  * @author lazycece
  * @date 2021/10/24
  */
-public class CommonException extends AbstractCommonException {
+public class CommonException extends AbstractBaseException {
 
     private Status status = RespStatus.FAIL;
 

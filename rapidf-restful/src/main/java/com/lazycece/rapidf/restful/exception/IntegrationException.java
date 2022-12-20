@@ -1,5 +1,5 @@
 /*
- *    Copyright 2021 lazycece<lazycece@gmail.com>
+ *    Copyright 2022 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -16,43 +16,32 @@
 
 package com.lazycece.rapidf.restful.exception;
 
+import com.lazycece.rapidf.restful.response.RespStatus;
 import com.lazycece.rapidf.restful.response.Status;
 
 /**
  * @author lazycece
- * @date 2021/10/24
+ * @date 2022/12/11
  */
-public abstract class AbstractCommonException extends RuntimeException {
+public class IntegrationException extends AbstractBaseException {
 
-    public AbstractCommonException() {
+    public IntegrationException() {
     }
 
-    public AbstractCommonException(String message) {
+    public IntegrationException(String message) {
         super(message);
     }
 
-    public AbstractCommonException(String message, Throwable cause) {
+    public IntegrationException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public AbstractCommonException(Throwable cause) {
+    public IntegrationException(Throwable cause) {
         super(cause);
     }
 
-    /**
-     * Get status .
-     *
-     * @return see ${@link Status}
-     */
-    abstract public Status getStatus();
-
     @Override
-    public String getMessage() {
-        String message = super.getMessage();
-        if (message == null) {
-            message = "";
-        }
-        return String.format("%s|%s", getStatus().toString(), message);
+    public Status getStatus() {
+        return RespStatus.INTEGRATION_ERROR;
     }
 }
-

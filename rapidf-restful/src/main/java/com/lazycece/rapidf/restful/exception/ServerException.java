@@ -1,5 +1,5 @@
 /*
- *    Copyright 2021 lazycece<lazycece@gmail.com>
+ *    Copyright 2022 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -21,27 +21,27 @@ import com.lazycece.rapidf.restful.response.Status;
 
 /**
  * @author lazycece
- * @date 2021/10/24
+ * @date 2022/12/11
  */
-public class ParamException extends AbstractBaseException {
+public class ServerException extends AbstractBaseException {
 
-    public ParamException() {
+    public ServerException() {
     }
 
-    public ParamException(String message) {
+    public ServerException(String message) {
         super(message);
     }
 
-    public ParamException(String message, Throwable cause) {
+    public ServerException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public ParamException(Throwable cause) {
+    public ServerException(Throwable cause) {
         super(cause);
     }
 
     @Override
     public Status getStatus() {
-        return RespStatus.PARAM_ERROR;
+        return RespStatus.INTERNAL_SERVER_ERROR;
     }
 }

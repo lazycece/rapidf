@@ -22,7 +22,7 @@ import com.lazycece.rapidf.restful.response.Status;
  * @author lazycece
  * @date 2021/11/3
  */
-public class AssertException extends AbstractCommonException {
+public class AssertException extends AbstractBaseException {
 
     private final Status status;
 

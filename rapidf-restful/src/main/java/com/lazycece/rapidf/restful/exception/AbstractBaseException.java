@@ -16,32 +16,43 @@
 
 package com.lazycece.rapidf.restful.exception;
 
-import com.lazycece.rapidf.restful.response.RespStatus;
 import com.lazycece.rapidf.restful.response.Status;
 
 /**
  * @author lazycece
  * @date 2021/10/24
  */
-public class ParamException extends AbstractBaseException {
+public abstract class AbstractBaseException extends RuntimeException {
 
-    public ParamException() {
+    public AbstractBaseException() {
     }
 
-    public ParamException(String message) {
+    public AbstractBaseException(String message) {
         super(message);
     }
 
-    public ParamException(String message, Throwable cause) {
+    public AbstractBaseException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public ParamException(Throwable cause) {
+    public AbstractBaseException(Throwable cause) {
         super(cause);
     }
 
+    /**
+     * Get status .
+     *
+     * @return see ${@link Status}
+     */
+    abstract public Status getStatus();
+
     @Override
-    public Status getStatus() {
-        return RespStatus.PARAM_ERROR;
+    public String getMessage() {
+        String message = super.getMessage();
+        if (message == null) {
+            message = "";
+        }
+        return String.format("%s|%s", getStatus().toString(), message);
     }
 }
+

@@ -25,6 +25,8 @@ public class RespData<T> {
     private Integer code;
     private String message;
     private T body;
+    private String traceId;
+    private boolean retry;
 
     public RespData() {
     }
@@ -93,5 +95,21 @@ public class RespData<T> {
 
     public void setBody(T body) {
         this.body = body;
+    }
+
+    public String getTraceId() {
+        return traceId;
+    }
+
+    public void setTraceId(String traceId) {
+        this.traceId = traceId;
+    }
+
+    public boolean isRetry() {
+        return retry;
+    }
+
+    public void setRetry(boolean retry) {
+        this.retry = retry;
     }
 }

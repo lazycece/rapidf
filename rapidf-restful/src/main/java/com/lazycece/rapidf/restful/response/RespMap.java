@@ -27,6 +27,8 @@ public class RespMap extends HashMap<String, Object> {
     private static final String CODE_FIELD = "code";
     private static final String MESSAGE_FIELD = "message";
     private static final String BODY_FIELD = "body";
+    private static final String TRACE_ID = "traceId";
+    private static final String RETRY = "retry";
 
     public RespMap() {
     }
@@ -75,7 +77,8 @@ public class RespMap extends HashMap<String, Object> {
     }
 
     public Integer getCode() {
-        return (int) this.get(CODE_FIELD);
+        Object object = this.get(CODE_FIELD);
+        return object == null ? null : (int) object;
     }
 
     public void setCode(Integer code) {
@@ -83,7 +86,8 @@ public class RespMap extends HashMap<String, Object> {
     }
 
     public String getMessage() {
-        return String.valueOf(this.get(MESSAGE_FIELD));
+        Object object = this.get(MESSAGE_FIELD);
+        return object == null ? null : String.valueOf(object);
     }
 
     public void setMessage(String message) {
@@ -97,5 +101,24 @@ public class RespMap extends HashMap<String, Object> {
     public void setBody(Object body) {
         this.put(BODY_FIELD, body);
     }
+
+    public String getTraceId() {
+        Object object = this.get(TRACE_ID);
+        return object == null ? null : String.valueOf(object);
+    }
+
+    public void setTraceId(String traceId) {
+        this.put(TRACE_ID, traceId);
+    }
+
+    public boolean retry() {
+        Object object = this.get(RETRY);
+        return object != null && Boolean.parseBoolean(String.valueOf(object));
+    }
+
+    public void setRetry(boolean retry) {
+        this.put(RETRY, retry);
+    }
+
 }
 

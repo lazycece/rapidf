@@ -23,6 +23,7 @@ package com.lazycece.rapidf.restful.response;
 public enum RespStatus implements Status {
 
     AUTH_TOKEN_FAIL(100, "Auth token fail"),
+
     AUTH_SIGN_FAIL(101, "Auth sign fail"),
     AUTH_PARAM_FAIL(102, "Auth param fail"),
     SUCCESS(200, "Success"),
@@ -33,7 +34,8 @@ public enum RespStatus implements Status {
     INTEGRATION_ERROR(600, "Integration Error"),
     FAIL(700, "Fail"),
     PARAM_ERROR(701, "Param Error"),
-    DATA_NOT_EXIST(702, "Data Not Exist");
+    DATA_NOT_EXIST(702, "Data Not Exist"),
+    DATA_STATUS_ERROR(703, "Data Status Error");
 
     private final int code;
     private final Family family;

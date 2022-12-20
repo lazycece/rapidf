@@ -22,10 +22,10 @@ package com.lazycece.rapidf.restful.response;
  */
 public enum RespStatus implements Status {
 
-    AUTH_TOKEN_FAIL(100, "Auth token fail"),
-
-    AUTH_SIGN_FAIL(101, "Auth sign fail"),
-    AUTH_PARAM_FAIL(102, "Auth param fail"),
+    AUTH_FAIL(100, "Auth Fail"),
+    AUTH_TOKEN_FAIL(101, "Auth Token Fail"),
+    AUTH_SIGN_FAIL(102, "Auth Sign Fail"),
+    AUTH_PARAM_FAIL(103, "Auth Param Fail"),
     SUCCESS(200, "Success"),
     CLIENT_ERROR(400, "Client Error"),
     ACCESS_DENIED(403, "Access Denied"),

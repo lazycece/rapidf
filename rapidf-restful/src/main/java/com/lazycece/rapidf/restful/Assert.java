@@ -17,6 +17,7 @@
 package com.lazycece.rapidf.restful;
 
 import com.lazycece.rapidf.restful.exception.AssertException;
+import com.lazycece.rapidf.restful.exception.ExceptionFactory;
 import com.lazycece.rapidf.restful.response.Status;
 
 import java.util.Collection;
@@ -31,14 +32,14 @@ public class Assert {
     public static void isTrue(final boolean bool, final Status status,
                               final String strFormat, final Object... args) {
         if (!bool) {
-            throw new AssertException(String.format(strFormat, args), status);
+            throw ExceptionFactory.assertException(String.format(strFormat, args), status);
         }
     }
 
     public static void isFalse(final boolean bool, final Status status,
                                final String strFormat, final Object... args) {
         if (bool) {
-            throw new AssertException(String.format(strFormat, args), status);
+            throw ExceptionFactory.assertException(String.format(strFormat, args), status);
         }
     }
 

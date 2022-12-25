@@ -5,7 +5,11 @@
 
 [中文](./README_zh_CN.md)
 
-The full name is <font size=4 color=blue>Rapi</font>d <font size=4 color=blue>d</font>evelopment <font size=4 color=blue>f</font>ramework. Rapidf currently provides the restful (response, exception, assert) ,
+The full name is 
+<span style='color:blue;font-size:20px'>Rapi</span>d 
+<span style='color:blue;font-size:20px'>d</span>evelopment 
+<font style='color:blue;font-size:20px'>f</font>ramework. 
+Rapidf currently provides the restful (response, exception, assert) ,
 validation, api level logger (method level logger) and custom utils.
 
 ## Quick Start

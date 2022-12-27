@@ -68,7 +68,7 @@ public class AbstractStateMachine implements StateMachine {
         }
 
         Transition transition = optional.get();
-        log.info("{} state transition, source state is {} and target state is {}.",
+        log.info("{} state transition, source state is {}, target state is {}.",
                 stateEvent.getDesc(), transition.getSourceState().getDesc(),
                 transition.getTargetState().getDesc());
         transition.execute(apply);

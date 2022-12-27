@@ -22,7 +22,7 @@ package com.lazycece.rapidf.domain.event;
  * @author lazycece
  * @date 2022/12/11
  */
-public interface EventPublisher {
+public interface DomainEventPublisher {
 
     /**
      * event publish

@@ -17,6 +17,7 @@
 package com.lazycece.rapidf.domain.statemachine.transition;
 
 import com.lazycece.rapidf.domain.statemachine.AbstractTransition;
+import com.lazycece.rapidf.domain.statemachine.Goods;
 import com.lazycece.rapidf.domain.statemachine.StateApply;
 import com.lazycece.rapidf.domain.statemachine.enums.AuditEvent;
 import com.lazycece.rapidf.domain.statemachine.enums.AuditStatus;
@@ -33,7 +34,9 @@ public class AuditPassTransition extends AbstractTransition {
 
     @Override
     public void execute(StateApply apply) {
-
+        Goods goods = (Goods) apply;
+        System.out.println("goods id : " + goods.getBizId());
+        System.out.println("goods status : " + goods.getState().getDesc());
         System.out.println("=============== audit pass ===============");
     }
 }

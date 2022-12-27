@@ -46,6 +46,9 @@ public class StateMachineTest {
         State<?> state = stateMachine.execute(goods, AuditEvent.SUBMIT_AUDIT);
 
         goods.setStatus((AuditStatus) state);
-        stateMachine.execute(goods, AuditEvent.AUDIT_PASS);
+        state = stateMachine.execute(goods, AuditEvent.AUDIT_PASS);
+
+        System.out.println("goods id : " + goods.getBizId());
+        System.out.println("goods status : " + state.getDesc());
     }
 }

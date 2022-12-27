@@ -30,4 +30,29 @@ public class GoodsAuditStateMachine extends AbstractStateMachine {
         super(transitions);
 
     }
+
+    public enum AuditEvent implements StateEvent<String> {
+
+        SUBMIT_AUDIT("SUBMIT_AUDIT", "提交审核"),
+        AUDIT_PASS("AUDIT_PASS", "审核通过"),
+        AUDIT_REJECT("AUDIT_REJECT", "审核拒绝");
+
+        private final String code;
+        private final String desc;
+
+        AuditEvent(String code, String desc) {
+            this.code = code;
+            this.desc = desc;
+        }
+
+        @Override
+        public String getCode() {
+            return code;
+        }
+
+        @Override
+        public String getDesc() {
+            return desc;
+        }
+    }
 }

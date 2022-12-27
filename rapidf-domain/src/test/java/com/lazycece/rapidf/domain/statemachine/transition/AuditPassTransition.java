@@ -17,9 +17,9 @@
 package com.lazycece.rapidf.domain.statemachine.transition;
 
 import com.lazycece.rapidf.domain.statemachine.Goods;
+import com.lazycece.rapidf.domain.statemachine.GoodsAuditStateMachine;
 import com.lazycece.rapidf.domain.statemachine.StateApply;
-import com.lazycece.rapidf.domain.statemachine.enums.AuditEvent;
-import com.lazycece.rapidf.domain.statemachine.enums.AuditStatus;
+import com.lazycece.rapidf.domain.statemachine.AuditStatus;
 
 /**
  * @author lazycece
@@ -28,7 +28,7 @@ import com.lazycece.rapidf.domain.statemachine.enums.AuditStatus;
 public class AuditPassTransition extends AbstractGoodsAuditStateTransition {
 
     public AuditPassTransition() {
-        super(AuditEvent.AUDIT_PASS, AuditStatus.AUDITING, AuditStatus.PASS);
+        super(GoodsAuditStateMachine.AuditEvent.AUDIT_PASS, AuditStatus.AUDITING, AuditStatus.PASS);
     }
 
     @Override

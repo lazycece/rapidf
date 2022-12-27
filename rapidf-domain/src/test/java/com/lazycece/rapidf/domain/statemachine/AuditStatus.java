@@ -14,9 +14,7 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.statemachine.enums;
-
-import com.lazycece.rapidf.domain.statemachine.State;
+package com.lazycece.rapidf.domain.statemachine;
 
 /**
  * @author lazycece

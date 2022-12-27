@@ -16,8 +16,6 @@
 
 package com.lazycece.rapidf.domain.statemachine;
 
-import com.lazycece.rapidf.domain.statemachine.enums.AuditEvent;
-import com.lazycece.rapidf.domain.statemachine.enums.AuditStatus;
 import com.lazycece.rapidf.domain.statemachine.transition.AbstractGoodsAuditStateTransition;
 import com.lazycece.rapidf.domain.statemachine.transition.AuditPassTransition;
 import com.lazycece.rapidf.domain.statemachine.transition.AuditRejectTransition;
@@ -44,10 +42,10 @@ public class StateMachineTest {
         Goods goods = new Goods();
         goods.setGoodsId(UUID.randomUUID().toString().replaceAll("-", ""));
         goods.setStatus(AuditStatus.DRAFT);
-        State<?> state = stateMachine.execute(goods, AuditEvent.SUBMIT_AUDIT);
+        State<?> state = stateMachine.execute(goods, GoodsAuditStateMachine.AuditEvent.SUBMIT_AUDIT);
 
         goods.setStatus((AuditStatus) state);
-        state = stateMachine.execute(goods, AuditEvent.AUDIT_PASS);
+        state = stateMachine.execute(goods, GoodsAuditStateMachine.AuditEvent.AUDIT_PASS);
 
         System.out.println("goods id : " + goods.getBizId());
         System.out.println("goods status : " + state.getDesc());

@@ -17,7 +17,6 @@
 package com.lazycece.rapidf.domain.statemachine;
 
 import com.lazycece.rapidf.domain.entity.Entity;
-import com.lazycece.rapidf.domain.statemachine.enums.AuditStatus;
 
 /**
  * @author lazycece

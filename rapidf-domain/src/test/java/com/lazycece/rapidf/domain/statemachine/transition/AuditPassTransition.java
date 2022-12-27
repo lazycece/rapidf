@@ -14,8 +14,26 @@
  *    limitations under the License.
  */
 
+package com.lazycece.rapidf.domain.statemachine.transition;
+
+import com.lazycece.rapidf.domain.statemachine.AbstractTransition;
+import com.lazycece.rapidf.domain.statemachine.StateApply;
+import com.lazycece.rapidf.domain.statemachine.enums.AuditEvent;
+import com.lazycece.rapidf.domain.statemachine.enums.AuditStatus;
+
 /**
  * @author lazycece
- * @date 2022/12/28
+ * @date 2022/12/27
  */
-package com.lazycece.rapidf.domain;
+public class AuditPassTransition extends AbstractTransition {
+
+    public AuditPassTransition() {
+        super(AuditEvent.AUDIT_PASS, AuditStatus.AUDITING, AuditStatus.PASS);
+    }
+
+    @Override
+    public void execute(StateApply apply) {
+
+        System.out.println("=============== audit pass ===============");
+    }
+}

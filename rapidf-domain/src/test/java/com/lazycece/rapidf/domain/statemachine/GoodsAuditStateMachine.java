@@ -14,8 +14,18 @@
  *    limitations under the License.
  */
 
+package com.lazycece.rapidf.domain.statemachine;
+
+import java.util.List;
+
 /**
  * @author lazycece
- * @date 2022/12/28
+ * @date 2022/12/27
  */
-package com.lazycece.rapidf.domain;
+public class GoodsAuditStateMachine extends AbstractStateMachine {
+
+    public GoodsAuditStateMachine(List<Transition> transitions) {
+        super(transitions);
+
+    }
+}

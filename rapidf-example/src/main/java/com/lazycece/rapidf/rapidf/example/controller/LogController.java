@@ -32,8 +32,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class LogController {
 
-    @Autowired
     private HelloService helloService;
+
+    @Autowired
+    public LogController(HelloService helloService) {
+        this.helloService = helloService;
+    }
 
     @GetMapping("/logHello")
     @Logger(symbol = "log-hello",

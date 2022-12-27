@@ -14,20 +14,19 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.statemachine;
+package com.lazycece.rapidf.domain.statemachine.transition;
 
-import com.lazycece.rapidf.domain.statemachine.transition.AbstractGoodsAuditStateTransition;
-
-import java.util.List;
+import com.lazycece.rapidf.domain.statemachine.AbstractTransition;
+import com.lazycece.rapidf.domain.statemachine.State;
+import com.lazycece.rapidf.domain.statemachine.StateEvent;
 
 /**
  * @author lazycece
- * @date 2022/12/27
+ * @date 2022/12/28
  */
-public class GoodsAuditStateMachine extends AbstractStateMachine {
+public abstract class AbstractGoodsAuditStateTransition extends AbstractTransition {
 
-    public GoodsAuditStateMachine(List<AbstractGoodsAuditStateTransition> transitions) {
-        super(transitions);
-
+    protected AbstractGoodsAuditStateTransition(StateEvent<?> stateEvent, State<?> source, State<?> target) {
+        super(stateEvent, source, target);
     }
 }

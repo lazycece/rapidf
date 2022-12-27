@@ -16,7 +16,6 @@
 
 package com.lazycece.rapidf.domain.statemachine.transition;
 
-import com.lazycece.rapidf.domain.statemachine.AbstractTransition;
 import com.lazycece.rapidf.domain.statemachine.Goods;
 import com.lazycece.rapidf.domain.statemachine.StateApply;
 import com.lazycece.rapidf.domain.statemachine.enums.AuditEvent;
@@ -26,7 +25,7 @@ import com.lazycece.rapidf.domain.statemachine.enums.AuditStatus;
  * @author lazycece
  * @date 2022/12/27
  */
-public class AuditSubmitTransition extends AbstractTransition {
+public class AuditSubmitTransition extends AbstractGoodsAuditStateTransition {
 
     public AuditSubmitTransition() {
         super(AuditEvent.SUBMIT_AUDIT, AuditStatus.DRAFT, AuditStatus.AUDITING);

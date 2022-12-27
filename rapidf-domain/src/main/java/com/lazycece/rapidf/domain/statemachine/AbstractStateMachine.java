@@ -32,7 +32,7 @@ public class AbstractStateMachine implements StateMachine {
 
     private final Map<State<?>, List<Transition>> transitionMap = new HashMap<>();
 
-    protected AbstractStateMachine(List<Transition> transitions) {
+    protected AbstractStateMachine(List<? extends Transition> transitions) {
         Objects.requireNonNull(transitions, "transitions is required");
         transitions.forEach(transition -> {
             if (!transitionMap.containsKey(transition.getSourceState())) {

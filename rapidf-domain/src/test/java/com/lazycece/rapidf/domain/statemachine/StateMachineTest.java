@@ -18,6 +18,7 @@ package com.lazycece.rapidf.domain.statemachine;
 
 import com.lazycece.rapidf.domain.statemachine.enums.AuditEvent;
 import com.lazycece.rapidf.domain.statemachine.enums.AuditStatus;
+import com.lazycece.rapidf.domain.statemachine.transition.AbstractGoodsAuditStateTransition;
 import com.lazycece.rapidf.domain.statemachine.transition.AuditPassTransition;
 import com.lazycece.rapidf.domain.statemachine.transition.AuditRejectTransition;
 import com.lazycece.rapidf.domain.statemachine.transition.AuditSubmitTransition;
@@ -33,7 +34,7 @@ import java.util.UUID;
 public class StateMachineTest {
 
     public static void main(String[] args) {
-        List<Transition> transitions = new ArrayList<>();
+        List<AbstractGoodsAuditStateTransition> transitions = new ArrayList<>();
         transitions.add(new AuditSubmitTransition());
         transitions.add(new AuditPassTransition());
         transitions.add(new AuditRejectTransition());

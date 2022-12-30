@@ -36,6 +36,7 @@
         <dom4j.version>2.1.3</dom4j.version>
         <xstream.version>1.4.19</xstream.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
+        <commons-collections4.version>4.4</commons-collections4.version>
         <thumbnailator.version>0.4.18</thumbnailator.version>
     </properties>
 
@@ -44,6 +45,12 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>${commons-collections4.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>

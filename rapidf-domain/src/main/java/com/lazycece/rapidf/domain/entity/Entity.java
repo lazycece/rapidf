@@ -28,6 +28,7 @@ public abstract class Entity<T> {
     private String updater;
     private Date createTime;
     private Date updateTime;
+    private boolean deleted;
 
     /**
      * Get the entity's business id
@@ -67,5 +68,13 @@ public abstract class Entity<T> {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
     }
 }

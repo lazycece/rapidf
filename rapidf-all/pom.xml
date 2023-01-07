@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.lazycece.rapidf</groupId>
         <artifactId>rapidf-parent</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </parent>
     <artifactId>rapidf-all</artifactId>
     <name>${project.artifactId}</name>
@@ -14,23 +14,28 @@
     <dependencies>
         <dependency>
             <groupId>com.lazycece.rapidf</groupId>
+            <artifactId>rapidf-domain</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.lazycece.rapidf</groupId>
             <artifactId>rapidf-restful</artifactId>
-            <version>${project.version}</version>
+            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>com.lazycece.rapidf</groupId>
             <artifactId>rapidf-logger</artifactId>
-            <version>${project.version}</version>
+            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>com.lazycece.rapidf</groupId>
             <artifactId>rapidf-validation</artifactId>
-            <version>${project.version}</version>
+            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>com.lazycece.rapidf</groupId>
             <artifactId>rapidf-utils</artifactId>
-            <version>${project.version}</version>
+            <version>1.0.1</version>
         </dependency>
     </dependencies>
 

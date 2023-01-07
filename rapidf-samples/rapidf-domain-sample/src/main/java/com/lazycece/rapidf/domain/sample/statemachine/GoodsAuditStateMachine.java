@@ -14,9 +14,11 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.statemachine;
+package com.lazycece.rapidf.domain.sample.statemachine;
 
-import com.lazycece.rapidf.domain.statemachine.transition.AbstractGoodsAuditStateTransition;
+import com.lazycece.rapidf.domain.sample.statemachine.transition.AbstractGoodsAuditStateTransition;
+import com.lazycece.rapidf.domain.statemachine.AbstractStateMachine;
+import com.lazycece.rapidf.domain.statemachine.StateEvent;
 
 import java.util.List;
 

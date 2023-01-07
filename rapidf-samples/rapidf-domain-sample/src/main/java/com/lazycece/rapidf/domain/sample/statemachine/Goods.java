@@ -14,9 +14,11 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.statemachine;
+package com.lazycece.rapidf.domain.sample.statemachine;
 
 import com.lazycece.rapidf.domain.entity.Entity;
+import com.lazycece.rapidf.domain.statemachine.State;
+import com.lazycece.rapidf.domain.statemachine.StateApply;
 
 /**
  * @author lazycece

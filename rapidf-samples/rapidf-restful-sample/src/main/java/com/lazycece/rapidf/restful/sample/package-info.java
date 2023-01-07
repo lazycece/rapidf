@@ -1,5 +1,5 @@
 /*
- *    Copyright 2022 lazycece<lazycece@gmail.com>
+ *    Copyright 2023 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,19 +14,8 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.statemachine.transition;
-
-import com.lazycece.rapidf.domain.statemachine.AbstractTransition;
-import com.lazycece.rapidf.domain.statemachine.State;
-import com.lazycece.rapidf.domain.statemachine.StateEvent;
-
 /**
  * @author lazycece
- * @date 2022/12/28
+ * @date 2023/1/7
  */
-public abstract class AbstractGoodsAuditStateTransition extends AbstractTransition {
-
-    protected AbstractGoodsAuditStateTransition(StateEvent<?> stateEvent, State<?> source, State<?> target) {
-        super(stateEvent, source, target);
-    }
-}
+package com.lazycece.rapidf.restful.sample;

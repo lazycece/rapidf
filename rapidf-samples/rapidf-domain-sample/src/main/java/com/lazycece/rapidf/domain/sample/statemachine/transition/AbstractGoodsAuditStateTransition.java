@@ -14,34 +14,19 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.statemachine;
+package com.lazycece.rapidf.domain.sample.statemachine.transition;
+
+import com.lazycece.rapidf.domain.statemachine.AbstractTransition;
+import com.lazycece.rapidf.domain.statemachine.State;
+import com.lazycece.rapidf.domain.statemachine.StateEvent;
 
 /**
  * @author lazycece
- * @date 2022/12/27
+ * @date 2022/12/28
  */
-public enum AuditStatus implements State<String> {
+public abstract class AbstractGoodsAuditStateTransition extends AbstractTransition {
 
-    DRAFT("DRAFT", "草稿态"),
-    AUDITING("AUDITING", "审核中"),
-    PASS("PASS", "审核通过"),
-    REJECT("REJECT", "审核拒绝");
-
-    private final String code;
-    private final String desc;
-
-    AuditStatus(String code, String desc) {
-        this.code = code;
-        this.desc = desc;
-    }
-
-    @Override
-    public String getCode() {
-        return code;
-    }
-
-    @Override
-    public String getDesc() {
-        return desc;
+    protected AbstractGoodsAuditStateTransition(StateEvent<?> stateEvent, State<?> source, State<?> target) {
+        super(stateEvent, source, target);
     }
 }

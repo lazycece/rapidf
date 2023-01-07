@@ -14,12 +14,12 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.statemachine.transition;
+package com.lazycece.rapidf.domain.sample.statemachine.transition;
 
-import com.lazycece.rapidf.domain.statemachine.Goods;
-import com.lazycece.rapidf.domain.statemachine.GoodsAuditStateMachine;
+import com.lazycece.rapidf.domain.sample.statemachine.AuditStatus;
+import com.lazycece.rapidf.domain.sample.statemachine.Goods;
+import com.lazycece.rapidf.domain.sample.statemachine.GoodsAuditStateMachine;
 import com.lazycece.rapidf.domain.statemachine.StateApply;
-import com.lazycece.rapidf.domain.statemachine.AuditStatus;
 
 /**
  * @author lazycece

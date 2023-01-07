@@ -50,6 +50,7 @@
     <modules>
         <module>rapidf-components</module>
         <module>rapidf-dependencies</module>
+        <module>rapidf-samples</module>
         <module>rapidf-tests</module>
     </modules>
 

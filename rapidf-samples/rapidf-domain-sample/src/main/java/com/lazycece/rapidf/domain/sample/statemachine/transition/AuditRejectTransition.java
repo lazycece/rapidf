@@ -14,21 +14,21 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.statemachine.transition;
+package com.lazycece.rapidf.domain.sample.statemachine.transition;
 
-import com.lazycece.rapidf.domain.statemachine.Goods;
-import com.lazycece.rapidf.domain.statemachine.GoodsAuditStateMachine;
+import com.lazycece.rapidf.domain.sample.statemachine.AuditStatus;
+import com.lazycece.rapidf.domain.sample.statemachine.Goods;
+import com.lazycece.rapidf.domain.sample.statemachine.GoodsAuditStateMachine;
 import com.lazycece.rapidf.domain.statemachine.StateApply;
-import com.lazycece.rapidf.domain.statemachine.AuditStatus;
 
 /**
  * @author lazycece
  * @date 2022/12/27
  */
-public class AuditSubmitTransition extends AbstractGoodsAuditStateTransition {
+public class AuditRejectTransition extends AbstractGoodsAuditStateTransition {
 
-    public AuditSubmitTransition() {
-        super(GoodsAuditStateMachine.AuditEvent.SUBMIT_AUDIT, AuditStatus.DRAFT, AuditStatus.AUDITING);
+    public AuditRejectTransition() {
+        super(GoodsAuditStateMachine.AuditEvent.AUDIT_REJECT, AuditStatus.AUDITING, AuditStatus.REJECT);
     }
 
     @Override
@@ -36,6 +36,6 @@ public class AuditSubmitTransition extends AbstractGoodsAuditStateTransition {
         Goods goods = (Goods) apply;
         System.out.println("goods id : " + goods.getBizId());
         System.out.println("goods status : " + goods.getState().getDesc());
-        System.out.println("=============== submit audit ===============");
+        System.out.println("=============== audit reject ===============");
     }
 }

@@ -1,5 +1,5 @@
 /*
- *    Copyright 2022 lazycece<lazycece@gmail.com>
+ *    Copyright 2023 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -16,6 +16,6 @@
 
 /**
  * @author lazycece
- * @date 2022/12/28
+ * @date 2023/1/7
  */
-package com.lazycece.rapidf.domain;
+package com.lazycece.rapidf.logger.sample;

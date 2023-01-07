@@ -14,12 +14,13 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.statemachine;
+package com.lazycece.rapidf.domain.sample.statemachine;
 
-import com.lazycece.rapidf.domain.statemachine.transition.AbstractGoodsAuditStateTransition;
-import com.lazycece.rapidf.domain.statemachine.transition.AuditPassTransition;
-import com.lazycece.rapidf.domain.statemachine.transition.AuditRejectTransition;
-import com.lazycece.rapidf.domain.statemachine.transition.AuditSubmitTransition;
+import com.lazycece.rapidf.domain.sample.statemachine.transition.AbstractGoodsAuditStateTransition;
+import com.lazycece.rapidf.domain.sample.statemachine.transition.AuditPassTransition;
+import com.lazycece.rapidf.domain.sample.statemachine.transition.AuditRejectTransition;
+import com.lazycece.rapidf.domain.sample.statemachine.transition.AuditSubmitTransition;
+import com.lazycece.rapidf.domain.statemachine.State;
 
 import java.util.ArrayList;
 import java.util.List;

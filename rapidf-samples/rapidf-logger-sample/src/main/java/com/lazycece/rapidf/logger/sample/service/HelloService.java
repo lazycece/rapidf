@@ -14,10 +14,10 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.rapidf.example.service;
+package com.lazycece.rapidf.logger.sample.service;
 
 import com.lazycece.rapidf.logger.annotation.Logger;
-import com.lazycece.rapidf.rapidf.example.constants.LogNameConstants;
+import com.lazycece.rapidf.logger.sample.constants.LogNameConstants;
 
 /**
  * @author lazycece

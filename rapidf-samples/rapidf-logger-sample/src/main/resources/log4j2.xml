@@ -7,7 +7,9 @@
         <Property name="CONSOLE_LOG_PATTERN">%clr{%d{${sys:LOG_DATEFORMAT_PATTERN}}}{faint} %clr{${sys:LOG_LEVEL_PATTERN}} %clr{%pid}{magenta} %clr{---}{faint} %clr{[%15.15t]}{faint} %clr{%-40.40c{1.}}{cyan} %clr{:}{faint} %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
         <Property name="FILE_LOG_PATTERN">%d{${sys:LOG_DATEFORMAT_PATTERN}} ${sys:LOG_LEVEL_PATTERN} %pid --- [%t] %-40.40c{1.} : %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
         <Property name="FILE_LOG_SIZE">100MB</Property>
-        <Property name="LOG_PATH">./rapidf-example/logs/</Property>
+<!--        <Property name="LOG_PATH">./rapidf-example/logs/</Property>-->
+        <Property name="LOG_PATH">${logging.file.path}</Property>
+
         <Property name="LOG_LEVEL">info</Property>
     </Properties>
     <Appenders>

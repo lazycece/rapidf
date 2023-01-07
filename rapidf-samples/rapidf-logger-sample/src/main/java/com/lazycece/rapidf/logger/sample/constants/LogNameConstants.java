@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.rapidf.example.constants;
+package com.lazycece.rapidf.logger.sample.constants;
 
 /**
  * @author lazycece

@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.rapidf.example.config.log;
+package com.lazycece.rapidf.logger.sample.config.log;
 
 import com.lazycece.rapidf.logger.interceptor.LogInterceptor;
 import org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator;

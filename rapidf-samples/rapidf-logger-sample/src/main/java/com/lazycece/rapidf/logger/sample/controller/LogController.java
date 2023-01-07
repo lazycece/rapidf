@@ -14,11 +14,11 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.rapidf.example.controller;
+package com.lazycece.rapidf.logger.sample.controller;
 
 import com.lazycece.rapidf.logger.annotation.Logger;
-import com.lazycece.rapidf.rapidf.example.constants.LogNameConstants;
-import com.lazycece.rapidf.rapidf.example.service.HelloService;
+import com.lazycece.rapidf.logger.sample.constants.LogNameConstants;
+import com.lazycece.rapidf.logger.sample.service.HelloService;
 import com.lazycece.rapidf.restful.exception.CommonException;
 import com.lazycece.rapidf.restful.response.RespMap;
 import org.springframework.beans.factory.annotation.Autowired;

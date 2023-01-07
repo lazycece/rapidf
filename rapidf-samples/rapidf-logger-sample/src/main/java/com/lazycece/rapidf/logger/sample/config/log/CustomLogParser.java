@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.rapidf.example.config.log;
+package com.lazycece.rapidf.logger.sample.config.log;
 
 import com.lazycece.rapidf.logger.parser.LogParser;
 import com.lazycece.rapidf.restful.response.RespMap;

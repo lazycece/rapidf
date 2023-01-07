@@ -14,23 +14,20 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.rapidf.example.config.log;
+package com.lazycece.rapidf.logger.sample.service.impl;
 
-import com.lazycece.rapidf.logger.LogInfo;
+import com.lazycece.rapidf.logger.sample.service.HelloService;
+import org.springframework.stereotype.Service;
 
 /**
  * @author lazycece
  * @date 2021/11/18
  */
-public class CustomLogInfo extends LogInfo {
+@Service
+public class HelloServiceImpl implements HelloService {
 
     @Override
-    public String digestLog() {
-        return "[custom]" + super.digestLog();
-    }
-
-    @Override
-    public String detailLog() {
-        return "[custom]" + super.detailLog();
+    public String hello(String name) {
+        return String.format("hello, %s.", name);
     }
 }

@@ -182,7 +182,11 @@
                 <version>${maven.javadoc.plugin.version}</version>
                 <configuration>
                     <skip>${maven.javadoc.skip}</skip>
-                    <additionalparam>-tag date</additionalparam>
+                    <tags>
+                        <tag>
+                            <name>date</name>
+                        </tag>
+                    </tags>
                     <locale>en_US</locale>
                 </configuration>
                 <executions>

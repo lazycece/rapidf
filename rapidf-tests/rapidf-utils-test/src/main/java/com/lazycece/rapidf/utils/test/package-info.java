@@ -1,5 +1,5 @@
 /*
- *    Copyright 2021 lazycece<lazycece@gmail.com>
+ *    Copyright 2023 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,16 +14,8 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.utils;
-
 /**
  * @author lazycece
- * @date 2021/11/2
+ * @date 2023/1/7
  */
-public class SnowFlakeTest {
-
-    public static void main(String[] args) {
-        SnowFlake snowFlake = new SnowFlake(2, 3);
-        System.out.println(snowFlake.nextId());
-    }
-}
+package com.lazycece.rapidf.utils.test;

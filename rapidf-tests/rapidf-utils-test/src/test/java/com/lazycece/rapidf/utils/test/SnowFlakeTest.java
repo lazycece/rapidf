@@ -14,8 +14,18 @@
  *    limitations under the License.
  */
 
+package com.lazycece.rapidf.utils.test;
+
+import com.lazycece.rapidf.utils.SnowFlake;
+
 /**
  * @author lazycece
- * @date 2021/10/24
+ * @date 2021/11/2
  */
-package com.lazycece.rapidf.validation;
+public class SnowFlakeTest {
+
+    public static void main(String[] args) {
+        SnowFlake snowFlake = new SnowFlake(2, 3);
+        System.out.println(snowFlake.nextId());
+    }
+}

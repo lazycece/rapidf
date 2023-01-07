@@ -14,8 +14,9 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.utils.image;
+package com.lazycece.rapidf.utils.test.image;
 
+import com.lazycece.rapidf.utils.image.ImageUtils;
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 

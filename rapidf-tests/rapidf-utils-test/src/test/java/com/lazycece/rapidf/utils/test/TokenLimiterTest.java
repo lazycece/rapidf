@@ -14,27 +14,19 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.utils;
+package com.lazycece.rapidf.utils.test;
 
 import org.junit.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 /**
  * @author lazycece
- * @date 2021/10/30
+ * @date 2021/12/5
  */
-public class UUIDUtilsTest {
+public class TokenLimiterTest {
 
     @Test
-    public void testUUID() {
-        String uuid = UUIDUtils.uuid();
-        assertThat(uuid).isNotBlank();
-    }
-
-    @Test
-    public void testSn() {
-        String sn = UUIDUtils.sn(6);
-        assertThat(sn.length()).isEqualTo(6);
+    public void test() {
+//        TokenLimiter tokenenLimiter = new TokenLimiter();
+//        Thread.sleep(10000);
     }
 }

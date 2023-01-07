@@ -1,5 +1,5 @@
 /*
- *    Copyright 2021 lazycece<lazycece@gmail.com>
+ *    Copyright 2023 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -18,4 +18,4 @@
  * @author lazycece
  * @date 2021/10/24
  */
-package com.lazycece.rapidf.utils;
+package com.lazycece.rapidf.utils.test;

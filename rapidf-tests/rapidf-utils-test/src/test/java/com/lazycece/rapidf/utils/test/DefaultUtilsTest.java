@@ -14,10 +14,11 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.utils;
+package com.lazycece.rapidf.utils.test;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.lazycece.rapidf.utils.DefaultUtils;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

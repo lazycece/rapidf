@@ -14,8 +14,9 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.restful;
+package com.lazycece.rapidf.restful.test;
 
+import com.lazycece.rapidf.restful.Assert;
 import com.lazycece.rapidf.restful.exception.AssertException;
 import com.lazycece.rapidf.restful.response.RespStatus;
 import org.junit.Test;

@@ -18,4 +18,4 @@
  * @author lazycece
  * @date 2021/10/24
  */
-package com.lazycece.rapidf.restful;
+package com.lazycece.rapidf.restful.test;

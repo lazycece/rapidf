@@ -14,6 +14,22 @@
     <name>Rapidf Tests</name>
     <description>${project.name}</description>
 
+    <modules>
+        <module>rapidf-restful-test</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.lazycece.rapidf</groupId>
+                <artifactId>rapidf-dependencies</artifactId>
+                <version>${revision}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>

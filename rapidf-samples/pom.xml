@@ -28,6 +28,8 @@
                 <groupId>com.lazycece.rapidf</groupId>
                 <artifactId>rapidf-dependencies</artifactId>
                 <version>${revision}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

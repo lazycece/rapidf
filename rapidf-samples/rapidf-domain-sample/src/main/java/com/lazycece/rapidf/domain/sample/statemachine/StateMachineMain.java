@@ -30,7 +30,7 @@ import java.util.UUID;
  * @author lazycece
  * @date 2022/12/27
  */
-public class StateMachineTest {
+public class StateMachineMain {
 
     public static void main(String[] args) {
         List<AbstractGoodsAuditStateTransition> transitions = new ArrayList<>();

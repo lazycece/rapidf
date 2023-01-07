@@ -10,7 +10,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>rapidf-restful-test</artifactId>
-    <name>Rapidf Restful Tests</name>
+    <name>Rapidf Restful Test</name>
     <description>${project.name}</description>
 
     <dependencies>

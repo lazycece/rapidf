@@ -33,7 +33,6 @@
     <properties>
         <slf4j.version>2.0.5</slf4j.version>
         <spring.aop>5.3.13</spring.aop>
-        <rapidf.utils.version>1.0.1</rapidf.utils.version>
     </properties>
 
     <dependencies>
@@ -52,7 +51,7 @@
         <dependency>
             <groupId>com.lazycece.rapidf</groupId>
             <artifactId>rapidf-utils</artifactId>
-            <version>${rapidf.utils.version}</version>
+            <version>${revision}</version>
         </dependency>
     </dependencies>
 

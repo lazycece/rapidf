@@ -1,4 +1,5 @@
 # Rapidf: Rapid Development Framework
+
 [![Maven Central](https://img.shields.io/maven-central/v/com.lazycece.rapidf/rapidf-parent)](https://search.maven.org/search?q=rapidf)
 [![License](https://img.shields.io/badge/license-Apache--2.0-green)](https://www.apache.org/licenses/LICENSE-2.0.html)
 [![GitHub release](https://img.shields.io/badge/release-download-orange.svg)](https://github.com/lazycece/rapidf/releases)
@@ -40,7 +41,7 @@ Rapidf (`Rapi`d `D`evelopment `F`ramework ) 是一个快速开发框架，其构
         <dependency>
             <groupId>com.lazycece.rapidf</groupId>
             <artifactId>rapidf-dependencies</artifactId>
-            <version>1.1.0</version>
+            <version>${rapidf-dependencies.version}</version>
             <type>pom</type>
             <scope>import</scope>
         </dependency>

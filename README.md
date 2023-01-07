@@ -1,20 +1,26 @@
-# Rapidf
+# Rapidf: Rapid Development Framework
+
 [![Maven Central](https://img.shields.io/maven-central/v/com.lazycece.rapidf/rapidf-parent)](https://search.maven.org/search?q=rapidf)
 [![License](https://img.shields.io/badge/license-Apache--2.0-green)](https://www.apache.org/licenses/LICENSE-2.0.html)
 [![GitHub release](https://img.shields.io/badge/release-download-orange.svg)](https://github.com/lazycece/rapidf/releases)
 
 [中文](./README_zh_CN.md)
 
-The full name is 
-<span style='color:blue;font-size:20px'>Rapi</span>d 
-<span style='color:blue;font-size:20px'>d</span>evelopment 
-<font style='color:blue;font-size:20px'>f</font>ramework. 
-Rapidf currently provides the restful (response, exception, assert) ,
-validation, api level logger (method level logger) and custom utils.
+## What does it do ?
+
+Rapidf (`Rapi`d `D`development `F`ramework ) is a development framework. Its idea is to extract the code related to business
+low coupling in our daily development work and form reusable and portable component assets. Rapidf currently has the following components:
+
+- rapidf-domain: From a domain-driven perspective, define the basic information related to the domain
+- rapidf-logger: Log output framework, which can be used for regular log output or log monitoring
+- rapidf-restful: Restful related, such as api protocol, service exception and so on.
+- rapidf-utils: Precipitate reusable tools
+- rapidf-validation: Extension of hibernate-validation
+
 
 ## Quick Start
 
-Complete example can view [rapidf-example](https://github.com/lazycece/rapidf/tree/main/rapidf-example).
+Complete example can view [rapidf-samples](https://github.com/lazycece/rapidf/tree/main/rapidf-samples).
 
 ### Maven dependency
 ```xml
@@ -35,8 +41,10 @@ Complete example can view [rapidf-example](https://github.com/lazycece/rapidf/tr
     <dependencies>
         <dependency>
             <groupId>com.lazycece.rapidf</groupId>
-            <artifactId>rapidf-xxx</artifactId>
-            <version>${rapidf.xxx.version}</version>
+            <artifactId>rapidf-dependencies</artifactId>
+            <version>${rapidf-dependencies.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
         </dependency>
     </dependencies>
 ```

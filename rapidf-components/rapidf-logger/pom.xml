@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~    Copyright 2022 lazycece<lazycece@gmail.com>
+  ~    Copyright 2021 lazycece<lazycece@gmail.com>
   ~
   ~    Licensed under the Apache License, Version 2.0 (the "License");
   ~    you may not use this file except in compliance with the License.
@@ -18,19 +18,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>rapidf-parent</artifactId>
-        <groupId>com.lazycece.rapidf</groupId>
-        <version>1.0.1</version>
-    </parent>
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.lazycece.rapidf</groupId>
+        <artifactId>rapidf-components</artifactId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
 
-    <artifactId>rapidf-domain</artifactId>
-    <version>1.0.0</version>
-    <name>${project.artifactId}</name>
+    <artifactId>rapidf-logger</artifactId>
+    <name>Rapidf Logger</name>
+    <description>${project.name}</description>
 
     <properties>
         <slf4j.version>2.0.5</slf4j.version>
+        <spring.aop>5.3.13</spring.aop>
+        <rapidf.utils.version>1.0.1</rapidf.utils.version>
     </properties>
 
     <dependencies>
@@ -39,6 +42,17 @@
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j.version}</version>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.aop}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.lazycece.rapidf</groupId>
+            <artifactId>rapidf-utils</artifactId>
+            <version>${rapidf.utils.version}</version>
         </dependency>
     </dependencies>
 

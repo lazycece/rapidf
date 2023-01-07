@@ -21,9 +21,9 @@
 
     <groupId>com.lazycece.rapidf</groupId>
     <artifactId>rapidf-parent</artifactId>
-    <version>1.0.1</version>
+    <version>${revision}</version>
     <packaging>pom</packaging>
-    <name>${project.artifactId}</name>
+    <name>Rapidf Parent</name>
     <description>Rapid development framework</description>
     <url>https://github.com/lazycece/rapidf</url>
 
@@ -48,15 +48,15 @@
     </developers>
 
     <modules>
-        <module>rapidf-all</module>
-        <module>rapidf-restful</module>
-        <module>rapidf-validation</module>
-        <module>rapidf-utils</module>
-        <module>rapidf-logger</module>
-        <module>rapidf-domain</module>
+        <module>rapidf-components</module>
+        <module>rapidf-dependencies</module>
+        <module>rapidf-tests</module>
     </modules>
 
     <properties>
+        <!-- Project revision -->
+        <revision>1.0.1</revision>
+        <!-- Encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- Maven properties -->
@@ -73,28 +73,9 @@
         <maven.deploy.plugin.version>2.8.2</maven.deploy.plugin.version>
         <maven.javadoc.plugin.version>2.10.4</maven.javadoc.plugin.version>
         <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
+        <flatten.maven.plugin.version>1.2.7</flatten.maven.plugin.version>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-            <version>3.23.1</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>4.10.0</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
     <profiles>
         <profile>
             <id>jdk1.8</id>
@@ -220,6 +201,31 @@
                 <configuration>
                     <skip>${maven.deploy.skip}</skip>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>${flatten.maven.plugin.version}</version>
+                <configuration>
+                    <updatePomFile>true</updatePomFile>
+                    <flattenMode>resolveCiFriendliesOnly</flattenMode>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>flatten.clean</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

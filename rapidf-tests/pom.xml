@@ -16,6 +16,7 @@
 
     <modules>
         <module>rapidf-restful-test</module>
+        <module>rapidf-utils-test</module>
     </modules>
 
     <dependencyManagement>

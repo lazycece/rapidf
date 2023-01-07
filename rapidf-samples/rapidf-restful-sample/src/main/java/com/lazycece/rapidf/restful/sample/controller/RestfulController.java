@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.rapidf.example.controller;
+package com.lazycece.rapidf.restful.sample.controller;
 
 import com.lazycece.rapidf.restful.response.RespMap;
 import org.springframework.web.bind.annotation.GetMapping;

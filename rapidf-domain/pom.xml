@@ -26,6 +26,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>rapidf-domain</artifactId>
+    <version>1.0.0</version>
+    <name>${project.artifactId}</name>
 
     <properties>
         <slf4j.version>2.0.5</slf4j.version>

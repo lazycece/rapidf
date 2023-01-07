@@ -14,37 +14,13 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.rapidf.example.req;
-
-import com.lazycece.rapidf.rapidf.example.enums.StatusEnum;
-import com.lazycece.rapidf.validation.constraints.Enum;
-
-import javax.validation.constraints.NotBlank;
+package com.lazycece.rapidf.validation.sample.enums;
 
 /**
  * @author lazycece
  * @date 2021/11/16
  */
-public class ValidateEnumReq {
+public enum StatusEnum {
 
-    @NotBlank(message = "tag can not be blank")
-    private String tag;
-    @Enum(message = "status value error", clazz = StatusEnum.class, method = "name")
-    private String status;
-
-    public String getTag() {
-        return tag;
-    }
-
-    public void setTag(String tag) {
-        this.tag = tag;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
+    VALID, INVALID
 }

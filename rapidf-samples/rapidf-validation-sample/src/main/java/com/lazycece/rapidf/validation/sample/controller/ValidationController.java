@@ -14,10 +14,9 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.rapidf.example.controller;
+package com.lazycece.rapidf.validation.sample.controller;
 
-import com.lazycece.rapidf.rapidf.example.req.ValidateEnumReq;
-import com.lazycece.rapidf.restful.response.RespMap;
+import com.lazycece.rapidf.validation.sample.req.ValidateEnumReq;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,8 +29,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ValidationController {
 
     @PostMapping("/validateEnum")
-    public RespMap validateEnum(@Validated ValidateEnumReq req) {
-        String data = String.format("tag = %s, status = %s", req.getTag(), req.getStatus());
-        return RespMap.success(data);
+    public String validateEnum(@Validated ValidateEnumReq req) {
+        return String.format("tag = %s, status = %s", req.getTag(), req.getStatus());
     }
 }

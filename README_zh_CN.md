@@ -5,13 +5,22 @@
 
 [英文](./README.md)
 
-全称是 `Rapi`d `d`evelopment `f`ramework（快速开发框架），Rapidf 目前提供了restful（响应、异常、断言）、验证、api 级别记录器（方法级别记录器）和自定义工具。
+## Rapidf 是做什么的？
 
-## Quick Start
+Rapidf (`Rapi`d `D`evelopment `F`ramework ) 是一个快速开发框架，其构思是将我们日常开发工作中业务低耦合相关的代码抽取并形成可复用、可迁移的组件资产。Rapidf 目前有如下组件：
 
-完整的示例可以看 [rapidf-example](https://github.com/lazycece/rapidf/tree/main/rapidf-example).
+- rapidf-domain：从领域驱动的视角，定义领域相关的基本信息
+- rapidf-logger：日志输出框架，可用于常规日志输出或日志监控
+- rapidf-restful：restful相关，如api协议、服务异常等等
+- rapidf-utils：沉淀可复用的工具类
+- rapidf-validation：hibernate-validation的扩展
 
-### Maven dependency
+
+## 快速开始
+
+完整的示例可以看 [rapidf-samples](https://github.com/lazycece/rapidf/tree/main/rapidf-samples).
+
+### Maven 依赖
 ```xml
     <!-- add sonatype repository when use SNAPSHOT version-->
     <repositories>
@@ -30,8 +39,10 @@
     <dependencies>
         <dependency>
             <groupId>com.lazycece.rapidf</groupId>
-            <artifactId>rapidf-xxx</artifactId>
-            <version>${rapidf.xxx.version}</version>
+            <artifactId>rapidf-dependencies</artifactId>
+            <version>1.1.0</version>
+            <type>pom</type>
+            <scope>import</scope>
         </dependency>
     </dependencies>
 ```

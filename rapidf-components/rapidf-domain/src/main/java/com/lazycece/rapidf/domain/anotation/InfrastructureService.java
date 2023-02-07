@@ -36,7 +36,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target({TYPE})
 @Retention(RUNTIME)
 @Component
-public @interface InfraService {
+public @interface InfrastructureService {
 
     /**
      * The value may indicate a suggestion for a logical component name,

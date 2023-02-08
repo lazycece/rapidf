@@ -16,7 +16,7 @@
 
 package com.lazycece.rapidf.domain.statemachine;
 
-import com.lazycece.rapidf.domain.enums.BaseEnum;
+import com.lazycece.rapidf.domain.model.BaseEnum;
 
 /**
  * The state-machine's state statement.

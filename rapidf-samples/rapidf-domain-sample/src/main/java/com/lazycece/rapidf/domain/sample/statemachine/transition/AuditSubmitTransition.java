@@ -34,7 +34,7 @@ public class AuditSubmitTransition extends AbstractGoodsAuditStateTransition {
     @Override
     public void execute(StateApply apply) {
         Goods goods = (Goods) apply;
-        System.out.println("goods id : " + goods.getBizId());
+        System.out.println("goods id : " + goods.getId());
         System.out.println("goods status : " + goods.getState().getDesc());
         System.out.println("=============== submit audit ===============");
     }

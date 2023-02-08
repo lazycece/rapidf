@@ -1,5 +1,5 @@
 /*
- *    Copyright 2022 lazycece<lazycece@gmail.com>
+ *    Copyright 2023 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,7 +14,9 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.valueobject;
+package com.lazycece.rapidf.domain.model;
+
+import com.lazycece.rapidf.domain.anotation.ValueObject;
 
 /**
  * The page information.
@@ -22,6 +24,7 @@ package com.lazycece.rapidf.domain.valueobject;
  * @author lazycece
  * @date 2022/12/11
  */
+@ValueObject
 public class Pagination {
 
     private Integer page;

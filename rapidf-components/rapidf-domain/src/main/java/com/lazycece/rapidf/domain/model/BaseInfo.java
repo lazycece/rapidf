@@ -1,5 +1,5 @@
 /*
- *    Copyright 2022 lazycece<lazycece@gmail.com>
+ *    Copyright 2023 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,29 +14,21 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.entity;
+package com.lazycece.rapidf.domain.model;
 
 import java.util.Date;
 
 /**
  * @author lazycece
- * @date 2022/12/11
+ * @date 2023/2/8
  */
-public abstract class Entity<T> {
+public class BaseInfo {
 
     private String creator;
     private String updater;
     private Date createTime;
     private Date updateTime;
     private boolean deleted;
-
-    /**
-     * Get the entity's business id
-     * <p>For domain, every entity should have its own business id. </p>
-     *
-     * @return business id
-     */
-    public abstract T getBizId();
 
     public String getCreator() {
         return creator;
@@ -77,4 +69,5 @@ public abstract class Entity<T> {
     public void setDeleted(boolean deleted) {
         this.deleted = deleted;
     }
+
 }

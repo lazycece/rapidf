@@ -31,6 +31,14 @@ public class Pagination {
     private Integer size;
     private Long count;
 
+    public Pagination() {
+    }
+
+    public Pagination(Integer page, Integer size) {
+        this.page = page;
+        this.size = size;
+    }
+
     public Integer getPage() {
         return page;
     }

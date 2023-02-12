@@ -24,7 +24,7 @@ import java.lang.reflect.Method;
  */
 public class EnumUtils {
 
-    private static final String ENUM_METHOD_GET_VALUE = "getValue";
+    private static final String ENUM_METHOD_GET_VALUE = "getCode";
 
     public static <T> T getEnum(Class<T> clazz, Object value) {
         return getEnum(clazz, ENUM_METHOD_GET_VALUE, value);

@@ -16,6 +16,8 @@
 
 package com.lazycece.rapidf.restful;
 
+import java.util.List;
+
 /**
  * @author lazycece
  * @date 2021/10/24
@@ -24,7 +26,7 @@ public class PageData<T> {
     /**
      * current page data
      */
-    private T data;
+    private List<T> data;
     /**
      * total records
      */
@@ -34,27 +36,26 @@ public class PageData<T> {
      */
     private Integer page;
 
-
     public PageData() {
     }
 
-    public PageData(T data, Long count) {
+    public PageData(List<T> data, Long count) {
         this.data = data;
         this.count = count;
     }
 
-    public PageData(T data, Long count, Integer page) {
+    public PageData(List<T> data, Long count, Integer page) {
         this.data = data;
         this.count = count;
         this.page = page;
     }
 
-    public Integer getPage() {
-        return page;
+    public List<T> getData() {
+        return data;
     }
 
-    public void setPage(Integer page) {
-        this.page = page;
+    public void setData(List<T> data) {
+        this.data = data;
     }
 
     public Long getCount() {
@@ -65,11 +66,11 @@ public class PageData<T> {
         this.count = count;
     }
 
-    public T getData() {
-        return data;
+    public Integer getPage() {
+        return page;
     }
 
-    public void setData(T data) {
-        this.data = data;
+    public void setPage(Integer page) {
+        this.page = page;
     }
 }

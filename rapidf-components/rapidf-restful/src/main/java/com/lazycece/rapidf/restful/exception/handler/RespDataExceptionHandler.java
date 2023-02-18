@@ -56,13 +56,17 @@ public class RespDataExceptionHandler {
 
     /**
      * Custom exception handle.
+     * <p>we need to cut off message from "|",see ${@link AbstractBaseException#getMessage()}</p>
      *
      * @param e ${@link AbstractBaseException}
      * @return see ${@link RespData}
      */
     @ExceptionHandler(value = AbstractBaseException.class)
     public RespData<?> customExceptionHandler(AbstractBaseException e) {
-        return RespData.fail(e.getStatus().getCode(), e.getMessage());
+        String message = e.getMessage();
+        int cut = message.indexOf("|");
+        message = message.substring(cut + 1);
+        return RespData.fail(e.getStatus().getCode(), message);
     }
 
     /**

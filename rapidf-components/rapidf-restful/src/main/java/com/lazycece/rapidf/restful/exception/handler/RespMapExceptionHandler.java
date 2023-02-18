@@ -56,13 +56,17 @@ public class RespMapExceptionHandler {
 
     /**
      * Custom exception handle.
+     * <p>we need to cut off message from "|",see ${@link AbstractBaseException#getMessage()}</p>
      *
      * @param e ${@link AbstractBaseException}
      * @return see ${@link RespMap}
      */
     @ExceptionHandler(value = AbstractBaseException.class)
     public RespMap customExceptionHandler(AbstractBaseException e) {
-        return RespMap.fail(e.getStatus().getCode(), e.getMessage());
+        String message = e.getMessage();
+        int cut = message.indexOf("|");
+        message = message.substring(cut + 1);
+        return RespMap.fail(e.getStatus().getCode(), message);
     }
 
     /**

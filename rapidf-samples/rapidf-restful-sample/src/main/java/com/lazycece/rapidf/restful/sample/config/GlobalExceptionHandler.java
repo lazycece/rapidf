@@ -16,7 +16,7 @@
 
 package com.lazycece.rapidf.restful.sample.config;
 
-import com.lazycece.rapidf.restful.exception.handler.RestExceptionHandler;
+import com.lazycece.rapidf.restful.exception.handler.RespDataExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
@@ -24,5 +24,5 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  * @date 2023/2/18
  */
 @RestControllerAdvice
-public class GlobalExceptionHandler extends RestExceptionHandler {
+public class GlobalExceptionHandler extends RespDataExceptionHandler {
 }

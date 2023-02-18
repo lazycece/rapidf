@@ -24,16 +24,16 @@ import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
+ * Custom exception handle with ${@link RespData}
+ *
  * @author lazycece
  * @date 2019/02/23
  */
-@RestControllerAdvice
-public class RestExceptionHandler {
+public class RespDataExceptionHandler {
 
-    private static final Logger log = LoggerFactory.getLogger(RestExceptionHandler.class);
+    private static final Logger log = LoggerFactory.getLogger(RespDataExceptionHandler.class);
 
     /**
      * Bind exception handle.

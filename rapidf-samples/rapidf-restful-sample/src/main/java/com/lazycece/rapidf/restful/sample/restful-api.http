@@ -1,3 +1,18 @@
 
-###
+### hello
 GET http://localhost:8080/hello?name=lazycece&age=100
+
+### exception1
+GET http://localhost:8080/hello/exception1?age=100
+
+### exception2
+GET http://localhost:8080/hello/exception2?age=100
+
+### exceptionJson
+POST http://localhost:8080/hello/exceptionJson?age=100
+Content-Type: application/json
+
+{
+  "name": "",
+  "age": 1
+}

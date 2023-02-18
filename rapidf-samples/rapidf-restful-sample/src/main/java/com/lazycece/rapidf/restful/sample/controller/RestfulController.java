@@ -16,9 +16,11 @@
 
 package com.lazycece.rapidf.restful.sample.controller;
 
+import com.lazycece.rapidf.restful.response.RespData;
 import com.lazycece.rapidf.restful.response.RespMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.lazycece.rapidf.restful.sample.request.HelloRequest;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author lazycece
@@ -33,4 +35,33 @@ public class RestfulController {
         return RespMap.success(data);
     }
 
+    @GetMapping("/hello/exception1")
+    public RespData<?> exception1(@RequestParam String name, int age) {
+        String data = String.format("hello, %s,  %s years old.", name, age);
+        return RespData.success(data);
+    }
+
+    @GetMapping("/hello/exception2")
+    public RespData<?> exception2(@Validated HelloRequest request) {
+        String data = String.format("hello, %s,  %s years old.", request.getName(), request.getAge());
+        return RespData.success(data);
+    }
+
+    @PostMapping("/hello/exceptionJson")
+    public RespData<?> exceptionJson(@Validated @RequestBody HelloRequest request) {
+        String data = String.format("hello, %s,  %s years old.", request.getName(), request.getAge());
+        return RespData.success(data);
+    }
+
+    @GetMapping("/hello/exception3")
+    public RespMap exception3(@RequestParam String name, int age) {
+        String data = String.format("hello, %s,  %s years old.", name, age);
+        return RespMap.success(data);
+    }
+
+    @GetMapping("/hello/exception4")
+    public RespMap exception4(@Validated HelloRequest request) {
+        String data = String.format("hello, %s,  %s years old.", request.getName(), request.getAge());
+        return RespMap.success(data);
+    }
 }

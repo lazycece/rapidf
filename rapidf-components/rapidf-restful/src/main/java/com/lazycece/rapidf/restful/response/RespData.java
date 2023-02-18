@@ -26,7 +26,6 @@ public class RespData<T> {
     private String message;
     private T body;
     private String traceId;
-    private boolean retry;
 
     public RespData() {
     }
@@ -63,6 +62,10 @@ public class RespData<T> {
 
     public static RespData<?> fail(Integer code, String message) {
         return new RespData<>(code, message, null);
+    }
+
+    public static <T> RespData<T> fail(Integer code, String message, T body) {
+        return new RespData<T>(code, message, body);
     }
 
     public static RespData<?> status(Status status) {
@@ -103,13 +106,5 @@ public class RespData<T> {
 
     public void setTraceId(String traceId) {
         this.traceId = traceId;
-    }
-
-    public boolean isRetry() {
-        return retry;
-    }
-
-    public void setRetry(boolean retry) {
-        this.retry = retry;
     }
 }

@@ -87,7 +87,7 @@ public enum RespStatus implements Status {
 
     @Override
     public String toString() {
-        return String.format("%s[%s,%s]|%s",
+        return String.format("%s[%s,%s,%s]",
                 this.name(), code, family, message);
     }
 }

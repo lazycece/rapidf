@@ -1,5 +1,5 @@
 /*
- *    Copyright 2022 lazycece<lazycece@gmail.com>
+ *    Copyright 2023 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,17 +14,16 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.statemachine;
-
-import com.lazycece.rapidf.domain.model.BaseEnum;
+package com.lazycece.rapidf.domain.model;
 
 /**
- * The state-machine's state statement.
+ * Declares a field of a class to constitute the identity of the corresponding class. Primarily used in
+ * {@link Aggregate} and {@link Entity} types.
  *
  * @author lazycece
- * @date 2022/12/11
+ * @date 2023/1/29
  */
-public interface State<T> extends BaseEnum<T> {
+public interface Identity<ID> {
 
-
+    ID getId();
 }

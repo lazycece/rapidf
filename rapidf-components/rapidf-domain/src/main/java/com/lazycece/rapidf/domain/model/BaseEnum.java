@@ -1,5 +1,5 @@
 /*
- *    Copyright 2022 lazycece<lazycece@gmail.com>
+ *    Copyright 2023 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,41 +14,25 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.valueobject;
+package com.lazycece.rapidf.domain.model;
 
 /**
- * The page information.
- *
  * @author lazycece
  * @date 2022/12/11
  */
-public class Pagination {
+public interface BaseEnum<T> {
 
-    private Integer page;
-    private Integer size;
-    private Long count;
+    /**
+     * Get enum's code value.
+     *
+     * @return the code
+     */
+    T getCode();
 
-    public Integer getPage() {
-        return page;
-    }
-
-    public void setPage(Integer page) {
-        this.page = page;
-    }
-
-    public Integer getSize() {
-        return size;
-    }
-
-    public void setSize(Integer size) {
-        this.size = size;
-    }
-
-    public Long getCount() {
-        return count;
-    }
-
-    public void setCount(Long count) {
-        this.count = count;
-    }
+    /**
+     * Get enum's description.
+     *
+     * @return description
+     */
+    String getDesc();
 }

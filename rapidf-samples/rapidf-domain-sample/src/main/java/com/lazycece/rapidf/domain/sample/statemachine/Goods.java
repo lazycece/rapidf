@@ -16,7 +16,8 @@
 
 package com.lazycece.rapidf.domain.sample.statemachine;
 
-import com.lazycece.rapidf.domain.entity.Entity;
+import com.lazycece.rapidf.domain.anotation.DomainEntity;
+import com.lazycece.rapidf.domain.model.Entity;
 import com.lazycece.rapidf.domain.statemachine.State;
 import com.lazycece.rapidf.domain.statemachine.StateApply;
 
@@ -24,6 +25,7 @@ import com.lazycece.rapidf.domain.statemachine.StateApply;
  * @author lazycece
  * @date 2022/12/27
  */
+@DomainEntity
 public class Goods extends Entity<String> implements StateApply {
 
     private String goodsId;
@@ -33,7 +35,7 @@ public class Goods extends Entity<String> implements StateApply {
     private AuditStatus status;
 
     @Override
-    public String getBizId() {
+    public String getId() {
         return goodsId;
     }
 

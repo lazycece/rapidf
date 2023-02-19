@@ -1,5 +1,5 @@
 /*
- *    Copyright 2022 lazycece<lazycece@gmail.com>
+ *    Copyright 2023 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,17 +14,32 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.statemachine;
+package com.lazycece.rapidf.restful.sample.request;
 
-import com.lazycece.rapidf.domain.model.BaseEnum;
+import javax.validation.constraints.NotBlank;
 
 /**
- * The state-machine's state statement.
- *
  * @author lazycece
- * @date 2022/12/11
+ * @date 2023/2/18
  */
-public interface State<T> extends BaseEnum<T> {
+public class HelloRequest {
+    @NotBlank(message = "name required")
+    private String name;
+    private Integer age;
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 }

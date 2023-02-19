@@ -1,5 +1,5 @@
 /*
- *    Copyright 2021 lazycece<lazycece@gmail.com>
+ *    Copyright 2023 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,56 +14,29 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.restful;
+package com.lazycece.rapidf.domain.model;
 
-import java.util.List;
+import com.lazycece.rapidf.domain.anotation.ValueObject;
 
 /**
+ * The page information.
+ *
  * @author lazycece
- * @date 2021/10/24
+ * @date 2022/12/11
  */
-public class PageData<T> {
-    /**
-     * current page data
-     */
-    private List<T> data;
-    /**
-     * total records
-     */
-    private Long count;
-    /**
-     * current page
-     */
+@ValueObject
+public class Pagination {
+
     private Integer page;
+    private Integer size;
+    private Long count;
 
-    public PageData() {
+    public Pagination() {
     }
 
-    public PageData(List<T> data, Long count) {
-        this.data = data;
-        this.count = count;
-    }
-
-    public PageData(List<T> data, Long count, Integer page) {
-        this.data = data;
-        this.count = count;
+    public Pagination(Integer page, Integer size) {
         this.page = page;
-    }
-
-    public List<T> getData() {
-        return data;
-    }
-
-    public void setData(List<T> data) {
-        this.data = data;
-    }
-
-    public Long getCount() {
-        return count;
-    }
-
-    public void setCount(Long count) {
-        this.count = count;
+        this.size = size;
     }
 
     public Integer getPage() {
@@ -72,5 +45,21 @@ public class PageData<T> {
 
     public void setPage(Integer page) {
         this.page = page;
+    }
+
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
+    public Long getCount() {
+        return count;
+    }
+
+    public void setCount(Long count) {
+        this.count = count;
     }
 }

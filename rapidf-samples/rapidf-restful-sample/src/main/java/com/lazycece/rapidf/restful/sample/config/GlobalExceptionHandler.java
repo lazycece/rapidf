@@ -1,5 +1,5 @@
 /*
- *    Copyright 2022 lazycece<lazycece@gmail.com>
+ *    Copyright 2023 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,17 +14,15 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.statemachine;
+package com.lazycece.rapidf.restful.sample.config;
 
-import com.lazycece.rapidf.domain.model.BaseEnum;
+import com.lazycece.rapidf.restful.exception.handler.RespDataExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
- * The state-machine's state statement.
- *
  * @author lazycece
- * @date 2022/12/11
+ * @date 2023/2/18
  */
-public interface State<T> extends BaseEnum<T> {
-
-
+@RestControllerAdvice
+public class GlobalExceptionHandler extends RespDataExceptionHandler {
 }

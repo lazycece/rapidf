@@ -35,7 +35,9 @@ public enum RespStatus implements Status {
     FAIL(700, "Fail"),
     PARAM_ERROR(701, "Param Error"),
     DATA_NOT_EXIST(702, "Data Not Exist"),
-    DATA_STATUS_ERROR(703, "Data Status Error");
+    DATA_STATUS_ERROR(703, "Data Status Error"),
+    NEED_TO_RETRY(704, "Need To Retry"),
+    ;
 
     private final int code;
     private final Family family;
@@ -85,7 +87,7 @@ public enum RespStatus implements Status {
 
     @Override
     public String toString() {
-        return String.format("%s[%s,%s]|%s",
+        return String.format("%s[%s,%s,%s]",
                 this.name(), code, family, message);
     }
 }

@@ -17,27 +17,27 @@
             <dependency>
                 <groupId>com.lazycece.rapidf</groupId>
                 <artifactId>rapidf-domain</artifactId>
-                <version>${revision}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.lazycece.rapidf</groupId>
                 <artifactId>rapidf-restful</artifactId>
-                <version>${revision}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.lazycece.rapidf</groupId>
                 <artifactId>rapidf-logger</artifactId>
-                <version>${revision}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.lazycece.rapidf</groupId>
                 <artifactId>rapidf-validation</artifactId>
-                <version>${revision}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.lazycece.rapidf</groupId>
                 <artifactId>rapidf-utils</artifactId>
-                <version>${revision}</version>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

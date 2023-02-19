@@ -52,7 +52,7 @@ public class StateMachineMain {
         goods.setStatus((AuditStatus) state);
         state = stateMachine.execute(goods, GoodsAuditStateMachine.AuditEvent.AUDIT_PASS);
 
-        System.out.println("goods id : " + goods.getBizId());
+        System.out.println("goods id : " + goods.getId());
         System.out.println("goods status : " + state.getDesc());
     }
 }

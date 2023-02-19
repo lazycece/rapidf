@@ -28,7 +28,6 @@ public class RespMap extends HashMap<String, Object> {
     private static final String MESSAGE_FIELD = "message";
     private static final String BODY_FIELD = "body";
     private static final String TRACE_ID = "traceId";
-    private static final String RETRY = "retry";
 
     public RespMap() {
     }
@@ -60,6 +59,10 @@ public class RespMap extends HashMap<String, Object> {
 
     public static RespMap fail(Integer code, String message) {
         return new RespMap(code, message);
+    }
+
+    public static RespMap fail(Integer code, String message, Object body) {
+        return fail(code, message).putting(BODY_FIELD, body);
     }
 
     public static RespMap status(Status status) {
@@ -110,15 +113,5 @@ public class RespMap extends HashMap<String, Object> {
     public void setTraceId(String traceId) {
         this.put(TRACE_ID, traceId);
     }
-
-    public boolean retry() {
-        Object object = this.get(RETRY);
-        return object != null && Boolean.parseBoolean(String.valueOf(object));
-    }
-
-    public void setRetry(boolean retry) {
-        this.put(RETRY, retry);
-    }
-
 }
 

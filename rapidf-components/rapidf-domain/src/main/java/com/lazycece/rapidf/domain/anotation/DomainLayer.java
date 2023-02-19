@@ -1,5 +1,5 @@
 /*
- *    Copyright 2022 lazycece<lazycece@gmail.com>
+ *    Copyright 2023 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,17 +14,24 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.statemachine;
+package com.lazycece.rapidf.domain.anotation;
 
-import com.lazycece.rapidf.domain.model.BaseEnum;
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
+
+import static java.lang.annotation.ElementType.PACKAGE;
+import static java.lang.annotation.ElementType.TYPE;
+import static java.lang.annotation.RetentionPolicy.CLASS;
 
 /**
- * The state-machine's state statement.
+ * Mark domain layer
  *
  * @author lazycece
- * @date 2022/12/11
+ * @date 2023/2/8
  */
-public interface State<T> extends BaseEnum<T> {
-
-
+@Documented
+@Target({TYPE, PACKAGE})
+@Retention(CLASS)
+public @interface DomainLayer {
 }

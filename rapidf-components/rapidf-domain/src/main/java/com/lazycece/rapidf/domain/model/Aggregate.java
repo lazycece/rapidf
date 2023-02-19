@@ -1,5 +1,5 @@
 /*
- *    Copyright 2022 lazycece<lazycece@gmail.com>
+ *    Copyright 2023 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,25 +14,13 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.enums;
+package com.lazycece.rapidf.domain.model;
 
 /**
+ * Domain Aggregate
+ *
  * @author lazycece
- * @date 2022/12/11
+ * @date 2023/2/8
  */
-public interface BaseEnum<T> {
-
-    /**
-     * Get enum's code value.
-     *
-     * @return the code
-     */
-    T getCode();
-
-    /**
-     * Get enum's description.
-     *
-     * @return description
-     */
-    String getDesc();
+public abstract class Aggregate<ID> extends BaseInfo implements Identity<ID> {
 }

@@ -56,7 +56,7 @@
 
     <properties>
         <!-- Project revision -->
-        <revision>1.2.0</revision>
+        <revision>1.2.1-SNAPSHOT</revision>
         <!-- Encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>

@@ -4,24 +4,25 @@
 [![License](https://img.shields.io/badge/license-Apache--2.0-green)](https://www.apache.org/licenses/LICENSE-2.0.html)
 [![GitHub release](https://img.shields.io/badge/release-download-orange.svg)](https://github.com/lazycece/rapidf/releases)
 
-[英文](./README.md)
+[中文](./README.md)
 
-## Rapidf 是做什么的？
+## What does it do ?
 
-Rapidf (`Rapi`d `D`evelopment `F`ramework ) 是一个快速开发框架，其构思是将我们日常开发工作中业务低耦合相关的代码抽取并形成可复用、可迁移的组件资产。Rapidf 目前有如下组件：
+Rapidf (`Rapi`d `D`development `F`ramework ) is a development framework. Its idea is to extract the code related to business
+low coupling in our daily development work and form reusable and portable component assets. Rapidf currently has the following components:
 
-- rapidf-domain：从领域驱动的视角，定义领域相关的基本信息
-- rapidf-logger：日志输出框架，可用于常规日志输出或日志监控
-- rapidf-restful：restful相关，如api协议、服务异常等等
-- rapidf-utils：沉淀可复用的工具类
-- rapidf-validation：hibernate-validation的扩展
+- rapidf-domain: From a domain-driven perspective, define the basic information related to the domain
+- rapidf-logger: Log output framework, which can be used for regular log output or log monitoring
+- rapidf-restful: Restful related, such as api protocol, service exception and so on.
+- rapidf-utils: Precipitate reusable tools
+- rapidf-validation: Extension of hibernate-validation
 
 
-## 快速开始
+## Quick Start
 
-完整的示例可以看 [rapidf-samples](https://github.com/lazycece/rapidf/tree/main/rapidf-samples).
+Complete example can view [rapidf-samples](https://github.com/lazycece/rapidf/tree/main/rapidf-samples).
 
-### Maven 依赖
+### Maven dependency
 ```xml
     <!-- add sonatype repository when use SNAPSHOT version-->
     <repositories>

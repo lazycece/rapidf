@@ -22,12 +22,12 @@ package com.lazycece.rapidf.domain.event;
  * @author lazycece
  * @date 2022/12/11
  */
-public interface DomainEventPublisher<T> {
+public interface DomainEventPublisher {
 
     /**
-     * event publish
+     * To publish domain event.
      *
-     * @param event domain event
+     * @param event ${@link DomainEvent}
      */
-    void publish(DomainEvent<T> event);
+    void publish(DomainEvent event);
 }

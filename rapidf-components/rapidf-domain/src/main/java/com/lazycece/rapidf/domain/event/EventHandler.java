@@ -36,9 +36,7 @@ import java.lang.annotation.*;
 public @interface EventHandler {
 
     /**
-     * The event source condition.
-     * <p>
-     * If equal, the condition is true otherwise false
+     * The event source.
      *
      * @return event source
      * @see DomainEvent#getSource()

@@ -17,29 +17,24 @@
 package com.lazycece.rapidf.domain.event;
 
 /**
- * Domain event handler
- * <p>
- * To use it with ${@link EventHandler}
+ * The domain event dispatcher.
  *
  * @author lazycece
  * @date 2023/2/23
  */
-public interface DomainEventHandler {
+public interface DomainEventDispatcher {
 
     /**
-     * Accept condition process.
+     * Register the domain event handler.
      *
-     * @param event ${@link DomainEvent}
-     * @return accept or not
+     * @param handler ${@link DomainEventHandler}
      */
-    default boolean accept(DomainEvent event) {
-        return true;
-    }
+    void register(DomainEventHandler handler);
 
     /**
-     * Do handle
+     * To publish domain event.
      *
      * @param event ${@link DomainEvent}
      */
-    void handle(DomainEvent event);
+    void publish(DomainEvent event);
 }

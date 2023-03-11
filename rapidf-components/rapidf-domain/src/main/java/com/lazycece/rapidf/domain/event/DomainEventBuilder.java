@@ -45,17 +45,6 @@ public class DomainEventBuilder {
         return this;
     }
 
-
-    public DomainEventBuilder version(String version) {
-        this.event.setVersion(version);
-        return this;
-    }
-
-    public DomainEventBuilder eventType(String type) {
-        this.event.setType(type);
-        return this;
-    }
-
     public DomainEventBuilder timestamp(long timestamp) {
         this.event.setTimestamp(timestamp);
         return this;
@@ -66,8 +55,13 @@ public class DomainEventBuilder {
         return this;
     }
 
-    public DomainEventBuilder data(Object data) {
-        this.event.setData(data);
+    public DomainEventBuilder type(String type) {
+        this.event.setType(type);
+        return this;
+    }
+
+    public DomainEventBuilder version(String version) {
+        this.event.setVersion(version);
         return this;
     }
 
@@ -78,6 +72,11 @@ public class DomainEventBuilder {
 
     public DomainEventBuilder extension(String key, Object value) {
         this.event.getExtensions().put(key, value);
+        return this;
+    }
+
+    public DomainEventBuilder data(Object data) {
+        this.event.setData(data);
         return this;
     }
 }

@@ -16,11 +16,72 @@
 
 package com.lazycece.rapidf.domain.event;
 
+import org.springframework.stereotype.Component;
+
+import java.lang.annotation.*;
+
 /**
+ * Domain event handler annotation.
+ * </p>
+ * To use it must implement the ${@link DomainEventHandler} interface.
+ *
  * @author lazycece
- * @date 2023/2/23
+ * @date 2023/3/11
+ * @see DomainEvent
  */
-public interface EventHandler {
+@Documented
+@Component
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface EventHandler {
 
+    /**
+     * The event source condition.
+     * <p>
+     * If equal, the condition is true otherwise false
+     *
+     * @return event source
+     * @see DomainEvent#getSource()
+     */
+    String source();
 
+    /**
+     * The event type condition.
+     * <p>
+     * If equal, the condition is true otherwise false
+     *
+     * @return event type
+     * @see DomainEvent#getType()
+     */
+    String type() default "";
+
+    /**
+     * The event version condition.
+     * <p>
+     * If equal, the condition is true otherwise false
+     *
+     * @return event version
+     * @see DomainEvent#getVersion()
+     */
+    String version() default "";
+
+    /**
+     * The extension condition
+     * <p>
+     * If extension contains those keys, the condition is true otherwise false
+     *
+     * @return extension key
+     * @see DomainEvent#getExtensions()
+     */
+    String[] extension() default {};
+
+    /**
+     * The SpEL condition.
+     * <p>
+     * If evaluation result is true, the condition is true otherwise false
+     *
+     * @return SpEL
+     * @see org.springframework.expression.Expression
+     */
+    String expression() default "";
 }

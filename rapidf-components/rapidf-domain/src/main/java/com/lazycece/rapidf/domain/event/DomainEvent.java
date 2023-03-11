@@ -30,7 +30,6 @@ import java.util.UUID;
  */
 public class DomainEvent implements Identity<String> {
 
-    private static final String EMPTY_STRING = "";
     /**
      * The event id, default is uuid.
      */
@@ -42,11 +41,11 @@ public class DomainEvent implements Identity<String> {
     /**
      * The event source, default is empty string, you can cover it.
      */
-    private String source = EMPTY_STRING;
+    private String source;
     /**
      * The event type, default is empty string, you can cover it.
      */
-    private String type = EMPTY_STRING;
+    private String type = "";
     /**
      * The event version, default is "1.0.0", you can cover it.
      */

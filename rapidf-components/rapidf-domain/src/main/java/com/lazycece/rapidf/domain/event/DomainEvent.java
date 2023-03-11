@@ -28,7 +28,7 @@ import java.util.UUID;
  * @author lazycece
  * @date 2022/12/11
  */
-public class DomainEvent<T> implements Identity<String> {
+public class DomainEvent implements Identity<String> {
 
     private static final String EMPTY_STRING = "";
     /**
@@ -58,10 +58,7 @@ public class DomainEvent<T> implements Identity<String> {
     /**
      * The event business data.
      */
-    private T data;
-
-    DomainEvent() {
-    }
+    private Object data;
 
     public String getEventId() {
         return eventId;
@@ -111,11 +108,11 @@ public class DomainEvent<T> implements Identity<String> {
         this.extensions = extensions;
     }
 
-    public T getData() {
+    public Object getData() {
         return data;
     }
 
-    public void setData(T data) {
+    public void setData(Object data) {
         this.data = data;
     }
 

@@ -116,9 +116,7 @@ public final class DefaultDomainEventDispatcher implements DomainEventDispatcher
             ExpressionParser parser = new SpelExpressionParser();
             Expression exp = parser.parseExpression(annotation.expression());
             Boolean result = exp.getValue(domainEvent, Boolean.class);
-            if (!Boolean.TRUE.equals(result)) {
-                return false;
-            }
+            return Boolean.TRUE.equals(result);
         }
 
         return true;

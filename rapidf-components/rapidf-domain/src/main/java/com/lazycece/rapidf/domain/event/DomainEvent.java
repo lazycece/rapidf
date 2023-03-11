@@ -16,26 +16,51 @@
 
 package com.lazycece.rapidf.domain.event;
 
+import com.lazycece.rapidf.domain.model.Identity;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
 /**
  * The domain event definition.
  *
  * @author lazycece
  * @date 2022/12/11
  */
-public class DomainEvent<T> {
+public class DomainEvent<T> implements Identity<String> {
 
-    private String eventId;
-    private long timestamp;
-    private String source;
+    private static final String EMPTY_STRING = "";
+    /**
+     * The event id, default is uuid.
+     */
+    private String eventId = UUID.randomUUID().toString();
+    /**
+     * The event time, you needn't cover it.
+     */
+    private long timestamp = System.currentTimeMillis() / 1000;
+    /**
+     * The event version, default is "1.0.0", you can cover it.
+     */
+    private String version = "1.0.0";
+    /**
+     * The event type, default is empty string, you can cover it.
+     */
+    private String eventType = EMPTY_STRING;
+    /**
+     * The event source, default is empty string, you can cover it.
+     */
+    private String source = EMPTY_STRING;
+    /**
+     * The event extension data.
+     */
+    private Map<String, Object> extensions = new HashMap<>();
+    /**
+     * The event business data.
+     */
     private T data;
 
-    public DomainEvent(T data) {
-        this.data = data;
-    }
-
-    public DomainEvent(T data, String source) {
-        this.data = data;
-        this.source = source;
+    DomainEvent() {
     }
 
     public String getEventId() {
@@ -54,6 +79,22 @@ public class DomainEvent<T> {
         this.timestamp = timestamp;
     }
 
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public String getEventType() {
+        return eventType;
+    }
+
+    public void setEventType(String eventType) {
+        this.eventType = eventType;
+    }
+
     public String getSource() {
         return source;
     }
@@ -62,11 +103,24 @@ public class DomainEvent<T> {
         this.source = source;
     }
 
+    public Map<String, Object> getExtensions() {
+        return extensions;
+    }
+
+    public void setExtensions(Map<String, Object> extensions) {
+        this.extensions = extensions;
+    }
+
     public T getData() {
         return data;
     }
 
     public void setData(T data) {
         this.data = data;
+    }
+
+    @Override
+    public String getId() {
+        return eventId;
     }
 }

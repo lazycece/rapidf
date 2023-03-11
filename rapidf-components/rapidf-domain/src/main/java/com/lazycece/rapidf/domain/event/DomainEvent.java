@@ -40,17 +40,17 @@ public class DomainEvent implements Identity<String> {
      */
     private long timestamp = System.currentTimeMillis() / 1000;
     /**
-     * The event version, default is "1.0.0", you can cover it.
-     */
-    private String version = "1.0.0";
-    /**
-     * The event type, default is empty string, you can cover it.
-     */
-    private String eventType = EMPTY_STRING;
-    /**
      * The event source, default is empty string, you can cover it.
      */
     private String source = EMPTY_STRING;
+    /**
+     * The event type, default is empty string, you can cover it.
+     */
+    private String type = EMPTY_STRING;
+    /**
+     * The event version, default is "1.0.0", you can cover it.
+     */
+    private String version = "1.0.0";
     /**
      * The event extension data.
      */
@@ -76,28 +76,28 @@ public class DomainEvent implements Identity<String> {
         this.timestamp = timestamp;
     }
 
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
-    }
-
-    public String getEventType() {
-        return eventType;
-    }
-
-    public void setEventType(String eventType) {
-        this.eventType = eventType;
-    }
-
     public String getSource() {
         return source;
     }
 
     public void setSource(String source) {
         this.source = source;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
     }
 
     public Map<String, Object> getExtensions() {

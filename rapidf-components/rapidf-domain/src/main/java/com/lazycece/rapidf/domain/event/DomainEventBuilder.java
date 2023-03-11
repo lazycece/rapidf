@@ -19,6 +19,8 @@ package com.lazycece.rapidf.domain.event;
 import java.util.Map;
 
 /**
+ * The domain event model(${@link DomainEvent}) builder, we recommend you to use it.
+ *
  * @author lazycece
  * @date 2023/3/11
  */
@@ -49,8 +51,8 @@ public class DomainEventBuilder {
         return this;
     }
 
-    public DomainEventBuilder eventType(String eventType) {
-        this.event.setEventType(eventType);
+    public DomainEventBuilder eventType(String type) {
+        this.event.setType(type);
         return this;
     }
 

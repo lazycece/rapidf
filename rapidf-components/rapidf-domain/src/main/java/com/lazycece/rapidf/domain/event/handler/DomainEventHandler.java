@@ -1,5 +1,5 @@
 /*
- *    Copyright 2022 lazycece<lazycece@gmail.com>
+ *    Copyright 2023 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,20 +14,34 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.event;
+package com.lazycece.rapidf.domain.event.handler;
+
+import com.lazycece.rapidf.domain.event.DomainEvent;
 
 /**
- * Domain event publisher.
+ * Domain event handler
+ * <p>
+ * To use it with ${@link EventHandler}
  *
  * @author lazycece
- * @date 2022/12/11
+ * @date 2023/2/23
  */
-public interface DomainEventPublisher {
+public interface DomainEventHandler {
 
     /**
-     * To publish domain event.
+     * Accept condition process.
+     *
+     * @param event ${@link DomainEvent}
+     * @return accept or not
+     */
+    default boolean accept(DomainEvent event) {
+        return true;
+    }
+
+    /**
+     * Do handle
      *
      * @param event ${@link DomainEvent}
      */
-    void publish(DomainEvent event);
+    void handle(DomainEvent event);
 }

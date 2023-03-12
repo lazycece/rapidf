@@ -16,27 +16,57 @@
 
 package com.lazycece.rapidf.domain.event;
 
+import com.lazycece.rapidf.domain.model.Identity;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
 /**
  * The domain event definition.
  *
  * @author lazycece
  * @date 2022/12/11
  */
-public class DomainEvent<T> {
+public class DomainEvent implements Identity<String> {
 
-    private String eventId;
-    private long timestamp;
-    private String source;
-    private T data;
-
-    public DomainEvent(T data) {
-        this.data = data;
-    }
-
-    public DomainEvent(T data, String source) {
-        this.data = data;
-        this.source = source;
-    }
+    /**
+     * The event id, default is uuid.
+     */
+    private String eventId = UUID.randomUUID().toString();
+    /**
+     * The event specification version, default is "1.0.0", you can cover it.
+     */
+    private String version = "1.0.0";
+    /**
+     * The event time, you needn't cover it.
+     */
+    private long timestamp = System.currentTimeMillis() / 1000;
+    /**
+     * The event type, indicates the event business type property.
+     * <p>
+     * The value can be set as follows:
+     * <li>The business event model fully qualified class name.</li>
+     * <li>The custom define type, which can distinguish business.</li>
+     * <li>... and so on</li>
+     */
+    private String type;
+    /**
+     * The event business identity, indicates the event business type's unique id.
+     */
+    private String identity;
+    /**
+     * The event source, default is empty string, you can cover it.
+     */
+    private String source = "";
+    /**
+     * The event extension data.
+     */
+    private Map<String, Object> extensions = new HashMap<>();
+    /**
+     * The event business data.
+     */
+    private Object data;
 
     public String getEventId() {
         return eventId;
@@ -44,6 +74,14 @@ public class DomainEvent<T> {
 
     public void setEventId(String eventId) {
         this.eventId = eventId;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
     }
 
     public long getTimestamp() {
@@ -54,6 +92,22 @@ public class DomainEvent<T> {
         this.timestamp = timestamp;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getIdentity() {
+        return identity;
+    }
+
+    public void setIdentity(String identity) {
+        this.identity = identity;
+    }
+
     public String getSource() {
         return source;
     }
@@ -62,11 +116,24 @@ public class DomainEvent<T> {
         this.source = source;
     }
 
-    public T getData() {
+    public Map<String, Object> getExtensions() {
+        return extensions;
+    }
+
+    public void setExtensions(Map<String, Object> extensions) {
+        this.extensions = extensions;
+    }
+
+    public Object getData() {
         return data;
     }
 
-    public void setData(T data) {
+    public void setData(Object data) {
         this.data = data;
+    }
+
+    @Override
+    public String getId() {
+        return eventId;
     }
 }

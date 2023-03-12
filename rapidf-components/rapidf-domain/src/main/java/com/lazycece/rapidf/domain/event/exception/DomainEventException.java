@@ -1,5 +1,5 @@
 /*
- *    Copyright 2022 lazycece<lazycece@gmail.com>
+ *    Copyright 2023 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,20 +14,26 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.event;
+package com.lazycece.rapidf.domain.event.exception;
 
 /**
- * Domain event publisher.
- *
  * @author lazycece
- * @date 2022/12/11
+ * @date 2023/3/12
  */
-public interface DomainEventPublisher {
+public class DomainEventException extends RuntimeException {
 
-    /**
-     * To publish domain event.
-     *
-     * @param event ${@link DomainEvent}
-     */
-    void publish(DomainEvent event);
+    public DomainEventException() {
+    }
+
+    public DomainEventException(String message) {
+        super(message);
+    }
+
+    public DomainEventException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public DomainEventException(Throwable cause) {
+        super(cause);
+    }
 }

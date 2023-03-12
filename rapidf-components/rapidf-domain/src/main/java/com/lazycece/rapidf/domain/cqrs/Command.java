@@ -1,5 +1,5 @@
 /*
- *    Copyright 2022 lazycece<lazycece@gmail.com>
+ *    Copyright 2023 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,20 +14,13 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.event;
+package com.lazycece.rapidf.domain.cqrs;
 
 /**
- * Domain event publisher.
+ * The command specification define.
  *
  * @author lazycece
- * @date 2022/12/11
+ * @date 2023/2/23
  */
-public interface DomainEventPublisher {
-
-    /**
-     * To publish domain event.
-     *
-     * @param event ${@link DomainEvent}
-     */
-    void publish(DomainEvent event);
+public interface Command {
 }

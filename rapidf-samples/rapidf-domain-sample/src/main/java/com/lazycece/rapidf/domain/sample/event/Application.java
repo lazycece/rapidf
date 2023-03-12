@@ -1,5 +1,5 @@
 /*
- *    Copyright 2022 lazycece<lazycece@gmail.com>
+ *    Copyright 2023 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,20 +14,21 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.event;
+package com.lazycece.rapidf.domain.sample.event;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
- * Domain event publisher.
- *
  * @author lazycece
- * @date 2022/12/11
+ * @date 2023/3/12
  */
-public interface DomainEventPublisher {
+@EnableAsync(proxyTargetClass = true)
+@SpringBootApplication
+public class Application {
 
-    /**
-     * To publish domain event.
-     *
-     * @param event ${@link DomainEvent}
-     */
-    void publish(DomainEvent event);
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
 }

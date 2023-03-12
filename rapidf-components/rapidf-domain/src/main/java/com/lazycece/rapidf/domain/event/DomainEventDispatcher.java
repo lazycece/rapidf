@@ -1,5 +1,5 @@
 /*
- *    Copyright 2022 lazycece<lazycece@gmail.com>
+ *    Copyright 2023 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -16,13 +16,22 @@
 
 package com.lazycece.rapidf.domain.event;
 
+import com.lazycece.rapidf.domain.event.handler.DomainEventHandler;
+
 /**
- * Domain event publisher.
+ * The domain event dispatcher.
  *
  * @author lazycece
- * @date 2022/12/11
+ * @date 2023/2/23
  */
-public interface DomainEventPublisher {
+public interface DomainEventDispatcher {
+
+    /**
+     * Register the domain event handler.
+     *
+     * @param handler ${@link DomainEventHandler}
+     */
+    void register(DomainEventHandler handler);
 
     /**
      * To publish domain event.

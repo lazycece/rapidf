@@ -24,6 +24,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.lang.NonNull;
+import org.springframework.stereotype.Component;
 
 /**
  * The default domain event publisher.
@@ -33,6 +34,7 @@ import org.springframework.lang.NonNull;
  * @see DomainEventPublisher
  * @see BeanPostProcessor
  */
+@Component
 public class DefaultDomainEventPublisher implements DomainEventPublisher, BeanPostProcessor {
 
     private final Logger log = LoggerFactory.getLogger(DefaultDomainEventPublisher.class);

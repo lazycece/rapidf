@@ -18,15 +18,16 @@ package com.lazycece.rapidf.domain.event.impl;
 
 import com.lazycece.rapidf.domain.event.*;
 import com.lazycece.rapidf.domain.event.exception.DomainEventException;
+import com.lazycece.rapidf.domain.event.DomainEventHandler;
+import com.lazycece.rapidf.domain.event.EventHandler;
+import com.lazycece.rapidf.domain.event.EventHandlerRegistration;
+import org.springframework.core.annotation.Order;
 import org.springframework.expression.Expression;
 import org.springframework.expression.ExpressionParser;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
 import org.springframework.util.StringUtils;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * The default domain dispatcher.
@@ -38,9 +39,9 @@ import java.util.Map;
 public class DefaultDomainEventDispatcher implements DomainEventDispatcher {
 
     /**
-     * The domain event subscribers.
+     * The domain event registration table.
      */
-    private final Map<String/*event type*/, Map<EventHandler, DomainEventHandler>> subscribers = new HashMap<>();
+    private final HashMap<String/*event type*/, List<EventHandlerRegistration>> registrationTable = new HashMap<>();
 
     /**
      * @see DomainEventDispatcher#register
@@ -55,10 +56,19 @@ public class DefaultDomainEventDispatcher implements DomainEventDispatcher {
         if (!StringUtils.hasText(eventType)) {
             throw new DomainEventException("The event type must be not blank.");
         }
-        if (!this.subscribers.containsKey(eventType)) {
-            this.subscribers.put(eventType, new HashMap<>());
+
+        EventHandlerRegistration registration;
+        Order order = handler.getClass().getAnnotation(Order.class);
+        if (order != null) {
+            registration = EventHandlerRegistration.build(handler.getClass().getName(), annotation, handler, order.value());
+        } else {
+            registration = EventHandlerRegistration.build(handler.getClass().getName(), annotation, handler);
         }
-        this.subscribers.get(eventType).put(annotation, handler);
+
+        if (!this.registrationTable.containsKey(eventType)) {
+            this.registrationTable.put(eventType, new ArrayList<>());
+        }
+        this.registrationTable.get(eventType).add(registration);
     }
 
     /**
@@ -67,18 +77,20 @@ public class DefaultDomainEventDispatcher implements DomainEventDispatcher {
     @Override
     public void publish(DomainEvent event) {
         String eventType = event.getType();
-        if (StringUtils.hasText(eventType)) {
+        if (!StringUtils.hasText(eventType)) {
             throw new DomainEventException("The event type must be not blank.");
         }
 
-        Map<EventHandler, DomainEventHandler> handlerMap = this.subscribers.get(eventType);
-        if (handlerMap == null) {
+        List<EventHandlerRegistration> registrationList = this.registrationTable.get(eventType);
+        if (registrationList == null) {
             // no event handler, return.
             return;
         }
-        handlerMap.forEach((annotation, handler) -> {
-            if (match(annotation, event) && handler.accept(event)) {
-                handler.handle(event);
+        registrationList.forEach(registration -> {
+            boolean matchCondition = match(registration.getAnnotation(), event);
+            boolean accept = registration.getHandler().accept(event);
+            if (matchCondition && accept) {
+                registration.getHandler().handle(event);
             }
         });
     }

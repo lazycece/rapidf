@@ -45,13 +45,13 @@ public class DomainEventBuilder {
         return this;
     }
 
-    public DomainEventBuilder timestamp(long timestamp) {
-        this.event.setTimestamp(timestamp);
+    public DomainEventBuilder version(String version) {
+        this.event.setVersion(version);
         return this;
     }
 
-    public DomainEventBuilder source(String source) {
-        this.event.setSource(source);
+    public DomainEventBuilder timestamp(long timestamp) {
+        this.event.setTimestamp(timestamp);
         return this;
     }
 
@@ -60,8 +60,13 @@ public class DomainEventBuilder {
         return this;
     }
 
-    public DomainEventBuilder version(String version) {
-        this.event.setVersion(version);
+    public DomainEventBuilder identity(String identity) {
+        this.event.setIdentity(identity);
+        return this;
+    }
+
+    public DomainEventBuilder source(String source) {
+        this.event.setSource(source);
         return this;
     }
 

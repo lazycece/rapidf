@@ -35,21 +35,30 @@ public class DomainEvent implements Identity<String> {
      */
     private String eventId = UUID.randomUUID().toString();
     /**
+     * The event specification version, default is "1.0.0", you can cover it.
+     */
+    private String version = "1.0.0";
+    /**
      * The event time, you needn't cover it.
      */
     private long timestamp = System.currentTimeMillis() / 1000;
     /**
+     * The event type, indicates the event business type property.
+     * <p>
+     * The value can be set as follows:
+     * <li>The business event model fully qualified class name.</li>
+     * <li>The custom define type, which can distinguish business.</li>
+     * <li>... and so on</li>
+     */
+    private String type;
+    /**
+     * The event business identity, indicates the event business type's unique id.
+     */
+    private String identity;
+    /**
      * The event source, default is empty string, you can cover it.
      */
-    private String source;
-    /**
-     * The event type, default is empty string, you can cover it.
-     */
-    private String type = "";
-    /**
-     * The event version, default is "1.0.0", you can cover it.
-     */
-    private String version = "1.0.0";
+    private String source = "";
     /**
      * The event extension data.
      */
@@ -67,20 +76,20 @@ public class DomainEvent implements Identity<String> {
         this.eventId = eventId;
     }
 
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
     public long getTimestamp() {
         return timestamp;
     }
 
     public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
-    }
-
-    public String getSource() {
-        return source;
-    }
-
-    public void setSource(String source) {
-        this.source = source;
     }
 
     public String getType() {
@@ -91,12 +100,20 @@ public class DomainEvent implements Identity<String> {
         this.type = type;
     }
 
-    public String getVersion() {
-        return version;
+    public String getIdentity() {
+        return identity;
     }
 
-    public void setVersion(String version) {
-        this.version = version;
+    public void setIdentity(String identity) {
+        this.identity = identity;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
     }
 
     public Map<String, Object> getExtensions() {

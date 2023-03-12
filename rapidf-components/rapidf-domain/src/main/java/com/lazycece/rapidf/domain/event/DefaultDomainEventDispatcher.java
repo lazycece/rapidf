@@ -34,12 +34,12 @@ import java.util.Map;
  * @date 2023/3/11
  * @see DomainEventDispatcher
  */
-public final class DefaultDomainEventDispatcher implements DomainEventDispatcher {
+public class DefaultDomainEventDispatcher implements DomainEventDispatcher {
 
     /**
-     * The domain event registration table.
+     * The domain event subscribers.
      */
-    private final Map<String/*event source*/, Map<EventHandler, DomainEventHandler>> registrationTable = new HashMap<>();
+    private final Map<String/*event type*/, Map<EventHandler, DomainEventHandler>> subscribers = new HashMap<>();
 
     /**
      * @see DomainEventDispatcher#register
@@ -50,14 +50,14 @@ public final class DefaultDomainEventDispatcher implements DomainEventDispatcher
         if (annotation == null) {
             throw new DomainEventException("The domain event handler must be annotated with @EventHandler.");
         }
-        String eventSource = annotation.source();
-        if (eventSource == null || "".equals(eventSource.trim())) {
-            throw new DomainEventException("The event source must be not blank.");
+        String eventType = annotation.type();
+        if (!StringUtils.hasText(eventType)) {
+            throw new DomainEventException("The event type must be not blank.");
         }
-        if (!this.registrationTable.containsKey(eventSource)) {
-            this.registrationTable.put(eventSource, new HashMap<>());
+        if (!this.subscribers.containsKey(eventType)) {
+            this.subscribers.put(eventType, new HashMap<>());
         }
-        this.registrationTable.get(eventSource).put(annotation, handler);
+        this.subscribers.get(eventType).put(annotation, handler);
     }
 
     /**
@@ -65,16 +65,17 @@ public final class DefaultDomainEventDispatcher implements DomainEventDispatcher
      */
     @Override
     public void publish(DomainEvent event) {
-        String eventSource = event.getSource();
-        if (StringUtils.hasText(eventSource)) {
-            throw new DomainEventException("The event source must be not blank.");
+        String eventType = event.getType();
+        if (StringUtils.hasText(eventType)) {
+            throw new DomainEventException("The event type must be not blank.");
         }
-        Map<EventHandler, DomainEventHandler> handlerMap = this.registrationTable.get(eventSource);
+        Map<EventHandler, DomainEventHandler> handlerMap = this.subscribers.get(eventType);
         if (handlerMap == null) {
             // no event handler, return.
             return;
         }
         handlerMap.forEach((annotation, handler) -> {
+            // TODO: 2023/3/12  how to  control order.
             if (match(annotation, event) && handler.accept(event)) {
                 handler.handle(event);
             }
@@ -89,7 +90,7 @@ public final class DefaultDomainEventDispatcher implements DomainEventDispatcher
      * @return true/false
      */
     private boolean match(EventHandler annotation, DomainEvent domainEvent) {
-        // match type
+        // match source
         if (StringUtils.hasText(annotation.source())) {
             if (!annotation.source().equals(domainEvent.getSource())) {
                 return false;

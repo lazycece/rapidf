@@ -36,22 +36,22 @@ import java.lang.annotation.*;
 public @interface EventHandler {
 
     /**
-     * The event source.
-     *
-     * @return event source
-     * @see DomainEvent#getSource()
-     */
-    String source();
-
-    /**
-     * The event type condition.
-     * <p>
-     * If equal, the condition is true otherwise false
+     * The event type
      *
      * @return event type
      * @see DomainEvent#getType()
      */
-    String type() default "";
+    String type();
+
+    /**
+     * The event source condition.
+     * <p>
+     * If equal, the condition is true otherwise false
+     *
+     * @return event source
+     * @see DomainEvent#getSource()
+     */
+    String source() default "";
 
     /**
      * The event version condition.

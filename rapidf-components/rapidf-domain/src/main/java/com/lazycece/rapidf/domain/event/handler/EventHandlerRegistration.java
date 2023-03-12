@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.event;
+package com.lazycece.rapidf.domain.event.handler;
 
 /**
  * The domain event handler registration.
@@ -45,21 +45,20 @@ public class EventHandlerRegistration {
      */
     private int order = 0;
 
-    public static EventHandlerRegistration build(String name, EventHandler annotation, DomainEventHandler handler, int order) {
-        EventHandlerRegistration registration = new EventHandlerRegistration();
-        registration.setName(name);
-        registration.setAnnotation(annotation);
-        registration.setHandler(handler);
-        registration.setOrder(order);
-        return registration;
+    public EventHandlerRegistration() {
     }
 
-    public static EventHandlerRegistration build(String name, EventHandler annotation, DomainEventHandler handler) {
-        EventHandlerRegistration registration = new EventHandlerRegistration();
-        registration.setName(name);
-        registration.setAnnotation(annotation);
-        registration.setHandler(handler);
-        return registration;
+    public EventHandlerRegistration(EventHandler annotation, DomainEventHandler handler) {
+        this.name = handler.getClass().getName();
+        this.annotation = annotation;
+        this.handler = handler;
+    }
+
+    public EventHandlerRegistration(EventHandler annotation, DomainEventHandler handler, int order) {
+        this.name = handler.getClass().getName();
+        this.annotation = annotation;
+        this.handler = handler;
+        this.order = order;
     }
 
     public String getName() {

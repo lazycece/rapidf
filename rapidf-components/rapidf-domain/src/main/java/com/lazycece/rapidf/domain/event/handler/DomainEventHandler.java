@@ -14,7 +14,9 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.event;
+package com.lazycece.rapidf.domain.event.handler;
+
+import com.lazycece.rapidf.domain.event.DomainEvent;
 
 /**
  * Domain event handler

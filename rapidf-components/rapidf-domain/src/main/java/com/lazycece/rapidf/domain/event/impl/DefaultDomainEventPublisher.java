@@ -17,8 +17,8 @@
 package com.lazycece.rapidf.domain.event.impl;
 
 import com.lazycece.rapidf.domain.event.*;
-import com.lazycece.rapidf.domain.event.DomainEventHandler;
-import com.lazycece.rapidf.domain.event.EventHandler;
+import com.lazycece.rapidf.domain.event.handler.DomainEventHandler;
+import com.lazycece.rapidf.domain.event.handler.EventHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;

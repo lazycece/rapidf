@@ -16,6 +16,8 @@
 
 package com.lazycece.rapidf.domain.event;
 
+import com.lazycece.rapidf.domain.event.handler.DomainEventHandler;
+
 /**
  * The domain event dispatcher.
  *

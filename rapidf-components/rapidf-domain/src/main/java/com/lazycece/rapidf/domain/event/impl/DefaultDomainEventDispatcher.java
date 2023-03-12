@@ -18,9 +18,9 @@ package com.lazycece.rapidf.domain.event.impl;
 
 import com.lazycece.rapidf.domain.event.*;
 import com.lazycece.rapidf.domain.event.exception.DomainEventException;
-import com.lazycece.rapidf.domain.event.DomainEventHandler;
-import com.lazycece.rapidf.domain.event.EventHandler;
-import com.lazycece.rapidf.domain.event.EventHandlerRegistration;
+import com.lazycece.rapidf.domain.event.handler.DomainEventHandler;
+import com.lazycece.rapidf.domain.event.handler.EventHandler;
+import com.lazycece.rapidf.domain.event.handler.EventHandlerRegistration;
 import org.springframework.core.annotation.Order;
 import org.springframework.expression.Expression;
 import org.springframework.expression.ExpressionParser;
@@ -60,9 +60,9 @@ public class DefaultDomainEventDispatcher implements DomainEventDispatcher {
         EventHandlerRegistration registration;
         Order order = handler.getClass().getAnnotation(Order.class);
         if (order != null) {
-            registration = EventHandlerRegistration.build(handler.getClass().getName(), annotation, handler, order.value());
+            registration = new EventHandlerRegistration(annotation, handler, order.value());
         } else {
-            registration = EventHandlerRegistration.build(handler.getClass().getName(), annotation, handler);
+            registration = new EventHandlerRegistration(annotation, handler);
         }
 
         if (!this.registrationTable.containsKey(eventType)) {

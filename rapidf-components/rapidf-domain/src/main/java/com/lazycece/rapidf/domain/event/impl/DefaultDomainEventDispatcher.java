@@ -69,6 +69,9 @@ public class DefaultDomainEventDispatcher implements DomainEventDispatcher {
             this.registrationTable.put(eventType, new ArrayList<>());
         }
         this.registrationTable.get(eventType).add(registration);
+        this.registrationTable.get(eventType).sort(
+                Comparator.comparingInt(EventHandlerRegistration::getOrder)
+                        .thenComparing(EventHandlerRegistration::getName));
     }
 
     /**

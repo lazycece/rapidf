@@ -21,6 +21,7 @@ import com.lazycece.rapidf.domain.event.DomainEventHandler;
 import com.lazycece.rapidf.domain.event.EventHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.scheduling.annotation.Async;
 
 /**
  * @author lazycece
@@ -32,8 +33,15 @@ public class OrderLifeCycleHandler2 implements DomainEventHandler {
     private final Logger log = LoggerFactory.getLogger(OrderLifeCycleHandler2.class);
 
     @Override
+    @Async
     public void handle(DomainEvent event) {
-        log.info("========= OrderLifeCycleHandler, order=0 ============");
+        log.info("========= OrderLifeCycleHandler, order=0, async ============");
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        log.info("========= OrderLifeCycleHandler, order=0, async finish ============");
 
     }
 }

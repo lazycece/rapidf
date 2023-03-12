@@ -18,13 +18,13 @@ package com.lazycece.rapidf.domain.sample.event;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
  * @author lazycece
  * @date 2023/3/12
  */
-@ComponentScan(value = "com.lazycece.rapidf")
+@EnableAsync(proxyTargetClass = true)
 @SpringBootApplication
 public class Application {
 

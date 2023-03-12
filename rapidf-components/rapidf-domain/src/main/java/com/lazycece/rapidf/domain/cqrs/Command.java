@@ -17,7 +17,7 @@
 package com.lazycece.rapidf.domain.cqrs;
 
 /**
- * The command specification interface define.
+ * The command specification define.
  *
  * @author lazycece
  * @date 2023/2/23

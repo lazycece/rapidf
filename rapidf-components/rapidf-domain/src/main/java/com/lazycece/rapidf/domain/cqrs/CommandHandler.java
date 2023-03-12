@@ -17,17 +17,17 @@
 package com.lazycece.rapidf.domain.cqrs;
 
 /**
- * The command handler specification interface define.
+ * The command handler specification define.
  *
  * @author lazycece
  * @date 2023/2/23
  */
-public interface CommandHandler<T extends Command> {
+public interface CommandHandler<Response, Cmd extends Command> {
     /**
      * To hand the command.
      *
      * @param cmd cmd
      * @see Command
      */
-    void handle(T cmd);
+    Response handle(Cmd cmd);
 }

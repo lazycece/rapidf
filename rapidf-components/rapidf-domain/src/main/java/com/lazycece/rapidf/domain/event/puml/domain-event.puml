@@ -1,10 +1,11 @@
 @startuml domain-event
 class DomainEvent {
   + String eventId
-  + String source
+  + String version
   + long timestamp
   + String type
-  + String version
+  + String identify
+  + String source
   + Map<String, Object> extension
   + Object data
 }
@@ -19,7 +20,9 @@ class DomainEventDispatcher {
  + void publish(DomainEvent event)
 }
 
-class DomainEventStore
+class DomainEventStore {
+ + void save(DomainEvent event)
+}
 
 DomainEventDispatcher -down-> DomainEventStore: use
 DomainEventStore -down-> DomainEvent: save

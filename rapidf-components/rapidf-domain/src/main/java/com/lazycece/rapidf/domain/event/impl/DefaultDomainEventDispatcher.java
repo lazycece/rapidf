@@ -14,8 +14,9 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.domain.event;
+package com.lazycece.rapidf.domain.event.impl;
 
+import com.lazycece.rapidf.domain.event.*;
 import com.lazycece.rapidf.domain.event.exception.DomainEventException;
 import org.springframework.expression.Expression;
 import org.springframework.expression.ExpressionParser;
@@ -69,13 +70,13 @@ public class DefaultDomainEventDispatcher implements DomainEventDispatcher {
         if (StringUtils.hasText(eventType)) {
             throw new DomainEventException("The event type must be not blank.");
         }
+
         Map<EventHandler, DomainEventHandler> handlerMap = this.subscribers.get(eventType);
         if (handlerMap == null) {
             // no event handler, return.
             return;
         }
         handlerMap.forEach((annotation, handler) -> {
-            // TODO: 2023/3/12  how to  control order.
             if (match(annotation, event) && handler.accept(event)) {
                 handler.handle(event);
             }
@@ -122,5 +123,4 @@ public class DefaultDomainEventDispatcher implements DomainEventDispatcher {
 
         return true;
     }
-
 }

@@ -22,12 +22,12 @@ package com.lazycece.rapidf.domain.cqrs;
  * @author lazycece
  * @date 2023/2/23
  */
-public interface CommandHandler<Response, Cmd extends Command> {
+public interface CommandHandler<Result, Cmd extends Command> {
     /**
      * To hand the command.
      *
      * @param cmd cmd
      * @see Command
      */
-    Response handle(Cmd cmd);
+    Result handle(Cmd cmd);
 }

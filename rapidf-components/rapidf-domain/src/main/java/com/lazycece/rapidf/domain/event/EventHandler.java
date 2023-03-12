@@ -31,6 +31,7 @@ import java.lang.annotation.*;
  */
 @Documented
 @Component
+@Inherited
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface EventHandler {

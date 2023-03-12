@@ -17,8 +17,8 @@
 package com.lazycece.rapidf.domain.sample.event.handler;
 
 import com.lazycece.rapidf.domain.event.DomainEvent;
-import com.lazycece.rapidf.domain.event.DomainEventHandler;
-import com.lazycece.rapidf.domain.event.EventHandler;
+import com.lazycece.rapidf.domain.event.handler.DomainEventHandler;
+import com.lazycece.rapidf.domain.event.handler.EventHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Async;

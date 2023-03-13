@@ -19,6 +19,7 @@ package com.lazycece.rapidf.domain.sample.event.handler;
 import com.lazycece.rapidf.domain.event.DomainEvent;
 import com.lazycece.rapidf.domain.event.handler.DomainEventHandler;
 import com.lazycece.rapidf.domain.event.handler.EventHandler;
+import com.lazycece.rapidf.domain.sample.event.model.OrderDomainEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.Order;
@@ -41,6 +42,7 @@ public class OrderSuccessEventHandler implements DomainEventHandler {
     @Override
     public void handle(DomainEvent event) {
         log.info("========= OrderSuccessEventHandler, order=3 ============");
-
+        OrderDomainEvent data = event.getData(OrderDomainEvent.class);
+        log.info("========= OrderSuccessEventHandler, order=3, id4={} ============", data.getOrderId());
     }
 }

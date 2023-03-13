@@ -17,17 +17,18 @@
 package com.lazycece.rapidf.domain.cqrs;
 
 /**
- * The command handler specification define.
+ * The query handler specification define.
  *
  * @author lazycece
- * @date 2023/2/23
+ * @date 2023/3/12
  */
-public interface CommandHandler<R, C extends Command> {
+public interface QueryHandler<R, Q extends Query> {
+
     /**
-     * To hand the command.
+     * To hand the query.
      *
-     * @param cmd cmd
-     * @see Command
+     * @param query query
+     * @see Query
      */
-    R handle(C cmd);
+    R handle(Q query);
 }

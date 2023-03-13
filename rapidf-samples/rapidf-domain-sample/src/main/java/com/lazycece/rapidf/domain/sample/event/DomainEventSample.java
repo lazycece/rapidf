@@ -42,7 +42,7 @@ public class DomainEventSample implements CommandLineRunner {
         OrderDomainEvent data = new OrderDomainEvent();
         data.setUserId(1L);
         data.setAmount(BigDecimal.valueOf(10));
-        data.setGoodsId("goodsIs");
+        data.setGoodsId("goodsId");
         data.setStatus("success");
         DomainEvent domainEvent = DomainEventBuilder.builder()
                 .type(OrderDomainEvent.class.getName())

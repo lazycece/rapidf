@@ -132,8 +132,22 @@ public class DomainEvent implements Identity<String> {
         this.data = data;
     }
 
+    /**
+     * @see Identity#getId()
+     */
     @Override
     public String getId() {
         return eventId;
+    }
+
+    /**
+     * Get event business data.
+     *
+     * @param clazz class
+     * @param <T>   target object type
+     * @return Target object
+     */
+    public <T> T getData(Class<T> clazz) {
+        return clazz.cast(data);
     }
 }

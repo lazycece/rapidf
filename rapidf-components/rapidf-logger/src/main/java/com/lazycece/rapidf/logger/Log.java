@@ -17,6 +17,8 @@
 package com.lazycece.rapidf.logger;
 
 /**
+ * Log interface define.
+ *
  * @author lazycece
  * @date 2021/11/7
  */

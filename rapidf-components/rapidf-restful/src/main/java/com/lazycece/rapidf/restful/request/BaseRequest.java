@@ -1,5 +1,5 @@
 /*
- *    Copyright 2021 lazycece<lazycece@gmail.com>
+ *    Copyright 2023 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,33 +14,23 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.utils;
-
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+package com.lazycece.rapidf.restful.request;
 
 /**
+ * Base request define.
+ *
  * @author lazycece
- * @date 2018/4/6
+ * @date 2023/3/16
  */
-public class AsyncUtils {
+public class BaseRequest {
 
-    private static AsyncUtils instance;
+    private String requestId;
 
-    private ExecutorService executorService;
-
-    private AsyncUtils() {
-        executorService = Executors.newFixedThreadPool(100);
+    public String getRequestId() {
+        return requestId;
     }
 
-    public static AsyncUtils getInstance() {
-        if (instance == null) {
-            instance = new AsyncUtils();
-        }
-        return instance;
-    }
-
-    public void execute(Runnable runnable) {
-        executorService.execute(runnable);
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
     }
 }

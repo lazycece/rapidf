@@ -1,5 +1,5 @@
 /*
- *    Copyright 2022 lazycece<lazycece@gmail.com>
+ *    Copyright 2023 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,8 +14,9 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.restful.exception;
+package com.lazycece.rapidf.restful.exception.factory;
 
+import com.lazycece.rapidf.restful.exception.*;
 import com.lazycece.rapidf.restful.response.Status;
 
 /**
@@ -23,6 +24,18 @@ import com.lazycece.rapidf.restful.response.Status;
  * @date 2022/12/11
  */
 public class ExceptionFactory {
+
+    public static UserBizException userBizException(String message) {
+        return new UserBizException(message);
+    }
+
+    public static UserBizException userBizException(String message, Throwable cause) {
+        return new UserBizException(message, cause);
+    }
+
+    public static UserBizException userBizException(Throwable cause) {
+        return new UserBizException(cause);
+    }
 
     public static ParamException paramException(String message) {
         return new ParamException(message);

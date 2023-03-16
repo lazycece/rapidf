@@ -14,31 +14,34 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.logger.parser;
+package com.lazycece.rapidf.restful.exception;
 
-import javax.annotation.Nullable;
+import com.lazycece.rapidf.restful.response.RespStatus;
+import com.lazycece.rapidf.restful.response.Status;
 
 /**
- * Log parser interface define.
- *
  * @author lazycece
- * @date 2021/11/6
+ * @date 2023/03/16
  */
-public interface LogParser {
+public class UserBizException extends AbstractBaseException {
 
-    /**
-     * Parse result flag, indicates success or not.
-     *
-     * @param result result object
-     * @return true or false
-     */
-    boolean isSuccess(@Nullable Object result);
+    public UserBizException() {
+    }
 
-    /**
-     * Parse result's status code
-     *
-     * @param result result object
-     * @return status code
-     */
-    String getCode(@Nullable Object result);
+    public UserBizException(String message) {
+        super(message);
+    }
+
+    public UserBizException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public UserBizException(Throwable cause) {
+        super(cause);
+    }
+
+    @Override
+    public Status getStatus() {
+        return RespStatus.USER_BIZ_FAIL;
+    }
 }

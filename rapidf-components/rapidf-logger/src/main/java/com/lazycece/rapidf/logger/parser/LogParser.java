@@ -19,6 +19,8 @@ package com.lazycece.rapidf.logger.parser;
 import javax.annotation.Nullable;
 
 /**
+ * Log parser interface define.
+ *
  * @author lazycece
  * @date 2021/11/6
  */

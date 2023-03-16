@@ -28,6 +28,7 @@ public interface QueryHandler<R, Q extends Query> {
      * To hand the query.
      *
      * @param query query
+     * @return result
      * @see Query
      */
     R handle(Q query);

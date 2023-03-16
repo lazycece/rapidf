@@ -27,6 +27,7 @@ public interface CommandHandler<R, C extends Command> {
      * To hand the command.
      *
      * @param cmd cmd
+     * @return result
      * @see Command
      */
     R handle(C cmd);

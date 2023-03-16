@@ -23,7 +23,7 @@ import java.lang.annotation.*;
 
 /**
  * Domain event handler annotation.
- * </p>
+ * <p>
  * To use it must implement the ${@link DomainEventHandler} interface.
  *
  * @author lazycece

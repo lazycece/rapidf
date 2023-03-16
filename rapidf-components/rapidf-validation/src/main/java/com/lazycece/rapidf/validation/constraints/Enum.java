@@ -30,58 +30,60 @@ import static java.lang.annotation.ElementType.TYPE_USE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * To validate a enum's value is right or not .
- *
- * example one, if a enum like
- * <code>
+ * To validate enum's value is right or not .
+ * <p>
+ * <p>
+ * Example one, if enum like:
+ * <pre>{@code
  * public enum Sex {
- *
- *     MALE, FEMALE, OTHER
+ * <p>
+ *   MALE, FEMALE, OTHER
  * }
- * </code>
- * can use the annotation as <code>@Enum(clazz = Sex.class)</code>, and param sex = 0;
- * Or use the annotation as <code>@Enum(clazz = Sex.class, method = "name")</code>,
+ * }</pre>
+ * can use the annotation as {@code @Enum(clazz = Sex.class)}, and param sex = 0;
+ * Or use the annotation as {@code @Enum(clazz = Sex.class, method = "name")},
  * and param sex = "MALE";
+ * <p>
+ * <p>
+ * Example two, if enum like:
+ * <pre>{@code
+ * public enum Role {
  *
- * example two, if a enum like
- * <code>
- *     public enum Role {
+ * ADMIN(1, "ADMIN"),
+ * TEST(2, "TEST"),
+ * DEVELOP(3, "DEVELOP");
  *
- *     ADMIN(1, "ADMIN"),
- *     TEST(2, "TEST"),
- *     DEVELOP(3, "DEVELOP");
+ * private int value;
+ * private String desc;
  *
- *     private int value;
- *     private String desc;
- *
- *     Role(int value, String desc) {
- *         this.value = value;
- *         this.desc = desc;
- *     }
- *
- *     public int getValue() {
- *         return value;
- *     }
- *
- *     public void setValue(int value) {
- *         this.value = value;
- *     }
- *
- *     public String getDesc() {
- *         return desc;
- *     }
- *
- *     public void setDesc(String desc) {
- *         this.desc = desc;
- *     }
+ * Role(int value, String desc) {
+ * this.value = value;
+ * this.desc = desc;
  * }
- * </code>
+ *
+ * public int getValue() {
+ * return value;
+ * }
+ *
+ * public void setValue(int value) {
+ * this.value = value;
+ * }
+ *
+ * public String getDesc() {
+ * return desc;
+ * }
+ *
+ * public void setDesc(String desc) {
+ * this.desc = desc;
+ * }
+ * }
+ * }</pre>
  * can use the annotation as <code>@Enum(clazz = Role.class, method = "getValue")</code>,
  * and param role = 1; Or use the annotation as <code>@Enum(clazz = Role.class,
  * method = "getDesc")</code>,and param role = "ADMIN";
  *
- *
- *
+ * <p>
+ * <p>
  *
  * @author lazycece
  * @date 2021/10/24
@@ -100,14 +102,14 @@ public @interface Enum {
     Class<? extends Payload>[] payload() default {};
 
     /**
-     * the enum's class-type
+     * The enum's class-type
      *
      * @return Class
      */
     Class<?> clazz();
 
     /**
-     * the method's name ,which used to validate the enum's value
+     * The method's name ,which used to validate the enum's value
      *
      * @return method's name
      */

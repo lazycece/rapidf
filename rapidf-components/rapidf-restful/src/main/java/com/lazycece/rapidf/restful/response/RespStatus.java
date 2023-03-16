@@ -37,6 +37,7 @@ public enum RespStatus implements Status {
     DATA_NOT_EXIST(702, "Data Not Exist"),
     DATA_STATUS_ERROR(703, "Data Status Error"),
     NEED_TO_RETRY(704, "Need To Retry"),
+    USER_BIZ_FAIL(705,"User Business Fail"),
     ;
 
     private final int code;

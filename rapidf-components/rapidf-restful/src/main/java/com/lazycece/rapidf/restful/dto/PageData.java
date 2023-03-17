@@ -1,5 +1,5 @@
 /*
- *    Copyright 2021 lazycece<lazycece@gmail.com>
+ *    Copyright 2023 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.restful;
+package com.lazycece.rapidf.restful.dto;
 
 import java.util.List;
 

@@ -37,9 +37,7 @@ public class Assert {
 
     public static void isFalse(final boolean bool, final Status status,
                                final String strFormat, final Object... args) {
-        if (bool) {
-            throw ExceptionFactory.assertException(String.format(strFormat, args), status);
-        }
+        isTrue(!bool, status, strFormat, args);
     }
 
     public static void notBlank(final String str, final Status status,

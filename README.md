@@ -10,7 +10,7 @@
 
 Rapidf (`Rapi`d `D`evelopment `F`ramework ) 是一个快速开发框架，其构思是将我们日常开发工作中业务低耦合相关的代码抽取并形成可复用、可迁移的组件资产。Rapidf 目前有如下组件：
 
-- rapidf-domain：从领域驱动的视角，定义领域相关的基本信息
+- rapidf-domain：从领域驱动的视角，定义领域相关的基本信息（模型、事件、状态机等等）
 - rapidf-logger：日志输出框架，可用于常规日志输出或日志监控
 - rapidf-restful：restful相关，如api协议、服务异常等等
 - rapidf-utils：沉淀可复用的工具类

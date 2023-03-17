@@ -32,18 +32,17 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 /**
  * To validate enum's value is right or not .
  * <p>
- * <p>
  * Example one, if enum like:
  * <pre>{@code
  * public enum Sex {
- * <p>
+ *
  *   MALE, FEMALE, OTHER
+ *
  * }
  * }</pre>
  * can use the annotation as {@code @Enum(clazz = Sex.class)}, and param sex = 0;
  * Or use the annotation as {@code @Enum(clazz = Sex.class, method = "name")},
  * and param sex = "MALE";
- * <p>
  * <p>
  * Example two, if enum like:
  * <pre>{@code
@@ -82,7 +81,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * and param role = 1; Or use the annotation as <code>@Enum(clazz = Role.class,
  * method = "getDesc")</code>,and param role = "ADMIN";
  *
- * <p>
  * <p>
  *
  * @author lazycece

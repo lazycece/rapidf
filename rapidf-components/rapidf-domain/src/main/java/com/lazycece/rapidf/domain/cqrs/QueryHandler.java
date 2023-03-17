@@ -22,7 +22,7 @@ package com.lazycece.rapidf.domain.cqrs;
  * @author lazycece
  * @date 2023/3/12
  */
-public interface QueryHandler<R, Q extends Query> {
+public interface QueryHandler<R, Q> {
 
     /**
      * To hand the query.

@@ -22,7 +22,7 @@ package com.lazycece.rapidf.domain.cqrs;
  * @author lazycece
  * @date 2023/2/23
  */
-public interface CommandHandler<R, C extends Command> {
+public interface CommandHandler<R, C> {
     /**
      * To hand the command.
      *

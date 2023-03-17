@@ -79,6 +79,11 @@ public class RespMap extends HashMap<String, Object> {
                 CODE_FIELD, RespStatus.FAIL.getCode());
     }
 
+    public boolean isNeedRetry() {
+        return RespStatus.NEED_TO_RETRY.getCode() == (int) this.getOrDefault(
+                CODE_FIELD, RespStatus.FAIL.getCode());
+    }
+
     public Integer getCode() {
         Object object = this.get(CODE_FIELD);
         return object == null ? null : (int) object;

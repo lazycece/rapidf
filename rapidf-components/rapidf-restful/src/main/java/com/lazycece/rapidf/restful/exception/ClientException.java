@@ -1,5 +1,5 @@
 /*
- *    Copyright 2023 lazycece<lazycece@gmail.com>
+ *    Copyright 2022 lazycece<lazycece@gmail.com>
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,34 +14,33 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.restful.request;
+package com.lazycece.rapidf.restful.exception;
 
-import java.util.Map;
+import com.lazycece.rapidf.restful.response.RespStatus;
+import com.lazycece.rapidf.restful.response.Status;
 
 /**
- * Base request define.
- *
  * @author lazycece
- * @date 2023/3/16
  */
-public class BaseRequest {
+public class ClientException extends AbstractBaseException {
 
-    private String requestId;
-    private Map<String, Object> extInfo;
-
-    public String getRequestId() {
-        return requestId;
+    public ClientException() {
     }
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
+    public ClientException(String message) {
+        super(message);
     }
 
-    public Map<String, Object> getExtInfo() {
-        return extInfo;
+    public ClientException(String message, Throwable cause) {
+        super(message, cause);
     }
 
-    public void setExtInfo(Map<String, Object> extInfo) {
-        this.extInfo = extInfo;
+    public ClientException(Throwable cause) {
+        super(cause);
+    }
+
+    @Override
+    public Status getStatus() {
+        return RespStatus.CLIENT_ERROR;
     }
 }

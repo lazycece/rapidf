@@ -25,6 +25,22 @@ import com.lazycece.rapidf.restful.response.Status;
  */
 public class ExceptionFactory {
 
+    public static AuthException authException(String message) {
+        return new AuthException(message);
+    }
+
+    public static AuthException authException(String message, Throwable cause) {
+        return new AuthException(message, cause);
+    }
+
+    public static ClientException clientException(String message) {
+        return new ClientException(message);
+    }
+
+    public static ClientException clientException(String message, Throwable cause) {
+        return new ClientException(message, cause);
+    }
+
     public static UserBizException userBizException(String message) {
         return new UserBizException(message);
     }

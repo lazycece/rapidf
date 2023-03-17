@@ -16,8 +16,10 @@
 
 package com.lazycece.rapidf.restful.sample.controller;
 
+import com.lazycece.rapidf.restful.exception.CommonException;
 import com.lazycece.rapidf.restful.response.RespData;
 import com.lazycece.rapidf.restful.response.RespMap;
+import com.lazycece.rapidf.restful.response.RespStatus;
 import com.lazycece.rapidf.restful.sample.request.HelloRequest;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -63,5 +65,11 @@ public class RestfulController {
     public RespMap exception4(@Validated HelloRequest request) {
         String data = String.format("hello, %s,  %s years old.", request.getName(), request.getAge());
         return RespMap.success(data);
+    }
+
+    @PostMapping("/hello/exceptionRetry")
+    public RespMap exceptionRetry(HelloRequest request) {
+        String data = String.format("hello, %s,  %s years old.", request.getName(), request.getAge());
+        throw new CommonException("error", RespStatus.NEED_TO_RETRY);
     }
 }

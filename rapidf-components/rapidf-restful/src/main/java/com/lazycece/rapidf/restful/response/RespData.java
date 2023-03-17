@@ -76,6 +76,10 @@ public class RespData<T> {
         return this.code != null && this.code == RespStatus.SUCCESS.getCode();
     }
 
+    public boolean isNeedRetry() {
+        return this.code != null && this.code == RespStatus.NEED_TO_RETRY.getCode();
+    }
+
     public Integer getCode() {
         return code;
     }

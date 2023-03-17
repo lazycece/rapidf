@@ -16,6 +16,8 @@
 
 package com.lazycece.rapidf.restful.request;
 
+import java.util.Map;
+
 /**
  * Base request define.
  *
@@ -25,6 +27,7 @@ package com.lazycece.rapidf.restful.request;
 public class BaseRequest {
 
     private String requestId;
+    private Map<String, Object> extInfo;
 
     public String getRequestId() {
         return requestId;
@@ -32,5 +35,13 @@ public class BaseRequest {
 
     public void setRequestId(String requestId) {
         this.requestId = requestId;
+    }
+
+    public Map<String, Object> getExtInfo() {
+        return extInfo;
+    }
+
+    public void setExtInfo(Map<String, Object> extInfo) {
+        this.extInfo = extInfo;
     }
 }

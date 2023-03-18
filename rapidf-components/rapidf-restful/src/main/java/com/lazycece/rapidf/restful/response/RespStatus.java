@@ -29,6 +29,7 @@ public enum RespStatus implements Status {
     SUCCESS(200, "Success"),
     CLIENT_ERROR(400, "Client Error"),
     ACCESS_DENIED(403, "Access Denied"),
+    SERVICE_NOT_FOUND(404, "Service Not Found"),
     INTERNAL_SERVER_ERROR(500, "Internal Server Error"),
     DB_EXCEPTION(501, "DB Exception "),
     INTEGRATION_ERROR(600, "Integration Error"),
@@ -37,7 +38,7 @@ public enum RespStatus implements Status {
     DATA_NOT_EXIST(702, "Data Not Exist"),
     DATA_STATUS_ERROR(703, "Data Status Error"),
     NEED_TO_RETRY(704, "Need To Retry"),
-    USER_BIZ_FAIL(705,"User Business Fail"),
+    USER_BIZ_FAIL(705, "User Business Fail"),
     ;
 
     private final int code;

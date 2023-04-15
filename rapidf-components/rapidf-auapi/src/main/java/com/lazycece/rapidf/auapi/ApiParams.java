@@ -24,7 +24,6 @@ import org.apache.commons.lang3.StringUtils;
 public class ApiParams extends com.lazycece.au.api.params.ApiParams {
     private String deviceId;
     private String version;
-    private Integer versionCode;
 
     public String getDeviceId() {
         return deviceId;
@@ -42,20 +41,10 @@ public class ApiParams extends com.lazycece.au.api.params.ApiParams {
         this.version = version;
     }
 
-    public Integer getVersionCode() {
-        return versionCode;
-    }
-
-    public void setVersionCode(Integer versionCode) {
-        this.versionCode = versionCode;
-    }
-
     @Override
     public boolean validate() {
         return super.validate()
                 && StringUtils.isNotBlank(deviceId)
-                && StringUtils.isNotBlank(version)
-                && versionCode!=null;
-
+                && StringUtils.isNotBlank(version);
     }
 }

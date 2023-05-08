@@ -14,37 +14,31 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.auapi;
+package com.lazycece.rapidf.auapi.extension;
 
-import org.apache.commons.lang3.StringUtils;
+import com.lazycece.au.api.token.Subject;
 
 /**
  * @author lazycece
  */
-public class ApiParams extends com.lazycece.au.api.params.ApiParams {
-    private String deviceId;
-    private String version;
+public class UserSubject implements Subject {
 
-    public String getDeviceId() {
-        return deviceId;
+    private String userId;
+    private String username;
+
+    public String getUserId() {
+        return userId;
     }
 
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public String getVersion() {
-        return version;
+    public String getUsername() {
+        return username;
     }
 
-    public void setVersion(String version) {
-        this.version = version;
-    }
-
-    @Override
-    public boolean validate() {
-        return super.validate()
-                && StringUtils.isNotBlank(deviceId)
-                && StringUtils.isNotBlank(version);
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

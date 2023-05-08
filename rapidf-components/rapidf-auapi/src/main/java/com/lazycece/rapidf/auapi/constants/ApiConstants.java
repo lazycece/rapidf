@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.auapi;
+package com.lazycece.rapidf.auapi.constants;
 
 /**
  * @author lazycece

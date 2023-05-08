@@ -20,11 +20,12 @@ import com.alibaba.fastjson.JSONObject;
 import com.lazycece.au.api.params.ParamsHandler;
 import com.lazycece.au.api.params.utils.JsonUtils;
 import com.lazycece.au.api.token.TokenHandler;
-import com.lazycece.rapidf.auapi.ApiConstants;
+import com.lazycece.rapidf.auapi.constants.ApiConstants;
 import com.lazycece.rapidf.restful.response.RespData;
 import com.lazycece.rapidf.restful.response.RespStatus;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
 
 /**
  * @author lazycece

@@ -16,7 +16,14 @@
 
 package com.lazycece.rapidf.auapi.filter;
 
+import com.lazycece.au.api.token.Subject;
+import com.lazycece.au.api.token.SubjectContext;
+import com.lazycece.au.context.RequestContext;
 import com.lazycece.au.filter.AuFilter;
+import com.lazycece.au.http.HttpServletRequestWrapper;
+import com.lazycece.au.log.AuLogger;
+import com.lazycece.au.log.AuLoggerFactory;
+import com.lazycece.rapidf.auapi.extension.UserSubject;
 
 /**
  * @author lazycece
@@ -24,18 +31,29 @@ import com.lazycece.au.filter.AuFilter;
  */
 public class SubjectFilter implements AuFilter {
 
+    private final AuLogger log = AuLoggerFactory.getLogger(this.getClass());
+
     @Override
     public String name() {
-        return AuFilter.super.name();
+        return "au-subject-filter";
     }
 
     @Override
     public boolean preHandle() throws Exception {
-        return AuFilter.super.preHandle();
+        log.debug("Subject filter process begin");
+        Subject subject = SubjectContext.getContext();
+        if (subject instanceof UserSubject) {
+            UserSubject userSubject = (UserSubject) subject;
+            HttpServletRequestWrapper requestWrapper = (HttpServletRequestWrapper) RequestContext.getCurrentContext().getRequest();
+            // TODO: 2023/5/15  lazycece
+
+        }
+
+        log.debug("Subject filter process end");
+        return true;
     }
 
     @Override
     public void postHandle() throws Exception {
-        AuFilter.super.postHandle();
     }
 }

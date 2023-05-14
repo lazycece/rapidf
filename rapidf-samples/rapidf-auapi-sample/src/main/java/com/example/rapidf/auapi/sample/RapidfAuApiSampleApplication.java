@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RapidfAuapiSampleApplication {
+public class RapidfAuApiSampleApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RapidfAuapiSampleApplication.class, args);
+        SpringApplication.run(RapidfAuApiSampleApplication.class, args);
     }
 
 }

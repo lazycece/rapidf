@@ -55,7 +55,7 @@ public class ParamsHandlerSupport implements ParamsHandler {
     @Override
     public String getResponseBody(String responseBody, String encodeData, String salt) {
         JSONObject response = JsonUtils.parseObject(responseBody, JSONObject.class);
-        response.put(ApiConstants.RESPONSE_FIELD_BODY, responseBody);
+        response.put(ApiConstants.RESPONSE_FIELD_BODY, encodeData);
         response.put(ApiConstants.RESPONSE_FIELD_SALT, salt);
         return JsonUtils.toJSONString(response);
     }

@@ -16,6 +16,12 @@
 
 package com.lazycece.rapidf.auapi.configuration;
 
+import com.lazycece.au.AuManager;
+import com.lazycece.au.api.spring.boot.autoconfigure.AuApiProperties;
+import com.lazycece.rapidf.auapi.filter.SubjectFilter;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -27,4 +33,17 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan(basePackages = "com.lazycece.rapidf.auapi")
 public class AuApiConfiguration {
+
+    @Bean
+    @ConditionalOnBean(AuApiProperties.class)
+    @ConditionalOnProperty(prefix = "au.api.token", name = "enable", havingValue = "true")
+    public SubjectFilter subjectFilter(AuApiProperties auApiProperties) {
+        AuApiProperties.AuApiToken apiToken = auApiProperties.getToken();
+        SubjectFilter subjectFilter = new SubjectFilter();
+        AuManager.getInstance().addAuFilter(subjectFilter)
+                .includePatterns(apiToken.getIncludePatterns())
+                .excludePatterns(apiToken.getExcludePatterns());
+        return subjectFilter;
+    }
+
 }

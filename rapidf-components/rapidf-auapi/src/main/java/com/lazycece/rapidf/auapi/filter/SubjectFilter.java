@@ -16,6 +16,8 @@
 
 package com.lazycece.rapidf.auapi.filter;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.lazycece.au.api.token.Subject;
 import com.lazycece.au.api.token.SubjectContext;
 import com.lazycece.au.context.RequestContext;
@@ -23,7 +25,14 @@ import com.lazycece.au.filter.AuFilter;
 import com.lazycece.au.http.HttpServletRequestWrapper;
 import com.lazycece.au.log.AuLogger;
 import com.lazycece.au.log.AuLoggerFactory;
+import com.lazycece.rapidf.auapi.constants.ApiConstants;
 import com.lazycece.rapidf.auapi.extension.UserSubject;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.reflect.FieldUtils;
+
+import java.lang.reflect.Field;
+import java.nio.charset.StandardCharsets;
+import java.util.Map;
 
 /**
  * @author lazycece
@@ -31,6 +40,7 @@ import com.lazycece.rapidf.auapi.extension.UserSubject;
  */
 public class SubjectFilter implements AuFilter {
 
+    private static final String CONTENT_TYPE_JSON = "application/json";
     private final AuLogger log = AuLoggerFactory.getLogger(this.getClass());
 
     @Override
@@ -42,13 +52,26 @@ public class SubjectFilter implements AuFilter {
     public boolean preHandle() throws Exception {
         log.debug("Subject filter process begin");
         Subject subject = SubjectContext.getContext();
-        if (subject instanceof UserSubject) {
-            UserSubject userSubject = (UserSubject) subject;
-            HttpServletRequestWrapper requestWrapper = (HttpServletRequestWrapper) RequestContext.getCurrentContext().getRequest();
-            // TODO: 2023/5/15  lazycece
-
+        if (!(subject instanceof UserSubject)) {
+            log.debug("Subject filter process , not expected subject");
+            return true;
         }
-
+        UserSubject userSubject = (UserSubject) subject;
+        HttpServletRequestWrapper requestWrapper = (HttpServletRequestWrapper) RequestContext.getCurrentContext().getRequest();
+        String contentType = requestWrapper.getContentType();
+        if (StringUtils.isNotBlank(contentType) && contentType.contains(CONTENT_TYPE_JSON)) {
+            String jsonContent = new String(requestWrapper.getContent(), StandardCharsets.UTF_8);
+            JSONObject jsonObject = StringUtils.isNotBlank(jsonContent) ? JSON.parseObject(jsonContent) : new JSONObject();
+            jsonObject.put(ApiConstants.PARAMETER_FIELD_SALT, userSubject.getUserId());
+            jsonContent = jsonObject.toJSONString();
+            Field contentFiled = FieldUtils.getField(HttpServletRequestWrapper.class, "content", true);
+            FieldUtils.writeField(contentFiled, requestWrapper, jsonContent.getBytes(StandardCharsets.UTF_8), true);
+        } else {
+            Map<String, String[]> parameters = requestWrapper.getParameters();
+            parameters.put(ApiConstants.PARAMETER_FIELD_SALT, new String[]{userSubject.getUserId()});
+            Field parametersFiled = FieldUtils.getField(HttpServletRequestWrapper.class, "parameters", true);
+            FieldUtils.writeField(parametersFiled, requestWrapper, parameters, true);
+        }
         log.debug("Subject filter process end");
         return true;
     }

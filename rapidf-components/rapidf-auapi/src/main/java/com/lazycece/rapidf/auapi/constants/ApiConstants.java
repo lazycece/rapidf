@@ -24,4 +24,6 @@ public class ApiConstants {
 
     public static final String RESPONSE_FIELD_BODY = "body";
     public static final String RESPONSE_FIELD_SALT = "salt";
+
+    public static final String PARAMETER_FIELD_SALT = "userId";
 }

@@ -20,6 +20,11 @@ public class UserControllerTest {
 
     @Test
     public void testInfo() throws Exception {
-        HttpHelper.getInstance().doGet("/u/info",null,String.class);
+        HttpHelper.getInstance().doGet("/u/info", null, String.class);
+    }
+
+    @Test
+    public void testUserSubject() throws Exception {
+        HttpHelper.getInstance().doPostJson("/u/subject", null, String.class);
     }
 }

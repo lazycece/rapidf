@@ -1,5 +1,6 @@
 package com.example.rapidf.auapi.sample.controller;
 
+import com.example.rapidf.auapi.sample.request.BaseRequest;
 import com.example.rapidf.auapi.sample.request.LoginRequest;
 import com.lazycece.au.api.token.SubjectContext;
 import com.lazycece.au.api.token.TokenHolder;
@@ -27,14 +28,21 @@ public class UserController {
         log.info("username -> {}, password = {}", request.getUsername(), request.getPassword());
         UserSubject subject = new UserSubject();
         subject.setUsername(request.getUsername());
+        subject.setUserId("8800880");
         String token = tokenHolder.generateToken(subject);
         response.addHeader(tokenHolder.getTokenHeader(), token);
         return RespData.success();
     }
 
     @GetMapping("/info")
-    public Object getUserInfo() {
+    public Object getUserInfo(String userId) {
+        log.info("tester: userId = {}", userId);
         UserSubject subject = (UserSubject) SubjectContext.getContext();
         return RespData.success(subject);
+    }
+
+    @PostMapping("/subject")
+    public Object testUserSubject(@RequestBody BaseRequest request) {
+        return RespData.success(request);
     }
 }

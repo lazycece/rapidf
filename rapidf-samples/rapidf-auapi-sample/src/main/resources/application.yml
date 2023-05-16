@@ -5,7 +5,7 @@ server:
     context-path: /au-api
 logging:
   level:
-    com.lazycece.au: debug
+    com.lazycece: debug
 au:
   enable: true
   api:

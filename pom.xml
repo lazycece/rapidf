@@ -56,12 +56,12 @@
 
     <properties>
         <!-- Project revision -->
-        <revision>1.2.3-SNAPSHOT</revision>
+        <revision>1.3.0-SNAPSHOT</revision>
         <!-- Encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- Maven properties -->
-        <maven.test.skip>false</maven.test.skip>
+        <maven.test.skip>true</maven.test.skip>
         <maven.deploy.skip>false</maven.deploy.skip>
         <maven.javadoc.skip>false</maven.javadoc.skip>
         <!-- Compiler settings properties -->

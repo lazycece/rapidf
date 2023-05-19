@@ -15,6 +15,7 @@
     <description>${project.name}</description>
 
     <modules>
+        <module>rapidf-auapi</module>
         <module>rapidf-domain</module>
         <module>rapidf-logger</module>
         <module>rapidf-restful</module>

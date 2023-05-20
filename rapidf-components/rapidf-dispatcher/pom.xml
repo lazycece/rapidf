@@ -5,22 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.lazycece.rapidf</groupId>
-        <artifactId>rapidf-parent</artifactId>
+        <artifactId>rapidf-components</artifactId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>rapidf-components</artifactId>
-    <packaging>pom</packaging>
-    <name>Rapidf Components</name>
+    <artifactId>rapidf-dispatcher</artifactId>
+    <name>Rapidf Dispatcher</name>
     <description>${project.name}</description>
 
-    <modules>
-        <module>rapidf-auapi</module>
-        <module>rapidf-dispatcher</module>
-        <module>rapidf-domain</module>
-        <module>rapidf-logger</module>
-        <module>rapidf-restful</module>
-        <module>rapidf-utils</module>
-        <module>rapidf-validation</module>
-    </modules>
+    <properties>
+    </properties>
+
+    <dependencies>
+    </dependencies>
 </project>

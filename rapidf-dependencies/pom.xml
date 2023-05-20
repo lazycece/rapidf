@@ -21,6 +21,11 @@
             </dependency>
             <dependency>
                 <groupId>com.lazycece.rapidf</groupId>
+                <artifactId>rapidf-dispatcher</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lazycece.rapidf</groupId>
                 <artifactId>rapidf-domain</artifactId>
                 <version>${project.version}</version>
             </dependency>

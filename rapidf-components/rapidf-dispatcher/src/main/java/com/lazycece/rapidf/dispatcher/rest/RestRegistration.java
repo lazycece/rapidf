@@ -14,11 +14,17 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.dispatcher.core;
+package com.lazycece.rapidf.dispatcher.rest;
+
+import java.lang.reflect.Method;
 
 /**
  * @author lazycece
- * @date 2023/6/28
+ * @date 2023/7/4
  */
-public class ServiceRegistration {
+public class RestRegistration {
+
+    private Class<?> clazz;
+    private Method method;
+    private Object[] args;
 }

@@ -14,11 +14,11 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.dispatcher;
+package com.lazycece.rapidf.dispatcher.service;
 
 /**
  * @author lazycece
- * @date 2023/7/2
+ * @date 2023/6/28
  */
-public interface ServiceDispatcher {
+public class ServiceRegistration {
 }

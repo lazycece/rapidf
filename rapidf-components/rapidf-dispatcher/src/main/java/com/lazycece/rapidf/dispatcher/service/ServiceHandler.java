@@ -16,14 +16,29 @@
 
 package com.lazycece.rapidf.dispatcher.service;
 
+import java.lang.annotation.*;
+
 /**
  * @author lazycece
  * @date 2023/7/3
  */
+@Documented
+@Inherited
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
 public @interface ServiceHandler {
 
+    /**
+     * The service name.
+     *
+     * @return name
+     */
     String name();
 
+    /**
+     * The service version.
+     *
+     * @return version
+     */
     String version();
-
 }

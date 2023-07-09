@@ -18,7 +18,16 @@ package com.lazycece.rapidf.dispatcher;
 
 /**
  * @author lazycece
- * @date 2023/7/2
+ * @date 2023/7/4
  */
-public interface ServiceDispatcher {
+public interface Dispatcher {
+
+    /**
+     * do dispatch service.
+     *
+     * @param cmd command
+     * @return invoke result
+     */
+    Object dispatch(DispatchCmd cmd);
+
 }

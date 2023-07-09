@@ -20,6 +20,6 @@ package com.lazycece.rapidf.dispatcher;
  * @author lazycece
  * @date 2023/7/4
  */
-public enum DispatcherPattern {
+public enum DispatchPattern {
     SERVICE, REST;
 }

@@ -14,13 +14,22 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.dispatcher.service;
+package com.lazycece.rapidf.dispatcher.core;
 
 /**
+ * Define the dispatch request content parser specification.
+ *
  * @author lazycece
- * @date 2023/7/3
+ * @date 2023/7/10
  */
-public interface Handler<R, P> {
+public interface DispatchRequestParser {
 
-    R handle(P param);
+    /**
+     * Parse request content to object.
+     *
+     * @param request request content
+     * @param clazz   the request class
+     * @return request object
+     */
+    Object parse(String request, Class<?> clazz);
 }

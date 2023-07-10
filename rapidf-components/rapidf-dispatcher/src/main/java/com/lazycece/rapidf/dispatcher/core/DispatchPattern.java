@@ -14,25 +14,13 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.dispatcher;
+package com.lazycece.rapidf.dispatcher.core;
 
 /**
  * @author lazycece
- * @date 2023/7/9
+ * @date 2023/7/4
  */
-public class DispatchException extends RuntimeException {
-    public DispatchException() {
-    }
+public enum DispatchPattern {
 
-    public DispatchException(String message) {
-        super(message);
-    }
-
-    public DispatchException(String message, Throwable cause) {
-        super(message, cause);
-    }
-
-    public DispatchException(Throwable cause) {
-        super(cause);
-    }
+    SERVICE, REST;
 }

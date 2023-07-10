@@ -14,20 +14,14 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.dispatcher;
+package com.lazycece.rapidf.dispatcher.core;
 
 /**
+ * Define the dispatch command specification.
+ *
  * @author lazycece
- * @date 2023/7/4
+ * @date 2023/7/9
  */
-public interface Dispatcher {
-
-    /**
-     * do dispatch service.
-     *
-     * @param cmd command
-     * @return invoke result
-     */
-    Object dispatch(DispatchCmd cmd);
+public interface DispatchCmd {
 
 }

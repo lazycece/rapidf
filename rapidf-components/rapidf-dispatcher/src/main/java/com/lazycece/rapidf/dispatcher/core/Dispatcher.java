@@ -14,12 +14,20 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.dispatcher;
+package com.lazycece.rapidf.dispatcher.core;
 
 /**
  * @author lazycece
  * @date 2023/7/4
  */
-public enum DispatchPattern {
-    SERVICE, REST;
+public interface Dispatcher {
+
+    /**
+     * do dispatch service.
+     *
+     * @param cmd command
+     * @return invoke result
+     */
+    Object dispatch(DispatchCmd cmd);
+
 }

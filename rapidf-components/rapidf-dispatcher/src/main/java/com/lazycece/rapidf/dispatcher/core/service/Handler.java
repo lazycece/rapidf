@@ -14,11 +14,15 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.dispatcher.service;
+package com.lazycece.rapidf.dispatcher.core.service;
 
 /**
+ * Define the service handler specification.
+ *
  * @author lazycece
  * @date 2023/7/3
  */
-public interface QueryHandler<R, Q> extends Handler<R, Q> {
+public interface Handler<Response, Request> {
+
+    Response handle(Request request);
 }

@@ -14,31 +14,11 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.dispatcher.service;
-
-import java.lang.annotation.*;
+package com.lazycece.rapidf.dispatcher.core.service;
 
 /**
  * @author lazycece
  * @date 2023/7/3
  */
-@Documented
-@Inherited
-@Target(ElementType.TYPE)
-@Retention(RetentionPolicy.RUNTIME)
-public @interface ServiceHandler {
-
-    /**
-     * The service name.
-     *
-     * @return name
-     */
-    String name();
-
-    /**
-     * The service version.
-     *
-     * @return version
-     */
-    String version();
+public interface QueryHandler<R, Q> extends Handler<R, Q> {
 }

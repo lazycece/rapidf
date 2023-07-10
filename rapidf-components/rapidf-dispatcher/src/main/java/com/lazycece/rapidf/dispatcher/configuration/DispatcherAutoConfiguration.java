@@ -14,11 +14,18 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.dispatcher;
+package com.lazycece.rapidf.dispatcher.configuration;
+
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * @author lazycece
  * @date 2023/6/25
  */
-public class DispatcherConfiguration {
+@Configuration
+@EnableConfigurationProperties({DispatcherProperties.class})
+@ComponentScan(basePackages = "com.lazycece.rapidf.dispatcher")
+public class DispatcherAutoConfiguration {
 }

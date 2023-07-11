@@ -22,5 +22,5 @@ package com.lazycece.rapidf.dispatcher.core;
  */
 public enum DispatchPattern {
 
-    SERVICE, REST;
+    service, facade;
 }

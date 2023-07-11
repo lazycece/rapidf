@@ -23,17 +23,17 @@ package com.lazycece.rapidf.dispatcher.core.rest;
 public class FacadeCmd {
 
     /**
-     * Service's name
+     * Facade's name
      */
     private String name;
 
     /**
-     * Service's version
+     * Facade's version
      */
     private String version;
 
     /**
-     * Service's action
+     * Facade's action
      */
     private String action;
 

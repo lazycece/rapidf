@@ -16,11 +16,13 @@
 
 package com.lazycece.rapidf.dispatcher.core.facade;
 
+import com.lazycece.rapidf.dispatcher.core.DispatchCmd;
+
 /**
  * @author lazycece
  * @date 2023/7/11
  */
-public class FacadeCmd {
+public class FacadeCmd implements DispatchCmd {
 
     /**
      * Facade's name

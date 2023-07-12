@@ -16,10 +16,16 @@
 
 package com.lazycece.rapidf.dispatcher.core.facade;
 
+import java.lang.annotation.*;
+
 /**
  * @author lazycece
  * @date 2023/7/11
  */
+@Documented
+@Inherited
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
 public @interface FacadeService {
 
     /**

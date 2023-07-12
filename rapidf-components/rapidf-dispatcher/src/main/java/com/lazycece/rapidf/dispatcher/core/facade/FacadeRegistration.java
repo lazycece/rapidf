@@ -17,7 +17,8 @@
 package com.lazycece.rapidf.dispatcher.core.facade;
 
 import java.lang.reflect.Method;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author lazycece
@@ -38,9 +39,9 @@ public class FacadeRegistration {
      */
     private Object facade;
     /**
-     * The facade action list
+     * The facade action map
      */
-    private List<FacadeAction> actionList;
+    private Map<String, FacadeAction> actionMap = new HashMap<>();
 
     public String getFacadeId() {
         return facadeId;
@@ -66,12 +67,12 @@ public class FacadeRegistration {
         this.facade = facade;
     }
 
-    public List<FacadeAction> getActionList() {
-        return actionList;
+    public Map<String, FacadeAction> getActionMap() {
+        return actionMap;
     }
 
-    public void setActionList(List<FacadeAction> actionList) {
-        this.actionList = actionList;
+    public void setActionMap(Map<String, FacadeAction> actionMap) {
+        this.actionMap = actionMap;
     }
 
     public static class FacadeAction {

@@ -41,11 +41,4 @@ public @interface ServiceHandler {
      * @return version
      */
     String version();
-
-    /**
-     * The request class.
-     *
-     * @return request class
-     */
-    Class<?> requestClass();
 }

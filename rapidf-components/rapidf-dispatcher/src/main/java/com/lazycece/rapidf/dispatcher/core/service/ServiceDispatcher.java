@@ -18,10 +18,11 @@ package com.lazycece.rapidf.dispatcher.core.service;
 
 import com.lazycece.rapidf.dispatcher.configuration.DispatcherProperties;
 import com.lazycece.rapidf.dispatcher.core.DispatchCmd;
-import com.lazycece.rapidf.dispatcher.core.DispatchException;
+import com.lazycece.rapidf.dispatcher.exception.DispatchException;
 import com.lazycece.rapidf.dispatcher.core.Dispatcher;
 import com.lazycece.rapidf.dispatcher.core.DispatchRequestParser;
 import com.lazycece.rapidf.dispatcher.constants.DispatcherConstants;
+import com.lazycece.rapidf.dispatcher.helper.ServiceHelper;
 import com.lazycece.rapidf.dispatcher.utils.ValidateUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,7 +47,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @see Dispatcher,BeanPostProcessor
  */
 @Component
-@ConditionalOnBean(DispatchRequestParser.class)
+@ConditionalOnBean(value = {DispatchRequestParser.class, DispatcherProperties.class})
 @ConditionalOnProperty(prefix = "rapidf.dispatcher", name = "pattern", havingValue = "service")
 public class ServiceDispatcher implements Dispatcher, BeanPostProcessor {
 
@@ -75,7 +76,7 @@ public class ServiceDispatcher implements Dispatcher, BeanPostProcessor {
             throw new DispatchException("service not found !");
         }
 
-        Object request = dispatchRequestParser.parse(serviceCmd.getRequest(), serviceRegistration.getServiceHandler().requestClass());
+        Object request = dispatchRequestParser.parse(serviceCmd.getRequest(), serviceRegistration.getRequestClass());
 
         if (dispatcherProperties.isValidateRequest()) {
             ValidateUtils.validate(request);
@@ -105,8 +106,8 @@ public class ServiceDispatcher implements Dispatcher, BeanPostProcessor {
      */
     private void registerServiceHandler(Object bean) {
         boolean targetAnnotation = bean.getClass().isAnnotationPresent(ServiceHandler.class);
-        boolean targetImpl = bean instanceof Handler<?, ?>;
-        if (targetAnnotation && targetImpl) {
+        boolean targetHandler = ServiceHelper.isExpectedServiceHandler(bean.getClass());
+        if (targetAnnotation && targetHandler) {
             log.info("To registry service handler, className={}", bean.getClass().getName());
             ServiceRegistration serviceRegistration = buildServiceRegistration((Handler<?, ?>) bean);
             this.registrationTable.put(serviceRegistration.getServiceId(), serviceRegistration);
@@ -122,9 +123,11 @@ public class ServiceDispatcher implements Dispatcher, BeanPostProcessor {
     private ServiceRegistration buildServiceRegistration(Handler<?, ?> handler) {
         ServiceHandler serviceHandler = handler.getClass().getAnnotation(ServiceHandler.class);
         String serviceId = serviceHandler.name() + serviceHandler.version();
+        Class<?> requestClass = ServiceHelper.getRequestClass(handler.getClass());
+
         Method method;
         try {
-            method = handler.getClass().getMethod(DispatcherConstants.SERVICE_HANDLER_METHOD_NAME, serviceHandler.requestClass());
+            method = handler.getClass().getMethod(DispatcherConstants.SERVICE_HANDLER_METHOD_NAME, requestClass);
         } catch (NoSuchMethodException e) {
             throw new DispatchException(String.format("no match service '%s' method.", DispatcherConstants.SERVICE_HANDLER_METHOD_NAME));
         }
@@ -134,6 +137,7 @@ public class ServiceDispatcher implements Dispatcher, BeanPostProcessor {
         serviceRegistration.setServiceHandler(serviceHandler);
         serviceRegistration.setHandler(handler);
         serviceRegistration.setMethod(method);
+        serviceRegistration.setRequestClass(requestClass);
         return serviceRegistration;
     }
 }

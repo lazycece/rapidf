@@ -44,6 +44,11 @@ public class ServiceRegistration {
      */
     private Method method;
 
+    /**
+     * the request class  of the handler handle method
+     */
+    private Class<?> requestClass;
+
     public String getServiceId() {
         return serviceId;
     }
@@ -74,5 +79,13 @@ public class ServiceRegistration {
 
     public void setMethod(Method method) {
         this.method = method;
+    }
+
+    public Class<?> getRequestClass() {
+        return requestClass;
+    }
+
+    public void setRequestClass(Class<?> requestClass) {
+        this.requestClass = requestClass;
     }
 }

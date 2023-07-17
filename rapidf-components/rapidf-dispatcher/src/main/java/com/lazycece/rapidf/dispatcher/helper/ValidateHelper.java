@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.dispatcher.utils;
+package com.lazycece.rapidf.dispatcher.helper;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
  * @author lazycece
  * @date 2023/7/10
  */
-public class ValidateUtils {
+public class ValidateHelper {
 
     public static void validate(Object request) {
         Validator validator = Validation.buildDefaultValidatorFactory().getValidator();

@@ -25,7 +25,6 @@ import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 /**
  * @author lazycece
@@ -33,33 +32,31 @@ import java.util.Optional;
  */
 public class ServiceHelper {
 
-    private static final List<String> SERVICE_SPEC_INTERFACES;
+    private static final List<Class<?>> SERVICE_SPEC_INTERFACES;
 
     static {
         SERVICE_SPEC_INTERFACES = new ArrayList<>();
-        SERVICE_SPEC_INTERFACES.add(Handler.class.getName());
-        SERVICE_SPEC_INTERFACES.add(CommandHandler.class.getName());
-        SERVICE_SPEC_INTERFACES.add(QueryHandler.class.getName());
+        SERVICE_SPEC_INTERFACES.add(Handler.class);
+        SERVICE_SPEC_INTERFACES.add(CommandHandler.class);
+        SERVICE_SPEC_INTERFACES.add(QueryHandler.class);
     }
 
     public static boolean isExpectedServiceHandler(Class<?> clazz) {
         return Arrays.stream(clazz.getInterfaces())
-                .anyMatch(cls -> SERVICE_SPEC_INTERFACES.contains(cls.getName()));
+                .anyMatch(SERVICE_SPEC_INTERFACES::contains);
     }
 
     public static Class<?> getRequestClass(Class<?> clazz) {
-        Optional<String> optional = Arrays.stream(clazz.getGenericInterfaces())
+        String className = Arrays.stream(clazz.getGenericInterfaces())
                 .filter(type -> type instanceof ParameterizedTypeImpl)
                 .map(type -> (ParameterizedTypeImpl) type)
-                .filter(parameterizedType -> SERVICE_SPEC_INTERFACES.contains(parameterizedType.getRawType().getName()))
+                .filter(parameterizedType -> SERVICE_SPEC_INTERFACES.contains(parameterizedType.getRawType()))
                 .map(parameterizedType -> parameterizedType.getActualTypeArguments()[1].getTypeName())
-                .findFirst();
+                .findFirst()
+                .orElseThrow(() -> new DispatchException("There is no request class."));
 
-        if (!optional.isPresent()) {
-            throw new DispatchException("There is no request class.");
-        }
         try {
-            return Class.forName(optional.get());
+            return Class.forName(className);
         } catch (ClassNotFoundException e) {
             throw new DispatchException("Get handler's request class fail, class not found.");
         }

@@ -23,7 +23,7 @@ import com.lazycece.rapidf.dispatcher.core.Dispatcher;
 import com.lazycece.rapidf.dispatcher.core.DispatchRequestParser;
 import com.lazycece.rapidf.dispatcher.constants.DispatcherConstants;
 import com.lazycece.rapidf.dispatcher.helper.ServiceHelper;
-import com.lazycece.rapidf.dispatcher.utils.ValidateUtils;
+import com.lazycece.rapidf.dispatcher.helper.ValidateHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
@@ -79,7 +79,7 @@ public class ServiceDispatcher implements Dispatcher, BeanPostProcessor {
         Object request = dispatchRequestParser.parse(serviceCmd.getRequest(), serviceRegistration.getRequestClass());
 
         if (dispatcherProperties.isValidateRequest()) {
-            ValidateUtils.validate(request);
+            ValidateHelper.validate(request);
         }
 
         try {

@@ -30,15 +30,10 @@
     <name>Rapidf Validation</name>
     <description>${project.name}</description>
 
-    <properties>
-        <hibernate-validator.version>6.2.0.Final</hibernate-validator.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>${hibernate-validator.version}</version>
             <optional>true</optional>
         </dependency>
     </dependencies>

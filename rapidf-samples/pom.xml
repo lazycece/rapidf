@@ -17,6 +17,7 @@
 
     <modules>
         <module>rapidf-auapi-sample</module>
+        <module>rapidf-dispatcher-sample</module>
         <module>rapidf-domain-sample</module>
         <module>rapidf-logger-sample</module>
         <module>rapidf-restful-sample</module>

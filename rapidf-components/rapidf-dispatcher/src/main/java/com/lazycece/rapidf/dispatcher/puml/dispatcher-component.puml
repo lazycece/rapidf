@@ -1,0 +1,27 @@
+@startuml dispatcher: component
+
+cloud "inbound" as inbound
+
+component dispatcher {
+  [facade dispatcher] as facadedp
+  [Service dispatcher] as servicedp
+}
+
+node "Application" {
+
+  package "handler" <<handler>> {
+    [XxxQueryHandler]
+    [XxxCommandHandler]
+  }
+
+  package "facade" <<facade>> {
+    [XxxQueryFacade]
+    [XxxCommandFacade]
+  }
+}
+
+inbound ..down..> dispatcher
+facadedp --down--> facade
+servicedp --down--> handler
+
+@enduml

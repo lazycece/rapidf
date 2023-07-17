@@ -1,0 +1,4 @@
+rapidf:
+  dispatcher:
+    pattern: facade
+    validate-request: true

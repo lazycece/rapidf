@@ -1,0 +1,46 @@
+@startuml dispatcher: service handler
+interface Dispatcher {
+  + Object dispatch(DispatchCmd cmd)
+}
+class ServiceDispatcher {
+  - ConcurrentHashMap<String, ServiceRegistration> registrationTable
+  + Object dispatch(DispatchCmd cmd)
+}
+
+class ServiceRegistration {
+  - String serviceId
+  - ServiceHandler serviceHandler
+  - Handler<?, ?> handler
+  - Method method
+  - Class<?> requestClass
+}
+
+class ServiceCmd {
+  - String name
+  - String version
+  - String request
+}
+
+interface DispatchCmd
+
+annotation ServiceHandler {
+  + String name()
+  + String version()
+}
+
+package spec <<Rectangle>> {
+  interface Handler
+  interface QueryHandler
+  interface CommandHandler
+}
+
+ServiceDispatcher -up-> Dispatcher: implement
+ServiceRegistration -right-* ServiceDispatcher: map
+ServiceHandler -down-> ServiceRegistration
+ServiceRegistration -down- spec: follow
+ServiceCmd -up-> DispatchCmd: implement
+
+QueryHandler -up-> Handler: extend
+CommandHandler -up-> Handler: extend
+
+@enduml

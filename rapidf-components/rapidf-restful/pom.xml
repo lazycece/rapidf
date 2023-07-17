@@ -30,30 +30,27 @@
     <name>Rapidf Restful</name>
     <description>${project.name}</description>
 
-    <properties>
-        <spring.version>5.3.12</spring.version>
-        <slf4j.version>2.0.5</slf4j.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-            <version>${spring.version}</version>
             <scope>compile</scope>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>${spring.version}</version>
             <scope>compile</scope>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
             <optional>true</optional>
         </dependency>
     </dependencies>

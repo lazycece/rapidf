@@ -1,0 +1,20 @@
+
+### order_create
+POST http://localhost:8080/service/handle
+Content-Type: application/json
+
+{
+  "name": "order_create",
+  "version": "1.0.0",
+  "requestData": "{\"userId\":\"userId\",\"goodsId\":\"goodsId\",\"count\":1}"
+}
+
+### order_cancel
+POST http://localhost:8080/service/handle
+Content-Type: application/json
+
+{
+  "name": "order_cancel",
+  "version": "1.0.0",
+  "requestData": "{\"userId\":\"userId\",\"orderId\":\"orderId\"}"
+}

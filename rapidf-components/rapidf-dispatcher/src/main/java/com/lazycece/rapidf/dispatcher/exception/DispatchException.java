@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package com.lazycece.rapidf.dispatcher.core;
+package com.lazycece.rapidf.dispatcher.exception;
 
 /**
  * @author lazycece

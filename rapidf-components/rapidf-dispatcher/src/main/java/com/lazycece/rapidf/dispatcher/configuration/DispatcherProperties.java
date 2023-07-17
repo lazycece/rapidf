@@ -29,7 +29,7 @@ public class DispatcherProperties {
     /**
      * the dispatcher pattern
      */
-    private DispatchPattern pattern = DispatchPattern.SERVICE;
+    private DispatchPattern pattern = DispatchPattern.service;
 
     /**
      * indicating need to validate the request or not

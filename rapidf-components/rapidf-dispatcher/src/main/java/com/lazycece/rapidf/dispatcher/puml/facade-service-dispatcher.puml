@@ -1,0 +1,53 @@
+@startuml dispatcher: facade service
+interface Dispatcher {
+  + Object dispatch(DispatchCmd cmd)
+}
+class FacadeDispatcher {
+  - ConcurrentHashMap<String, FacadeRegistration> registrationTable
+  + Object dispatch(DispatchCmd cmd)
+}
+
+class FacadeRegistration {
+  - String facadeId
+  - FacadeService facadeService
+  - Object facade
+  - Map<String, FacadeAction> actionMap
+}
+
+class FacadeAction {
+  - String action
+  - Method method
+  - Class<?> requestClass
+}
+
+class FacadeCmd {
+  - String name
+  - String version
+  - String action
+  - String request
+}
+
+interface DispatchCmd
+
+annotation FacadeService {
+  + String name()
+  + String version()
+}
+
+package spec <<Rectangle>> {
+  interface Facade
+  interface QueryFacade
+  interface CommandFacade
+}
+
+FacadeDispatcher -up-> Dispatcher: implement
+FacadeRegistration -right-* FacadeDispatcher: map
+FacadeService -down-> FacadeRegistration
+FacadeRegistration -down- spec: follow
+FacadeAction -down-* FacadeRegistration
+FacadeCmd -up-> DispatchCmd: implement
+
+QueryFacade -up-> Facade: extend
+CommandFacade -up-> Facade: extend
+
+@enduml

@@ -12,6 +12,7 @@ Rapidf (`Rapi`d `D`development `F`ramework ) is a development framework. Its ide
 low coupling in our daily development work and form reusable and portable component assets. Rapidf currently has the following components:
 
 - rapidf-auapi: Based on rapidf component integration [AuApi](https://github.com/lazycece/au-api-spring-boot) framework, out of the box
+- rapidf-dispatcher：Based on the application of the hexagonal architecture idea, the inbound adapter framework is implemented, and two modes of service handler and facade service are supported
 - rapidf-domain: From a domain-driven perspective, define the basic information related to the domain (model, event, statemachine and so on)
 - rapidf-logger: Log output framework, which can be used for regular log output or log monitoring
 - rapidf-restful: Restful related, such as api protocol, service exception and so on.

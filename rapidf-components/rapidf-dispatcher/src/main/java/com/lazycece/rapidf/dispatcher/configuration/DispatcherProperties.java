@@ -18,11 +18,13 @@ package com.lazycece.rapidf.dispatcher.configuration;
 
 import com.lazycece.rapidf.dispatcher.core.DispatchPattern;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * @author lazycece
  * @date 2023/7/4
  */
+@Configuration
 @ConfigurationProperties(prefix = "rapidf.dispatcher")
 public class DispatcherProperties {
 

@@ -42,6 +42,9 @@ public class ServiceHelper {
     }
 
     public static boolean isExpectedServiceHandler(Class<?> clazz) {
+        if (SERVICE_SPEC_INTERFACES.contains(clazz)) {
+            return false;
+        }
         return Arrays.stream(clazz.getInterfaces())
                 .anyMatch(SERVICE_SPEC_INTERFACES::contains);
     }

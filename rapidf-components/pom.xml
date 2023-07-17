@@ -29,6 +29,7 @@
         <spring.boot.version>2.5.6</spring.boot.version>
         <spring.version>5.3.12</spring.version>
         <hibernate-validator.version>6.2.0.Final</hibernate-validator.version>
+        <validation-api.version>2.0.2</validation-api.version>
     </properties>
 
     <dependencyManagement>
@@ -59,6 +60,11 @@
                 <groupId>org.hibernate.validator</groupId>
                 <artifactId>hibernate-validator</artifactId>
                 <version>${hibernate-validator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.validation</groupId>
+                <artifactId>jakarta.validation-api</artifactId>
+                <version>${validation-api.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

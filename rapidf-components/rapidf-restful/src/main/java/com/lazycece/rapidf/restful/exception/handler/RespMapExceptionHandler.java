@@ -21,9 +21,14 @@ import com.lazycece.rapidf.restful.response.RespMap;
 import com.lazycece.rapidf.restful.response.RespStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+
+import javax.validation.ValidationException;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Custom exception handle with ${@link RespMap}
@@ -44,14 +49,21 @@ public class RespMapExceptionHandler {
     @ExceptionHandler(value = BindException.class)
     public RespMap bindExceptionHandler(BindException e) {
         BindingResult bindingResult = e.getBindingResult();
-        StringBuilder stringBuilder = new StringBuilder();
-        bindingResult.getAllErrors().forEach(
-                objectError ->
-                        stringBuilder.append(",").append(objectError.getDefaultMessage())
-        );
-        String errorMessage = stringBuilder.toString();
-        errorMessage = errorMessage.substring(1);
-        return RespMap.fail(RespStatus.PARAM_ERROR.getCode(), errorMessage);
+        List<String> errorMessage = bindingResult.getAllErrors().stream()
+                .map(DefaultMessageSourceResolvable::getDefaultMessage)
+                .collect(Collectors.toList());
+        return RespMap.fail(RespStatus.PARAM_ERROR.getCode(), errorMessage.toString());
+    }
+
+    /**
+     * validation exception handle.
+     *
+     * @param e ${@link ValidationException}
+     * @return see ${@link RespMap}
+     */
+    @ExceptionHandler(value = ValidationException.class)
+    public RespMap validationExceptionHandler(ValidationException e) {
+        return RespMap.fail(RespStatus.PARAM_ERROR.getCode(), e.getMessage());
     }
 
     /**

@@ -22,7 +22,7 @@ import com.lazycece.rapidf.dispatcher.exception.DispatchException;
 import com.lazycece.rapidf.dispatcher.core.DispatchRequestParser;
 import com.lazycece.rapidf.dispatcher.core.Dispatcher;
 import com.lazycece.rapidf.dispatcher.helper.FacadeHelper;
-import com.lazycece.rapidf.dispatcher.utils.ValidateUtils;
+import com.lazycece.rapidf.dispatcher.helper.ValidateHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
@@ -82,7 +82,7 @@ public class FacadeDispatcher implements Dispatcher, BeanPostProcessor {
         Object request = dispatchRequestParser.parse(facadeCmd.getRequest(), facadeAction.getRequestClass());
 
         if (dispatcherProperties.isValidateRequest()) {
-            ValidateUtils.validate(request);
+            ValidateHelper.validate(request);
         }
 
         try {

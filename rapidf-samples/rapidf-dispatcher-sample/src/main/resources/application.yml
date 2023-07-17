@@ -1,0 +1,4 @@
+rapidf:
+  dispatcher:
+    pattern: service
+    validate-request: false

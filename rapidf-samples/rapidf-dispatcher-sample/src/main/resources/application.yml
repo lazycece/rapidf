@@ -1,4 +1,4 @@
 rapidf:
   dispatcher:
     pattern: facade
-    validate-request: false
+    validate-request: true

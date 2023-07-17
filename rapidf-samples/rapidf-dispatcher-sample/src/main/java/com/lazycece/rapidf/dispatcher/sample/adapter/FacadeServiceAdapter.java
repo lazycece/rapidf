@@ -18,6 +18,7 @@ package com.lazycece.rapidf.dispatcher.sample.adapter;
 
 import com.lazycece.rapidf.dispatcher.core.Dispatcher;
 import com.lazycece.rapidf.dispatcher.core.facade.FacadeCmd;
+import com.lazycece.rapidf.restful.response.RespData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,12 +38,12 @@ public class FacadeServiceAdapter {
     private Dispatcher dispatcher;
 
     @PostMapping("/handle")
-    public Object handle(@RequestBody @Validated FacadeRequest request) {
+    public RespData<?> handle(@RequestBody @Validated FacadeRequest request) {
         FacadeCmd cmd = new FacadeCmd();
         cmd.setName(request.getName());
         cmd.setVersion(request.getVersion());
         cmd.setAction(request.getAction());
         cmd.setRequest(request.getRequestData());
-        return dispatcher.dispatch(cmd);
+        return RespData.success(dispatcher.dispatch(cmd));
     }
 }

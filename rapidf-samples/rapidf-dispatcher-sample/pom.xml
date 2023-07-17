@@ -33,6 +33,10 @@
     <dependencies>
         <dependency>
             <groupId>com.lazycece.rapidf</groupId>
+            <artifactId>rapidf-restful</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lazycece.rapidf</groupId>
             <artifactId>rapidf-utils</artifactId>
         </dependency>
         <dependency>

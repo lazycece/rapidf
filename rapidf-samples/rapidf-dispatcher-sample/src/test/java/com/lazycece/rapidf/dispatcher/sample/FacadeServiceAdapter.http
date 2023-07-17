@@ -9,6 +9,17 @@ Content-Type: application/json
   "requestData": "{\"userId\":\"userId\",\"goodsId\":\"goodsId\",\"count\":1}"
 }
 
+### order.create validation
+POST http://localhost:8080/facade/handle
+Content-Type: application/json
+
+{
+  "name": "order",
+  "version": "1.0.0",
+  "action": "create",
+  "requestData": "{\"userId\":\"\",\"goodsId\":\"\",\"count\":1}"
+}
+
 ### order.cancel
 POST http://localhost:8080/facade/handle
 Content-Type: application/json

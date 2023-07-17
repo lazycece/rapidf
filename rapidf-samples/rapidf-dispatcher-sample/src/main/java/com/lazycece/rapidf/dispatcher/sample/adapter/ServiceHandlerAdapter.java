@@ -18,6 +18,7 @@ package com.lazycece.rapidf.dispatcher.sample.adapter;
 
 import com.lazycece.rapidf.dispatcher.core.Dispatcher;
 import com.lazycece.rapidf.dispatcher.core.service.ServiceCmd;
+import com.lazycece.rapidf.restful.response.RespData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,11 +38,11 @@ public class ServiceHandlerAdapter {
     private Dispatcher dispatcher;
 
     @PostMapping("/handle")
-    public Object handle(@RequestBody @Validated ServiceRequest request) {
+    public RespData<?> handle(@RequestBody @Validated ServiceRequest request) {
         ServiceCmd cmd = new ServiceCmd();
         cmd.setName(request.getName());
         cmd.setVersion(request.getVersion());
         cmd.setRequest(request.getRequestData());
-        return dispatcher.dispatch(cmd);
+        return RespData.success(dispatcher.dispatch(cmd));
     }
 }

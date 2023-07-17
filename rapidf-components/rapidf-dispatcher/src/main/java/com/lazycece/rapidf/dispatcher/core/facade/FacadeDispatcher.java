@@ -43,7 +43,7 @@ import java.util.concurrent.ConcurrentHashMap;
  *
  * @author lazycece
  * @date 2023/7/2
- * @see Dispatcher,BeanPostProcessor
+ * @see Dispatcher
  */
 @Component
 @ConditionalOnBean(value = {DispatchRequestParser.class, DispatcherProperties.class})

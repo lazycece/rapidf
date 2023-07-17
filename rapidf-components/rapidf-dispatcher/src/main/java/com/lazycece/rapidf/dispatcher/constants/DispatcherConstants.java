@@ -23,4 +23,6 @@ package com.lazycece.rapidf.dispatcher.constants;
 public class DispatcherConstants {
 
     public static final String SERVICE_HANDLER_METHOD_NAME = "handle";
+
+    public static final int FACADE_ACTION_PARAMETER_LEN = 1;
 }

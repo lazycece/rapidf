@@ -16,6 +16,7 @@
 
 package com.lazycece.rapidf.dispatcher.helper;
 
+import com.lazycece.rapidf.dispatcher.constants.DispatcherConstants;
 import com.lazycece.rapidf.dispatcher.core.facade.*;
 import com.lazycece.rapidf.dispatcher.exception.DispatchException;
 
@@ -54,7 +55,7 @@ public class FacadeHelper {
 
         return Arrays.stream(facadeIfs.getMethods()).map(method -> {
             Class<?>[] ptc = method.getParameterTypes();
-            if (ptc.length != 1) {
+            if (ptc.length != DispatcherConstants.FACADE_ACTION_PARAMETER_LEN) {
                 throw new DispatchException("The parameter length of the facade service action is wrong.");
             }
             Class<?> requestClass = ptc[0];

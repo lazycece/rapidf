@@ -31,8 +31,7 @@
     <description>${project.name}</description>
 
     <properties>
-        <au-api-spring-boot.version>1.0.2</au-api-spring-boot.version>
-        <servlet.api.version>3.1.0</servlet.api.version>
+        <au-api-spring-boot.version>2.0.0</au-api-spring-boot.version>
     </properties>
 
     <dependencies>
@@ -57,9 +56,8 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${servlet.api.version}</version>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
             <optional>true</optional>
         </dependency>
     </dependencies>

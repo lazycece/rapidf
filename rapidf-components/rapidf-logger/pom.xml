@@ -30,10 +30,6 @@
     <name>Rapidf Logger</name>
     <description>${project.name}</description>
 
-    <properties>
-        <spring.aop>5.3.13</spring.aop>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -43,7 +39,6 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
-            <version>${spring.aop}</version>
             <optional>true</optional>
         </dependency>
         <dependency>

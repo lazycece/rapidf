@@ -16,7 +16,7 @@
 
 package com.lazycece.rapidf.restful.sample.request;
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 
 /**
  * @author lazycece

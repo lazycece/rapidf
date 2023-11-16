@@ -1,0 +1,68 @@
+POST http://localhost:8080/service/handle
+Content-Type: application/json
+
+{
+  "name": "order_cancel",
+  "version": "1.0.0",
+  "requestData": "{\"userId\":\"userId\",\"orderId\":\"orderId\"}"
+}
+
+<> 2023-11-17T011627.200.json
+
+###
+
+POST http://localhost:8080/service/handle
+Content-Type: application/json
+
+{
+  "name": "order_create",
+  "version": "1.0.0",
+  "requestData": "{\"userId\":\"userId\",\"goodsId\":\"goodsId\",\"count\":1}"
+}
+
+<> 2023-11-17T011622.200.json
+
+###
+
+POST http://localhost:8080/facade/handle
+Content-Type: application/json
+
+{
+  "name": "order",
+  "version": "1.0.0",
+  "action": "cancel",
+  "requestData": "{\"userId\":\"userId\",\"orderId\":\"orderId\"}"
+}
+
+<> 2023-11-17T011539.200.json
+
+###
+
+POST http://localhost:8080/facade/handle
+Content-Type: application/json
+
+{
+  "name": "order",
+  "version": "1.0.0",
+  "action": "create",
+  "requestData": "{\"userId\":\"\",\"goodsId\":\"\",\"count\":1}"
+}
+
+<> 2023-11-17T011519.200.json
+
+###
+
+POST http://localhost:8080/facade/handle
+Content-Type: application/json
+
+{
+  "name": "order",
+  "version": "1.0.0",
+  "action": "create",
+  "requestData": "{\"userId\":\"userId\",\"goodsId\":\"goodsId\",\"count\":1}"
+}
+
+<> 2023-11-17T011508.200.json
+
+###
+

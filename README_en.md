@@ -8,8 +8,9 @@
 
 ## What does it do ?
 
-Rapidf (`Rapi`d `D`development `F`ramework ) is a development framework. Its idea is to extract the code related to business
-low coupling in our daily development work and form reusable and portable component assets. Rapidf currently has the following components:
+Rapidf (`Rapi`d `D`development `F`ramework ) is a development framework. Committed to extracting business low-coupling related codes in daily development work and forming portable component assets to solve the standardization and manageability of application architecture.  
+
+Rapidf currently has the following components:
 
 - rapidf-auapi: Based on rapidf component integration [AuApi](https://github.com/lazycece/au-api-spring-boot) framework, out of the box
 - rapidf-dispatcher：Based on the application of the hexagonal architecture idea, the inbound adapter framework is implemented, and two modes of service handler and facade service are supported

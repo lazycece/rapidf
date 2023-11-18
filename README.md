@@ -21,6 +21,15 @@ Rapidf 目前有如下组件：
 - rapidf-validation：hibernate-validation的扩展
 
 
+## 环境依赖
+
+Rapidf 环境依赖如下:
+
+|Rapidf|Java|Spring Boot|
+|---|---|---|
+|1.x|1.8+|2.x|
+|2.x|17+|3.x|
+
 ## 快速开始
 
 完整的示例可以看 [rapidf-samples](https://github.com/lazycece/rapidf/tree/main/rapidf-samples).

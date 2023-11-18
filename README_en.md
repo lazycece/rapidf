@@ -21,6 +21,16 @@ Rapidf currently has the following components:
 - rapidf-validation: Extension of hibernate-validation
 
 
+## Environment
+
+Rapidf environment dependency as follow::
+
+|Rapidf|Java|Spring Boot|
+|---|---|---|
+|1.x|1.8+|2.x|
+|2.x|17+|3.x|
+
+
 ## Quick Start
 
 Complete example can view [rapidf-samples](https://github.com/lazycece/rapidf/tree/main/rapidf-samples).

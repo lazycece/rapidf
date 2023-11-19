@@ -72,7 +72,7 @@
         <maven.surefire.plugin.version>2.22.1</maven.surefire.plugin.version>
         <maven.source.plugin.version>3.0.1</maven.source.plugin.version>
         <maven.deploy.plugin.version>2.8.2</maven.deploy.plugin.version>
-        <maven.javadoc.plugin.version>2.10.4</maven.javadoc.plugin.version>
+        <maven.javadoc.plugin.version>3.5.0</maven.javadoc.plugin.version>
         <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
         <flatten.maven.plugin.version>1.2.7</flatten.maven.plugin.version>
     </properties>
@@ -157,12 +157,16 @@
                 <version>${maven.javadoc.plugin.version}</version>
                 <configuration>
                     <skip>${maven.javadoc.skip}</skip>
-                    <tags>
-                        <tag>
-                            <name>date</name>
-                        </tag>
-                    </tags>
+                    <additionalJOption>-tag date</additionalJOption>
                     <locale>en_US</locale>
+                    <charset>UTF-8</charset>
+                    <encoding>UTF-8</encoding>
+                    <docencoding>UTF-8</docencoding>
+                    <source>${maven.compiler.source}</source>
+                    <links>
+                        <link>http://docs.oracle.com/javase/17/docs/api</link>
+                    </links>
+                    <doclint>none</doclint>
                 </configuration>
                 <executions>
                     <execution>

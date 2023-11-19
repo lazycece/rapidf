@@ -8,7 +8,9 @@
 
 ## Rapidf 是做什么的？
 
-Rapidf (`Rapi`d `D`evelopment `F`ramework ) 是一个快速开发框架，其构思是将我们日常开发工作中业务低耦合相关的代码抽取并形成可复用、可迁移的组件资产。Rapidf 目前有如下组件：
+Rapidf (`Rapi`d `D`evelopment `F`ramework ) 是一个快速开发框架，致力于将日常开发工作中业务低耦合相关代码抽取并形成可迁移的组件资产，以解决应用架构的规范性与易治理性。
+
+Rapidf 目前有如下组件：
 
 - rapidf-auapi：基于rapidf组件集成[AuApi](https://github.com/lazycece/au-api-spring-boot) 框架，开箱即用
 - rapidf-dispatcher：基于应用六边形架构思想，实现入站适配器框架，支持服务处理器和门面服务两种模式
@@ -18,6 +20,15 @@ Rapidf (`Rapi`d `D`evelopment `F`ramework ) 是一个快速开发框架，其构
 - rapidf-utils：沉淀可复用的工具类
 - rapidf-validation：hibernate-validation的扩展
 
+
+## 环境依赖
+
+Rapidf 环境依赖如下:
+
+|Rapidf|Java|Spring Boot|
+|---|---|---|
+|1.x|1.8+|2.x|
+|2.x|17+|3.x|
 
 ## 快速开始
 

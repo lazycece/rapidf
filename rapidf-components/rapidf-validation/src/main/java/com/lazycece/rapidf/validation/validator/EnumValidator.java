@@ -18,8 +18,9 @@ package com.lazycece.rapidf.validation.validator;
 
 import com.lazycece.rapidf.validation.constraints.Enum;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
+
 import java.lang.reflect.Method;
 
 /**

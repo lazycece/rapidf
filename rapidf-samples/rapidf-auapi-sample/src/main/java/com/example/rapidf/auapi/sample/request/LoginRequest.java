@@ -3,7 +3,7 @@ package com.example.rapidf.auapi.sample.request;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 
 /**
  * @author lazycece

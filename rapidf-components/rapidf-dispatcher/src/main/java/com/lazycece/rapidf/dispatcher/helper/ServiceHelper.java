@@ -20,8 +20,8 @@ import com.lazycece.rapidf.dispatcher.core.service.CommandHandler;
 import com.lazycece.rapidf.dispatcher.core.service.Handler;
 import com.lazycece.rapidf.dispatcher.core.service.QueryHandler;
 import com.lazycece.rapidf.dispatcher.exception.DispatchException;
-import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
 
+import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -51,9 +51,9 @@ public class ServiceHelper {
 
     public static Class<?> getRequestClass(Class<?> clazz) {
         String className = Arrays.stream(clazz.getGenericInterfaces())
-                .filter(type -> type instanceof ParameterizedTypeImpl)
-                .map(type -> (ParameterizedTypeImpl) type)
-                .filter(parameterizedType -> SERVICE_SPEC_INTERFACES.contains(parameterizedType.getRawType()))
+                .filter(type -> type instanceof ParameterizedType)
+                .map(type -> (ParameterizedType) type)
+                .filter(parameterizedType -> SERVICE_SPEC_INTERFACES.contains((Class<?>) parameterizedType.getRawType()))
                 .map(parameterizedType -> parameterizedType.getActualTypeArguments()[1].getTypeName())
                 .findFirst()
                 .orElseThrow(() -> new DispatchException("There is no request class."));

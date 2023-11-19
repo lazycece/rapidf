@@ -19,7 +19,7 @@ package com.lazycece.rapidf.dispatcher.sample.adapter;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 
 /**
  * @author lazycece

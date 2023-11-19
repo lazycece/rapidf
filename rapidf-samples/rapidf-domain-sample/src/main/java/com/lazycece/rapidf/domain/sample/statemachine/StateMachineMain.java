@@ -21,7 +21,6 @@ import com.lazycece.rapidf.domain.sample.statemachine.transition.AuditPassTransi
 import com.lazycece.rapidf.domain.sample.statemachine.transition.AuditRejectTransition;
 import com.lazycece.rapidf.domain.sample.statemachine.transition.AuditSubmitTransition;
 import com.lazycece.rapidf.domain.statemachine.State;
-import org.apache.log4j.PropertyConfigurator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,9 +33,6 @@ import java.util.UUID;
 public class StateMachineMain {
 
     public static void main(String[] args) {
-
-        PropertyConfigurator.configure(ClassLoader.getSystemResource("log4j.properties"));
-
         List<AbstractGoodsAuditStateTransition> transitions = new ArrayList<>();
         transitions.add(new AuditSubmitTransition());
         transitions.add(new AuditPassTransition());

@@ -19,7 +19,7 @@ package com.lazycece.rapidf.validation.sample.req;
 import com.lazycece.rapidf.validation.constraints.Enum;
 import com.lazycece.rapidf.validation.sample.enums.StatusEnum;
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 
 /**
  * @author lazycece

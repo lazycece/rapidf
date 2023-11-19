@@ -18,14 +18,12 @@ package com.lazycece.rapidf.dispatcher.sample;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @author lazycece
  * @date 2023/7/17
  */
 @SpringBootApplication
-//@ComponentScan(basePackages = "com.lazycece.rapidf.dispatcher")
 public class RapidfDispatcherSampleApplication {
     public static void main(String[] args) {
         SpringApplication.run(RapidfDispatcherSampleApplication.class, args);

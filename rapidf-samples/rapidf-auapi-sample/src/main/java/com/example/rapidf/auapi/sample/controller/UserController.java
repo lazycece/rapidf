@@ -9,8 +9,8 @@ import com.lazycece.rapidf.restful.response.RespData;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * @author lazycece

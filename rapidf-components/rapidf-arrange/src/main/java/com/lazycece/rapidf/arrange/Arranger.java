@@ -18,6 +18,7 @@ package com.lazycece.rapidf.arrange;
 
 import com.lazycece.rapidf.arrange.function.Handler;
 import com.lazycece.rapidf.arrange.handler.PriorityHandler;
+import com.lazycece.rapidf.arrange.stream.ArrangeStream;
 import com.lazycece.rapidf.arrange.template.ProcessTemplate;
 
 import java.util.Comparator;
@@ -69,5 +70,16 @@ public class Arranger {
                 .sorted(Comparator.comparingInt(PriorityHandler::getOrder))
                 .filter(handler -> handler.accept(context))
                 .forEach(handler -> handler.handle(context));
+    }
+
+    /**
+     * Stream process arrange.
+     *
+     * @param context context
+     * @param <C>     context type
+     * @return stream
+     */
+    public static <C> ArrangeStream<C> stream(C context) {
+        return ArrangeStream.of(context);
     }
 }

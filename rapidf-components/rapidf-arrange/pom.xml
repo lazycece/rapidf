@@ -10,7 +10,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>rapidf-arrange</artifactId>
-    <name>Rapidf Dispatcher</name>
+    <name>Rapidf Arrange</name>
     <description>${project.name}</description>
 
     <dependencies>

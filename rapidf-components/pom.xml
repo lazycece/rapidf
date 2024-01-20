@@ -15,6 +15,7 @@
     <description>${project.name}</description>
 
     <modules>
+        <module>rapidf-arrange</module>
         <module>rapidf-auapi</module>
         <module>rapidf-dispatcher</module>
         <module>rapidf-domain</module>
@@ -60,6 +61,11 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-aop</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
                 <version>${spring.version}</version>
             </dependency>
             <dependency>

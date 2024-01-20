@@ -16,6 +16,11 @@
         <dependencies>
             <dependency>
                 <groupId>com.lazycece.rapidf</groupId>
+                <artifactId>rapidf-arrange</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lazycece.rapidf</groupId>
                 <artifactId>rapidf-auapi</artifactId>
                 <version>${project.version}</version>
             </dependency>

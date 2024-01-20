@@ -22,6 +22,7 @@ package com.lazycece.rapidf.arrange.function;
  * @author lazycece
  * @date 2024/1/20
  */
+@FunctionalInterface
 public interface Handler<T> {
 
     /**

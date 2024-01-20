@@ -16,6 +16,7 @@
     <description>${project.name}</description>
 
     <modules>
+        <module>rapidf-arrange-sample</module>
         <module>rapidf-auapi-sample</module>
         <module>rapidf-dispatcher-sample</module>
         <module>rapidf-domain-sample</module>

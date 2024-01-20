@@ -12,6 +12,7 @@ Rapidf (`Rapi`d `D`development `F`ramework ) is a development framework. Committ
 
 Rapidf currently has the following components:
 
+- rapidf-arrange: Using to standardized arrange application business logic.
 - rapidf-auapi: Based on rapidf component integration [AuApi](https://github.com/lazycece/au-api-spring-boot) framework, out of the box
 - rapidf-dispatcher：Based on the application of the hexagonal architecture idea, the inbound adapter framework is implemented, and two modes of service handler and facade service are supported
 - rapidf-domain: From a domain-driven perspective, define the basic information related to the domain (model, event, statemachine and so on)
@@ -25,10 +26,10 @@ Rapidf currently has the following components:
 
 Rapidf environment dependency as follow::
 
-|Rapidf|Java|Spring Boot|
-|---|---|---|
-|1.x|1.8+|2.x|
-|2.x|17+|3.x|
+|Rapidf|Java|Spring Boot|Remark|
+|---|---|---| --- |
+|1.x|1.8+|2.x| stop support new features |
+|2.x|17+|3.x| continuously updating|
 
 
 ## Quick Start

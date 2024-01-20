@@ -12,6 +12,7 @@ Rapidf (`Rapi`d `D`evelopment `F`ramework ) 是一个快速开发框架，致力
 
 Rapidf 目前有如下组件：
 
+- rapidf-arrange：用于规范应用业务逻辑的编排处理
 - rapidf-auapi：基于rapidf组件集成[AuApi](https://github.com/lazycece/au-api-spring-boot) 框架，开箱即用
 - rapidf-dispatcher：基于应用六边形架构思想，实现入站适配器框架，支持服务处理器和门面服务两种模式
 - rapidf-domain：从领域驱动的视角，定义领域相关的基本信息（模型、事件、状态机等等）
@@ -25,10 +26,10 @@ Rapidf 目前有如下组件：
 
 Rapidf 环境依赖如下:
 
-|Rapidf|Java|Spring Boot|
-|---|---|---|
-|1.x|1.8+|2.x|
-|2.x|17+|3.x|
+|Rapidf|Java|Spring Boot|备注|
+|---|---|---| --- |
+|1.x|1.8+|2.x| 停止支持新功能 |
+|2.x|17+|3.x| 持续更新中|
 
 ## 快速开始
 

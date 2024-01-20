@@ -16,27 +16,27 @@
 
 package com.lazycece.rapidf.arrange.sample;
 
-import com.lazycece.rapidf.arrange.handler.PriorityHandler;
+import com.lazycece.rapidf.arrange.handler.AbstractTemplateHandler;
 import com.lazycece.rapidf.arrange.sample.context.SampleContext;
 
 /**
  * @author lazycece
  * @date 2024/1/20
  */
-public class SamplePriorityHandler implements PriorityHandler<SampleContext> {
+public class TemplateHandlerSample extends AbstractTemplateHandler<SampleContext> {
 
     @Override
-    public boolean accept(SampleContext sampleContext) {
-        return PriorityHandler.super.accept(sampleContext);
+    protected boolean preHandle(SampleContext sampleContext) {
+        return super.preHandle(sampleContext);
     }
 
     @Override
-    public int getOrder() {
-        return PriorityHandler.super.getOrder();
+    protected void doHandle(SampleContext sampleContext) {
+
     }
 
     @Override
-    public void handle(SampleContext sampleContext) {
-
+    protected void postHandle(SampleContext sampleContext) {
+        super.postHandle(sampleContext);
     }
 }

@@ -16,20 +16,27 @@
 
 package com.lazycece.rapidf.arrange.sample;
 
-import com.lazycece.rapidf.arrange.command.Command;
+import com.lazycece.rapidf.arrange.handler.PriorityHandler;
+import com.lazycece.rapidf.arrange.sample.context.SampleContext;
 
 /**
  * @author lazycece
  * @date 2024/1/20
  */
-public class SampleCommand implements Command<Void, SampleCommand.CommandCmd> {
+public class PriorityHandlerSample implements PriorityHandler<SampleContext> {
 
     @Override
-    public Void execute(CommandCmd commandCmd) {
-        return null;
+    public boolean accept(SampleContext sampleContext) {
+        return PriorityHandler.super.accept(sampleContext);
     }
 
-    static class CommandCmd {
+    @Override
+    public int getOrder() {
+        return PriorityHandler.super.getOrder();
+    }
+
+    @Override
+    public void handle(SampleContext sampleContext) {
 
     }
 }

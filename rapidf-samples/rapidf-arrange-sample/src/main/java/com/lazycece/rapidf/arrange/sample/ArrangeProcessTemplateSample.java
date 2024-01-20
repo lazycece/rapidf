@@ -16,27 +16,34 @@
 
 package com.lazycece.rapidf.arrange.sample;
 
-import com.lazycece.rapidf.arrange.handler.AbstractTemplateHandler;
-import com.lazycece.rapidf.arrange.sample.context.SampleContext;
+import com.lazycece.rapidf.arrange.Arranger;
+import com.lazycece.rapidf.arrange.template.ProcessTemplate;
+
+import java.util.Random;
 
 /**
  * @author lazycece
  * @date 2024/1/20
  */
-public class SampleTemplateHandler extends AbstractTemplateHandler<SampleContext> {
+public class ArrangeProcessTemplateSample {
 
-    @Override
-    protected boolean preHandle(SampleContext sampleContext) {
-        return super.preHandle(sampleContext);
+    public static void main(String[] args) {
+        System.out.println(random(10));
     }
 
-    @Override
-    protected void doHandle(SampleContext sampleContext) {
+    public static int random(int bound) {
+        return Arranger.process(new ProcessTemplate<>() {
+            @Override
+            public void checkParam() {
+                if (bound <= 5) {
+                    throw new RuntimeException("error");
+                }
+            }
 
-    }
-
-    @Override
-    protected void postHandle(SampleContext sampleContext) {
-        super.postHandle(sampleContext);
+            @Override
+            public Integer handle() {
+                return new Random().nextInt(bound);
+            }
+        });
     }
 }

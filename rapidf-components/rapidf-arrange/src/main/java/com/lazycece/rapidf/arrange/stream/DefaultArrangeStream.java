@@ -63,7 +63,7 @@ public final class DefaultArrangeStream<Context> implements ArrangeStream<Contex
      * @see ArrangeStream#parallel
      */
     @Override
-    public ArrangeStream<Context> parallel(List<Handler<Context>> handlers) {
+    public ArrangeStream<Context> parallel(List<? extends Handler<Context>> handlers) {
         Objects.requireNonNull(handlers);
         stream = stream.filter(context -> {
             handlers.stream().parallel().forEach(handler -> handler.handle(context));

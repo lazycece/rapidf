@@ -52,7 +52,7 @@ public interface ArrangeStream<C> {
      * @param handlers ${@link Handler}
      * @return stream
      */
-    ArrangeStream<C> parallel(List<Handler<C>> handlers);
+    ArrangeStream<C> parallel(List<? extends Handler<C>> handlers);
 
     /**
      * To answer a result.

@@ -20,7 +20,9 @@ import com.lazycece.rapidf.arrange.Arranger;
 import com.lazycece.rapidf.arrange.handler.PriorityHandler;
 import com.lazycece.rapidf.arrange.sample.context.SampleContext;
 
-import java.util.List;
+import java.util.Comparator;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author lazycece
@@ -30,7 +32,8 @@ public class ArrangePriorityHandlerSample {
 
     public static void main(String[] args) {
         SampleContext context = new SampleContext();
-        Arranger.process(context, List.of(new PriorityHandlerSample2(), new PriorityHandlerSample1()));
+        Arranger.process(context, Stream.of(new PriorityHandlerSample2(), new PriorityHandlerSample1())
+                .sorted(Comparator.comparingInt(PriorityHandler::getOrder)).collect(Collectors.toList()));
     }
 
     static class PriorityHandlerSample1 implements PriorityHandler<SampleContext> {

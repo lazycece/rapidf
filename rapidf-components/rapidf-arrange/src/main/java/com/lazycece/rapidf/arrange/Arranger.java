@@ -21,7 +21,6 @@ import com.lazycece.rapidf.arrange.handler.PriorityHandler;
 import com.lazycece.rapidf.arrange.stream.ArrangeStream;
 import com.lazycece.rapidf.arrange.template.ProcessTemplate;
 
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -67,7 +66,6 @@ public class Arranger {
      */
     public static <C> void process(C context, List<PriorityHandler<C>> priorityHandlers) {
         priorityHandlers.stream()
-                .sorted(Comparator.comparingInt(PriorityHandler::getOrder))
                 .filter(handler -> handler.accept(context))
                 .forEach(handler -> handler.handle(context));
     }

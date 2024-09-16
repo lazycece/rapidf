@@ -21,6 +21,8 @@ Rapidf 目前有如下组件：
 - rapidf-utils：沉淀可复用的工具类
 - rapidf-validation：hibernate-validation的扩展
 
+![component_architecture](./document/picture/component_architecture.png)
+
 
 ## 环境依赖
 

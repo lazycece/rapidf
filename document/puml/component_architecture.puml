@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+node "Components Factory" {
+    node "Infra Components" {
+        [rapidf-logger]
+        [rapidf-utils]
+    }
+
+    node "Domain Components" {
+        [rapidf-domain]
+        [rapidf-arrange]
+    }
+
+    node "API Components" {
+        [rapidf-auapi]
+        [rapidf-dispatcher]
+        [rapidf-restful]
+        [rapidf-validation]
+    }
+}
+
+
+@enduml

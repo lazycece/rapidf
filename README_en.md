@@ -21,6 +21,8 @@ Rapidf currently has the following components:
 - rapidf-utils: Precipitate reusable tools
 - rapidf-validation: Extension of hibernate-validation
 
+![component_architecture](./document/picture/component_architecture.png)
+
 
 ## Environment
 

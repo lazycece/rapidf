@@ -35,7 +35,7 @@ public class UserController {
     }
 
     @GetMapping("/info")
-    public Object getUserInfo(String userId) {
+    public Object getUserInfo(@RequestParam(name = "userId") String userId) {
         log.info("tester: userId = {}", userId);
         UserSubject subject = (UserSubject) SubjectContext.getContext();
         return RespData.success(subject);

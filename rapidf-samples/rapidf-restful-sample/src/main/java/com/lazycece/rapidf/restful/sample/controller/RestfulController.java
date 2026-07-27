@@ -32,13 +32,13 @@ import org.springframework.web.bind.annotation.*;
 public class RestfulController {
 
     @GetMapping("/hello")
-    public RespMap example(String name, int age) {
+    public RespMap example(@RequestParam("name") String name, @RequestParam("age") int age) {
         String data = String.format("hello, %s,  %s years old.", name, age);
         return RespMap.success(data);
     }
 
     @GetMapping("/hello/exception1")
-    public RespData<?> exception1(@RequestParam String name, int age) {
+    public RespData<?> exception1(@RequestParam("name") String name, @RequestParam("age") int age) {
         String data = String.format("hello, %s,  %s years old.", name, age);
         return RespData.success(data);
     }
@@ -56,7 +56,7 @@ public class RestfulController {
     }
 
     @GetMapping("/hello/exception3")
-    public RespMap exception3(@RequestParam String name, int age) {
+    public RespMap exception3(@RequestParam("name") String name, @RequestParam("age") int age) {
         String data = String.format("hello, %s,  %s years old.", name, age);
         return RespMap.success(data);
     }

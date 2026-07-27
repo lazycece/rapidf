@@ -28,10 +28,12 @@ Rapidf currently has the following components:
 
 Rapidf environment dependency as follow::
 
-|Rapidf|Java|Spring Boot|Remark|
-|---|---|---| --- |
-|1.x|1.8+|2.x| stop support new features |
-|2.x|17+|3.x| continuously updating|
+| Rapidf |Java| Spring Boot |Remark|
+|--------|---|-------------| --- |
+| 1.x    |1.8+| 2.x         | stop support new features |
+| 2.x    |17+| 3.x         | stop support new features|
+| 3.x    |17+| 4.x         | continuously updating|
+
 
 
 ## Quick Start

@@ -159,18 +159,6 @@ Assert.assignableFrom(clazz, MyInterface.class, RespStatus.FAIL, "type mismatch"
 
 ---
 
-## 关键引入
-
-```java
-import com.lazycece.rapidf.restful.response.RespData;
-import com.lazycece.rapidf.restful.response.RespMap;
-import com.lazycece.rapidf.restful.response.RespStatus;
-import com.lazycece.rapidf.restful.Assert;
-import com.lazycece.rapidf.restful.exception.*;
-import com.lazycece.rapidf.restful.exception.factory.ExceptionFactory;
-import com.lazycece.rapidf.restful.exception.handler.RespDataExceptionHandler;
-```
-
 ## 参考
 
 - 框架源码：https://github.com/lazycece/rapidf/releases ，框架发布版本与当前skill版本对应

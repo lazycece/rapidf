@@ -210,25 +210,6 @@ public interface QueryHandler<R, Q extends Query> { R handle(Q query); }
 
 ---
 
-## 关键引入
-
-```java
-// 模型
-import com.lazycece.rapidf.domain.model.Entity;
-import com.lazycece.rapidf.domain.model.Aggregate;
-import com.lazycece.rapidf.domain.model.BaseEnum;
-// 状态机
-import com.lazycece.rapidf.domain.statemachine.*;
-// 领域事件
-import com.lazycece.rapidf.domain.event.*;
-import com.lazycece.rapidf.domain.event.handler.*;
-// CQRS
-import com.lazycece.rapidf.domain.cqrs.Command;
-import com.lazycece.rapidf.domain.cqrs.Query;
-// 分层注解
-import com.lazycece.rapidf.domain.anotation.*;
-```
-
 ## 参考
 
 - 框架源码：https://github.com/lazycece/rapidf/releases ，框架发布版本与当前skill版本对应

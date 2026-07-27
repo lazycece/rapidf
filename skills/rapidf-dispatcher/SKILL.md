@@ -178,17 +178,6 @@ public class GlobalExceptionHandler extends RespDataExceptionHandler {
 
 ---
 
-## 关键引入
-
-```java
-import com.lazycece.rapidf.dispatcher.core.Dispatcher;
-import com.lazycece.rapidf.dispatcher.core.DispatchRequestParser;
-import com.lazycece.rapidf.dispatcher.core.service.*;
-import com.lazycece.rapidf.dispatcher.core.facade.*;
-import com.lazycece.rapidf.restful.response.RespData;
-import com.lazycece.rapidf.restful.exception.handler.RespDataExceptionHandler;
-```
-
 ## 参考
 - 框架源码：https://github.com/lazycece/rapidf/releases ，框架发布版本与当前skill版本对应
 - 核心：`rapidf-components/rapidf-dispatcher/src/main/java/com/lazycece/rapidf/dispatcher/core/`

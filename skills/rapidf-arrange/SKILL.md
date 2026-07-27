@@ -128,18 +128,6 @@ Integer result = Arranger.stream(context)
 
 ---
 
-## 关键引入
-
-```java
-import com.lazycece.rapidf.arrange.Arranger;
-import com.lazycece.rapidf.arrange.function.Handler;
-import com.lazycece.rapidf.arrange.function.Filter;
-import com.lazycece.rapidf.arrange.function.Answer;
-import com.lazycece.rapidf.arrange.template.ProcessTemplate;
-import com.lazycece.rapidf.arrange.handler.AbstractTemplateHandler;
-import com.lazycece.rapidf.arrange.handler.PriorityHandler;
-```
-
 ## 参考
 - 框架源码：https://github.com/lazycece/rapidf/releases ，框架发布版本与当前skill版本对应
 - 源码：`rapidf-components/rapidf-arrange/src/main/java/com/lazycece/rapidf/arrange/Arranger.java`

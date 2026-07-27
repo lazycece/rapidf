@@ -6,7 +6,7 @@ import com.lazycece.au.api.params.utils.SaltUtils;
 import com.lazycece.au.api.token.TokenHolder;
 import com.lazycece.rapidf.restful.response.RespData;
 import com.lazycece.rapidf.restful.response.RespStatus;
-import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.boot.restclient.RestTemplateBuilder;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.*;
 import org.springframework.util.LinkedMultiValueMap;
@@ -28,7 +28,7 @@ public class HttpHelper {
     private ParamsHolder paramsHolder;
     private TokenHolder tokenHolder;
     private RestTemplate restTemplate;
-    private String token = "ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUo5LmV5SnpkV0lpT2lKeVR6QkJRbGhPZVVGRE9XcGlNakIxWWtkR05tVlhUbXhaTWxWMVkyMUdkMkZYVW0xTWJVWXhXVmhDY0V4dFZqUmtSMVoxWXpKc2RtSnBOVlpqTWxaNVZUTldhV0Z0Vm1wa1NqVndlRFU1ZVdJM05rbEJaMEZEVkVGQlIyUllUbXhqYTJ4clpFRkJVMVJIY0doa2JVVjJZa2RHZFZwNU9WUmtTRXB3WW0xak4xUkJRVWxrV0U1c1kyMDFhR0pYVm5oQlNEUkJRVmhvZDJSQlFVaFBSR2QzVFVSbk5FMUlVVUZEUjNob1pXNXNhbHBYVG13aUxDSnBjM01pT2lKVVQwdEZUaTFKVTFOVlJWSWlMQ0psZUhBaU9qRTJPRFF5TlRVeE9EVXNJbWxoZENJNk1UWTROREkxTXpNNE5YMC55UHBpckYzWkkySE44V3A2WURwaVRqUHMzRlZWM2JUR0ZYSzV1Z1NmaEd3=";
+    private String token = "ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUo5LmV5SnpkV0lpT2lKeVR6QkJRbGhPZVVGRE9XcGlNakIxWWtkR05tVlhUbXhaTWxWMVkyMUdkMkZYVW0xTWJVWXhXVmhDY0V4dFZqUmtSMVoxWXpKc2RtSnBOVlpqTWxaNVZUTldhV0Z0Vm1wa1NqVndlRFU1ZVdJM05rbEJaMEZEVkVGQlIyUllUbXhqYTJ4clpFRkJVMVJIY0doa2JVVjJZa2RHZFZwNU9WUmtTRXB3WW0xak4xUkJRVWxrV0U1c1kyMDFhR0pYVm5oQlNEUkJRVmhvZDJSQlFVaFBSR2QzVFVSbk5FMUlVVUZEUjNob1pXNXNhbHBYVG13aUxDSnBjM01pT2lKVVQwdEZUaTFKVTFOVlJWSWlMQ0psZUhBaU9qRTNPRFV4TlRVeE16UXNJbWxoZENJNk1UYzROVEUxTXpNek5IMC44YnlOQl9kcFhiYjBLcUlPQUVpQ3ZiQ3BVMmVsRDdsR1FidFU3cGxFNXJz";
 
     private HttpHelper() {
         this("http://127.0.0.1:8888/au-api");
@@ -37,7 +37,7 @@ public class HttpHelper {
     private HttpHelper(String rootUri) {
         restTemplate = new RestTemplateBuilder()
                 .rootUri(rootUri)
-                .setConnectTimeout(Duration.ofSeconds(10))
+                .connectTimeout(Duration.ofSeconds(10))
                 .build();
         paramsHolder = ParamsHolder.build("75HVYG0VQVDEYPLLODZUX99ZCV333EKY");
     }

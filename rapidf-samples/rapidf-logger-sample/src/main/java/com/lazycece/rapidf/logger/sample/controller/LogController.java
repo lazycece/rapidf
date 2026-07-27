@@ -21,8 +21,10 @@ import com.lazycece.rapidf.logger.sample.constants.LogNameConstants;
 import com.lazycece.rapidf.logger.sample.service.HelloService;
 import com.lazycece.rapidf.restful.exception.CommonException;
 import com.lazycece.rapidf.restful.response.RespMap;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -34,12 +36,14 @@ public class LogController {
 
     @Autowired
     private HelloService helloService;
+    org.slf4j.Logger log = LoggerFactory.getLogger(LogController.class);
 
     @GetMapping("/logHello")
     @Logger(symbol = "log-hello",
             digestLogName = LogNameConstants.CONTROLLER_DIGEST,
             detailLogName = LogNameConstants.CONTROLLER_DETAIL)
-    public RespMap logHello(String name) {
+    public RespMap logHello(@RequestParam(name = "name") String name) {
+        log.info("===============哈哈");
         return RespMap.success(helloService.hello(name));
     }
 
@@ -48,7 +52,7 @@ public class LogController {
             digestLogName = LogNameConstants.CONTROLLER_DIGEST,
             detailLogName = LogNameConstants.CONTROLLER_DETAIL,
             blacklist = {Integer.class})
-    public RespMap logBlacklist(String arg1, int arg2) {
+    public RespMap logBlacklist(@RequestParam(name = "arg1") String arg1, @RequestParam(name = "arg2") int arg2) {
         String data = String.format("Log parameter: %s, %s", arg1, arg2);
         return RespMap.success(data);
     }

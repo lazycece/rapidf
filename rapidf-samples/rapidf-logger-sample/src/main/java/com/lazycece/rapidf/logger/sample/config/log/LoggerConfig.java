@@ -28,7 +28,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class LoggerConfig {
 
-    @Bean
+    @Bean(name = "logInterceptor")
     public LogInterceptor logInterceptor() {
         LogInterceptor logInterceptor = new LogInterceptor();
         logInterceptor.setLogParser(new CustomLogParser());
@@ -37,7 +37,7 @@ public class LoggerConfig {
     }
 
     @Bean
-    public BeanNameAutoProxyCreator beanNameAutoProxyCreator() {
+    public static BeanNameAutoProxyCreator beanNameAutoProxyCreator() {
         BeanNameAutoProxyCreator beanNameAutoProxyCreator = new BeanNameAutoProxyCreator();
         beanNameAutoProxyCreator.setBeanNames("logController", "helloService*");
         beanNameAutoProxyCreator.setInterceptorNames("logInterceptor");

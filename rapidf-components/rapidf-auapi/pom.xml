@@ -31,7 +31,7 @@
     <description>${project.name}</description>
 
     <properties>
-        <au-api-spring-boot.version>2.0.0</au-api-spring-boot.version>
+        <au-api-spring-boot.version>3.0.0</au-api-spring-boot.version>
     </properties>
 
     <dependencies>

@@ -64,7 +64,7 @@ public class Arranger {
      * @param priorityHandlers ${@link PriorityHandler}
      * @param <C>              context type
      */
-    public static <C> void process(C context, List<PriorityHandler<C>> priorityHandlers) {
+    public static <C> void process(C context, List<? extends PriorityHandler<C>> priorityHandlers) {
         priorityHandlers.stream()
                 .filter(handler -> handler.accept(context))
                 .forEach(handler -> handler.handle(context));

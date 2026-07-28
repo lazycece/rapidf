@@ -16,6 +16,7 @@
 
 package com.lazycece.rapidf.domain.model;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -26,8 +27,8 @@ public class BaseInfo {
 
     private String creator;
     private String updater;
-    private Date createTime;
-    private Date updateTime;
+    private LocalDateTime createTime;
+    private LocalDateTime updateTime;
     private boolean deleted;
 
     public String getCreator() {
@@ -46,19 +47,19 @@ public class BaseInfo {
         this.updater = updater;
     }
 
-    public Date getCreateTime() {
+    public LocalDateTime getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(LocalDateTime createTime) {
         this.createTime = createTime;
     }
 
-    public Date getUpdateTime() {
+    public LocalDateTime getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
+    public void setUpdateTime(LocalDateTime updateTime) {
         this.updateTime = updateTime;
     }
 
